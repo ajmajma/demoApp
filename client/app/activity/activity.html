@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <p ng-show="isLoggedIn()">Welcome {{ getCurrentUser().name }}</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="gutter-sizer"></div>
+    <div class="grid-sizer"></div>
+    <div class="item gs-w" ng-class="widget.widget.size" ng-repeat="widget in contentHere" packery-angular >
+      <div class="flipper" ng-class="{ 'flipMe' : flipWidg }">
+        <div class="front clickFlip" ng-style="{ 'background-color' : themeHere.bg }">
+          <div class="handle"><h5 ng-style="{ 'color' : themeHere.h1 }">{{widget.widget.title}}</h5></div>
+           <div recompiler="widget.widget.content"></div>
+          <div class="frontFooter">
+            <ul class="footerActions">
+              <li><i class="fa fa-refresh flipCheck" ng-click="flipWidg = !flipWidg"></i></li>
+              <li><i class="fa fa-wifi"></i></li>
+              <li><i class="fa fa-share-alt" ng-click="shareWidg($index)"></i></li>
+              <li><i class="fa fa-cogs"></i></li>
+              <li><i class="fa fa-trash" ng-click="deleteAlert(widget)"></i></li>
+            </ul>
+          </div>  
+        </div>
+          <div class="back clickFlip" ng-click="flipWidg = !flipWidg">
+        <h4 class="flipCheck"><i class="fa fa-refresh"></i></h4>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>

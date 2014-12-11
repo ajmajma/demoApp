@@ -1,0 +1,201 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/nvd3/src/nv.d3.css" />
+      <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+    <link rel="stylesheet" href="app/app.css">
+      <!-- injector:css -->
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </head>
+  <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}">
+
+      <script type="text/ng-template" id="shareModal.html">
+        <div class="modal-header'>
+            <h3 class="modal-title" style="font-size: 36px;
+text-align: center;word-spacing: -0.15em;
+font-weight: 300;text-transform:uppercase;">Share &nbsp;&nbsp;{{nameOfWidg}}</h3>
+        </div>
+        <div class="modal-body">
+          <div class="sharePers">
+          <figure class="effect-phoebe" ng-repeat="item in myShares">
+            <img src="assets/images/education.jpg" alt="img26"/>
+              <figcaption>
+              <h2>Alex <span>Employee</span></h2>
+              <p>
+                <a href="#"><i class="fa fa-fw fa-user"></i></a>
+                <a href="#"><i class="fa fa-fw fa-heart"></i></a>
+                <a href="#"><i class="fa fa-fw fa-cog"></i></a>
+              </p>
+            </figcaption>     
+          </figure>         
+        </div>
+        <div class="clear"></div>
+         
+        </div>
+        <div class="modal-footer">
+            <button class="btn" ng-click="ok()">OK</button>
+            <button class="btn" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+
+    <growl-notifications></growl-notifications>
+
+  <div class="nativeMode velocity-opposites-transition-swoopIn" ng-if="modalOpen" style="display:none;"><div class="nativeClose" ng-click="closeNative()"><i class="fa fa-times"></i></div><div class="nativeTitle">{{modalInfo.title}}</div>
+<div class="nativeContent">Content here</div></div>
+
+<div ng-repeat="item in alertArray">
+  <growl-notification class="velocity-opposites-transition-flipBounceYIn" data-velocity-opts="{ stagger: 350 }" >
+   <i class="fa fa-bullhorn notifyHorn" ng-show="item.type == 1"></i>  <i class="fa fa-check notifyCheck" ng-show="item.type == 2"></i> <i class="fa fa-exclamation-triangle notifyWarn" ng-show="item.type == 3"></i> {{item.content}} <i class="fa fa-times notifyClose" ng-click="$growlNotification.remove()"></i>
+  </growl-notification>
+</div>
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="navbar navbar-default navbar-static-top navWrap" ng-controller="NavbarCtrl" ng-show="isLoggedIn()" >
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/dashboard" class="navbar-brand" ng-click="addQuick()">Volute</a>
+    </div>
+    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/dashboard')}" class="menu-effect"><a href="/dashboard" >Dashboard</a></li>
+        <!-- <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" class="menu-effect"><a href="/admin">Manage Users</a></li> -->
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/marketplace')}" class="menu-effect"><a href="/marketplace">Marketplace</a></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><a href="/activity"><i class="fa fa-comments-o"></i></a></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><a href="/offline">{{trackSpace}} %<i class="fa fa-wifi"></i></a></li>
+
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" class="menu-effect"><a href="/signup">Sign up</a></li>
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="menu-effect"><a href="/login">Login</a></li>
+        <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li> -->
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><a href="/profile"><i class="fa fa-user"></i></a></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="menu-effect"><a href="" ng-click="logout()"><i class="fa fa-sign-out"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Add your site or application content here -->
+    <div ng-view="" class="view-container velocity-opposites-transition-perspectiveLeftIn" ></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/angular-socket-io/socket.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/velocity/velocity.js"></script>
+      <script src="bower_components/velocity/velocity.ui.js"></script>
+      <script src="bower_components/angular-velocity/angular-velocity.min.js"></script>
+      <script src="bower_components/d3/d3.js"></script>
+      <script src="bower_components/nvd3/nv.d3.js"></script>
+      <script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+      <script src="bower_components/classie/classie.js"></script>
+      <script src="bower_components/get-style-property/get-style-property.js"></script>
+      <script src="bower_components/get-size/get-size.js"></script>
+      <script src="bower_components/eventie/eventie.js"></script>
+      <script src="bower_components/doc-ready/doc-ready.js"></script>
+      <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+      <script src="bower_components/matches-selector/matches-selector.js"></script>
+      <script src="bower_components/outlayer/item.js"></script>
+      <script src="bower_components/outlayer/outlayer.js"></script>
+      <script src="bower_components/packery/js/rect.js"></script>
+      <script src="bower_components/packery/js/packer.js"></script>
+      <script src="bower_components/packery/js/item.js"></script>
+      <script src="bower_components/packery/js/packery.js"></script>
+      <script src="bower_components/draggabilly/draggabilly.js"></script>
+      <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+      <script src="bower_components/videogular/videogular.js"></script>
+      <script src="bower_components/videogular-controls/controls.js"></script>
+      <script src="bower_components/videogular-buffering/buffering.js"></script>
+      <script src="bower_components/videogular-overlay-play/overlay-play.js"></script>
+      <script src="bower_components/videogular-poster/poster.js"></script>
+      <script src="bower_components/videogular-ima-ads/ima-ads.js"></script>
+      <script src="bower_components/videogular-youtube/youtube.js"></script>
+      <script src="bower_components/angular-growl-notifications/dist/angular-growl-notifications.js"></script>
+      <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+      <!-- endbower -->
+      <script src="socket.io-client/socket.io.js"></script>
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,client}) app/app.js -->
+        <script src="app/app.js"></script>
+          <!-- injector:js -->
+          <script src="app/ModalInstance/ModalInstance.controller.js"></script>
+          <script src="app/account/account.js"></script>
+          <script src="app/account/login/login.controller.js"></script>
+          <script src="app/account/settings/settings.controller.js"></script>
+          <script src="app/account/signup/signup.controller.js"></script>
+          <script src="app/activity/activity.controller.js"></script>
+          <script src="app/activity/activity.js"></script>
+          <script src="app/admin/admin.controller.js"></script>
+          <script src="app/admin/admin.js"></script>
+          <script src="app/cacheCheck/cacheCheck.service.js"></script>
+          <script src="app/main/main.controller.js"></script>
+          <script src="app/main/main.js"></script>
+          <script src="app/marketplace/marketplace.controller.js"></script>
+          <script src="app/marketplace/marketplace.js"></script>
+          <script src="app/offline/offline.controller.js"></script>
+          <script src="app/offline/offline.js"></script>
+          <script src="app/packeryAngular/packeryAngular.directive.js"></script>
+          <script src="app/profile/profile.controller.js"></script>
+          <script src="app/profile/profile.js"></script>
+          <script src="app/recompiler/recompiler.directive.js"></script>
+          <script src="app/themeFactory/themeFactory.service.js"></script>
+          <script src="app/themeMe/themeMe.controller.js"></script>
+          <script src="components/auth/auth.service.js"></script>
+          <script src="components/auth/user.service.js"></script>
+          <script src="components/modal/modal.service.js"></script>
+          <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+          <script src="components/navbar/navbar.controller.js"></script>
+          <script src="components/socket/socket.service.js"></script>
+          <!-- endinjector -->
+        <!-- endbuild -->
+</body>
+</html>

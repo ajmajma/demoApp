@@ -1,0 +1,36 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700italic,700,900,900italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,800,700);
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'account/login/login.scss';
+@import 'activity/activity.scss';
+@import 'admin/admin.scss';
+@import 'main/fonts.scss';
+@import 'main/main.scss';
+@import 'main/style.sass';
+@import 'marketplace/marketplace.sass';
+@import 'marketplace/marketplace.scss';
+@import 'offline/offline.scss';
+@import 'profile/profile.sass';
+@import 'modal/modal.scss';
+// endinjector

@@ -1,0 +1,444 @@
+body 
+	background: #ffffff
+	font-family: 'proxima_nova_rgregular', sans-serif
+	//background: url('/assets/images/bg2.png') repeat center
+
+h1,h2,h3,h4,h5,h6
+	font-family: 'futura_ltbook', sans-serif
+
+.container
+	@media screen and (min-width: 1200px)
+		width: 90%
+
+
+.view-container 
+	position: relative
+
+[ng-view] 
+	position: absolute
+	width: 100%
+
+[ng-view].ng-leave 
+	z-index: 0
+
+[ng-view].ng-enter 
+	z-index: 1
+
+
+.marketTransitions.ng-leave 
+	z-index: 0
+
+.marketTransitions.ng-enter 
+	z-index: 1
+
+growl-notifications
+	position: fixed
+	top: 10px
+	left: 10px
+	width: 100%
+	z-index: 1001
+
+growl-notification
+	padding: 15px 30px
+	margin-bottom: 15px
+	width: calc(100%  - 30px)
+	background-color: rgba(42,45,50,0.85)
+	color: #fff
+
+.notifyHorn
+	font-size: 20px
+	padding-right: 10px
+
+.notifyCheck
+	font-size: 20px
+	padding-right: 10px
+	color: #9FFA16
+
+.notifyWarn
+	font-size: 20px
+	padding-right: 10px
+	color: #FC6753
+
+.notifyClose
+	float: right
+	font-size: 20px
+
+
+.locationTitle
+	font-family: 'proxima_nova_rgregular', sans-serif
+
+.loginTitle
+	text-align: center
+
+.loginScreen
+	background: #f7f7f7 url(/assets/images/noise1.png) repeat center
+	background-size: cover
+
+.navWrap
+	background: #f7f7f7 url(/assets/images/noise1.png) repeat center
+	border-top: 1px solid #DBDBDB
+	border-bottom: 1px solid #DBDBDB
+	height: 75px
+
+.navbar-default
+	border: none
+
+.navbar-brand
+	color: #ea6060!important
+	font-size: 40px
+	margin-top: 10px
+	font-family: 'proxima_nova_condensedlight', sans-serif
+
+
+#navbar-main 
+	padding: 15px 20px 0px 20px
+	.active
+		a
+			font-weight: 300
+			color: #fff
+			background-color: #28282e
+
+@media screen and (max-width: 767px)
+	.navbar-nav 
+		background: #f7f7f7 url(/assets/images/noise1.png) repeat center
+		margin: 0
+	#navbar-main 
+		padding: 0
+
+
+
+.text-muted
+	padding: 22px
+	color: #ea6060
+
+.item
+	height: 300px
+	width: 24%
+	@media screen and (max-width: 1199px)
+		width: 32%
+	@media screen and (max-width: 768px)
+		width: 49%
+	@media screen and (max-width: 550px)
+		width: 99%
+
+.w1
+	height: 610px
+.w2
+	height: 610px
+.w3
+	width: 49%
+	@media screen and (max-width: 1199px)
+		width: 65%
+	@media screen and (max-width: 768px)
+		width: 96%
+
+.w5
+	width: 49%
+	height: 610px
+	@media screen and (max-width: 1199px)
+		width: 65%
+	@media screen and (max-width: 768px)
+		width: 99%
+
+.wVideo
+	height: 610px
+	width: 99%
+
+.videogular-container 
+	width: 100%
+	height: 320px
+	margin: auto
+	overflow: hidden
+
+
+.grid-sizer
+	width: 24%
+	@media screen and (max-width: 1199px)
+		width: 32%
+	@media screen and (max-width: 768px)
+		width: 49%
+	@media screen and (max-width: 550px)
+		width: 95%
+
+.gutter-sizer 
+	width: 1%
+
+.handle
+	width: 100%
+	height: 50px
+	display: block
+	background: #f7f7f7
+	h5
+		margin: 0
+		color: #212121
+		float: left
+		text-transform: uppercase
+		padding: 15px
+	span 
+		color: #ea6060
+		font-family: 'Merriweather', serif
+		font-weight: 300
+		padding-right: 5px
+
+.clear
+	clear: both
+
+.frontHeader
+	width: 100%
+	height: 40px
+	float: left
+	background-color: rgba(0,0,0, 0.2)
+	h4
+		color: #d5d5d5
+		padding-left: 15px
+
+.frontContent
+	width: 100%
+	background-color: #cacaca
+	min-height: 209px
+	float: left
+	
+.frontFooter
+	width: 100%
+	height: 40px
+	position: absolute
+	bottom: 0
+	ul 
+		list-style-type: none
+		width: 100%
+		li 
+			float: right
+			cursor: pointer
+			padding: 0 10px
+			i 
+				font-size: 22px
+				color: #878796
+				transition: 0.5s all
+			i:hover 
+				text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+
+#marketplaceView
+	.row
+		margin-right: 0
+		margin-left: 0
+
+
+.marketTabs
+	background-color: #fff
+	padding: 0
+	border-top-right-radius: 10px
+	border-top-left-radius: 10px
+	background-color: #262528
+	-webkit-tap-highlight-color: rgba(255,0,0,0.5)
+	font-weight: 300
+	ul
+		list-style-type: none
+		display: block
+		float: left
+		padding: 0
+		margin: 0
+		border-top-right-radius: 10px
+		border-top-left-radius: 10px
+		background-color: #262528
+		color: #bdbdbd
+		font-size: 16px
+		.activeTab
+			background-color: #f7f7f7
+			border-top-right-radius: 10px
+			border-top-left-radius: 10px
+			color: #5f6d85
+		li 
+			float: left
+			padding: 15px 50px
+			cursor: pointer
+
+.marketContent	
+	background-color: #f7f7f7
+	border-bottom-left-radius: 10px
+	border-bottom-right-radius: 10px
+
+.typeOfMarket
+	font-family: 'Lato', sans-serif
+	color: #ea6060
+	font-weight: 300
+
+.filterBar
+	margin: 10px 5px
+	border-radius: 10px
+	background-color: #dfe2e4
+	border-bottom: 2px solid #d0d4d6
+	.filterBy 
+		padding: 15px 20px
+		min-height: 50px
+		float: left
+		background-color: #f2f4f6
+		border-top-left-radius: 10px
+		border-bottom-left-radius: 10px
+		color: #868080
+	.filterSearch
+		padding: 10px
+		float: left
+		border-top-right-radius: 10px
+		border-bottom-right-radius: 10px
+		.marketSearch
+			border-radius: 5px
+			padding: 5px
+			margin: 0
+			float: left
+			border: none
+
+.marketLargeArea::before
+	width: 0
+	position: absolute
+	top: 0
+	left: 51px
+	height: 0
+	border-left: 8px solid transparent
+	border-right: 8px solid transparent
+	border-bottom: 10px solid #dfe2e4
+
+.marketLargeArea
+	margin: 10px 5px
+	padding: 10px
+	border-radius: 10px
+	background-color: #dfe2e4
+	border-bottom: 2px solid #d0d4d6
+	.mainTitle
+		color: #a9abad
+
+.marketFeature
+	margin: 10px
+	height: 200px
+	.row 
+		height: 100%
+	.featureLeft
+		height: 100%
+		width: 20%
+		float: left
+		display: block
+		.featureLeftRow
+			float: left
+			width: 100%
+			text-align: center
+			height: 25%
+			display: block
+			background-color: #fff
+			border-bottom: 1px solid #eee
+		.featureLeftRow:first-child
+			border-top-left-radius: 10px
+		.featureLeftRow:last-child
+			border-bottom-left-radius: 10px
+		.featureRowActive
+			background-color: #ea6060
+	.featureRight
+		width: 28%
+		float: left
+		display: block
+
+.featureRowActive:before
+	width: 0
+	height: 0
+	border-top: 60px solid transparent
+	border-bottom: 60px solid transparent
+	border-left: 60px solid green
+
+.marketMain
+	max-height: 750px
+	overflow-y: auto
+
+.bundlePic
+	background: url('/images/visa.png')
+	background-position: center center
+	background-size: contain
+	width: 100%
+	height: 90px
+	background-repeat: no-repeat
+
+.bundletitle
+	text-align: center
+	padding: 10px 0
+	font-size: 14px
+
+.marketSidePanel
+	.bundleSearch
+		padding-top: 75px
+		padding-left: 0
+		h3
+			font-family: "Lato", sans-serif
+			color: #ea6060
+			font-weight: 300
+
+.bundleList
+	padding: 0
+	margin-top: 5px
+	margin-bottom: 20px
+	.bundleCat
+		background-color: #f2f5f8
+		padding: 12px 20px
+		border-top: 1px solid #f2fefe
+		border-bottom: 1px solid #dcdfe2
+		border-right: 1px solid #dcdfe2
+		border-left: 1px solid #dcdfe2
+		p 
+			margin: 0
+	.bundleCat:first-child
+		border-top-right-radius: 10px
+		border-top-left-radius: 10px
+	.bundleCat:last-child
+		border-bottom-right-radius: 10px
+		border-bottom-left-radius: 10px
+
+.singleMarketItem
+	min-height: 170px
+
+.profilePic
+	width: 200px
+	height: 200px
+	margin: 0 auto
+	background-color: #fff
+	border-radius: 100px
+
+.packery-sizer
+	width: 360px
+	height: 500px
+
+.packery-object 
+	width: 360px
+	height: 500px
+
+.darkMe 
+	.front 
+		background-color: #28282e
+		.hamburg 
+			span, span:before, span:after
+				background-color: #fff
+	.handle 
+		background-color: #28282e
+		h5
+			color: #fff
+  
+.nativeMode
+	position: fixed
+	height: 100%
+	width: 100%
+	background-color: #ea6060
+	z-index: 1002
+	.nativeTitle
+		color: #fff
+		text-align: center
+		font-size: 90px
+	.nativeClose
+		color: #fff
+		font-size: 50px
+
+
+.shareModal
+	.modal-content
+		background-color: #28282e
+		border-radius: 0
+		color: #fff
+		.modal-header
+			font-size: 24px
+		.modal-footer
+			border-top: none
+

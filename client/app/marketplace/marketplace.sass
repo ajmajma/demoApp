@@ -1,0 +1,191 @@
+
+.marketTabs
+	background-color: #fff
+	padding: 0
+	border-top-right-radius: 10px
+	border-top-left-radius: 10px
+	background-color: #262528
+	-webkit-tap-highlight-color: rgba(255,0,0,0.5)
+	font-weight: 300
+	ul
+		list-style-type: none
+		display: block
+		float: left
+		padding: 0
+		margin: 0
+		border-top-right-radius: 10px
+		border-top-left-radius: 10px
+		background-color: #262528
+		color: #bdbdbd
+		font-size: 16px
+		.activeTab
+			background-color: #f7f7f7
+			border-top-right-radius: 10px
+			border-top-left-radius: 10px
+			color: #5f6d85
+		li 
+			float: left
+			padding: 15px 50px
+			cursor: pointer
+
+.marketContent	
+	background-color: #f7f7f7
+	border-bottom-left-radius: 10px
+	border-bottom-right-radius: 10px
+	margin-bottom: 15px
+
+.typeOfMarket
+	font-family: 'Lato', sans-serif
+	color: #ea6060
+	font-weight: 300
+
+.filterBar
+	margin: 10px 5px
+	border-radius: 10px
+	background-color: #dfe2e4
+	border-bottom: 2px solid #d0d4d6
+	.filterBy 
+		padding: 15px 20px
+		min-height: 50px
+		float: left
+		background-color: #f2f4f6
+		border-top-left-radius: 10px
+		border-bottom-left-radius: 10px
+		color: #868080
+	.filterSearch
+		padding: 10px
+		float: left
+		border-top-right-radius: 10px
+		border-bottom-right-radius: 10px
+		.marketSearch
+			border-radius: 5px
+			padding: 5px
+			margin: 0
+			float: left
+			border: none
+
+.marketLargeArea::before
+	width: 0
+	position: absolute
+	top: 0
+	left: 51px
+	height: 0
+	border-left: 8px solid transparent
+	border-right: 8px solid transparent
+	border-bottom: 10px solid #dfe2e4
+
+.marketLargeArea
+	margin: 10px 5px
+	padding: 10px
+	border-radius: 10px
+	background-color: #dfe2e4
+	border-bottom: 2px solid #d0d4d6
+	.mainTitle
+		color: #a9abad
+
+.marketFeature
+	margin: 10px
+	height: 200px
+	.row 
+		height: 100%
+	.featureLeft
+		height: 100%
+		width: 20%
+		float: left
+		display: block
+		.featureLeftRow
+			float: left
+			width: 100%
+			text-align: center
+			height: 25%
+			display: block
+			background-color: #fff
+			border-bottom: 1px solid #eee
+		.featureLeftRow:first-child
+			border-top-left-radius: 10px
+		.featureLeftRow:last-child
+			border-bottom-left-radius: 10px
+		.featureRowActive
+			background-color: #ea6060
+	.featureRight
+		width: 28%
+		float: left
+		display: block
+
+.featureRowActive:before
+	width: 0
+	height: 0
+	border-top: 60px solid transparent
+	border-bottom: 60px solid transparent
+	border-left: 60px solid green
+
+.marketMain
+	max-height: 750px
+	overflow-y: auto
+
+.bundlePic
+	background: #28282e 
+	transition: 0.2s ease-in-out
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+	background-position: center center
+	background-size: contain
+	border: 2px solid #ebe9e8
+	width: 100%
+	height: 270px
+	background-repeat: no-repeat
+
+
+.bundlePic:hover
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+	-webkit-transform: translate(0px,-5px)
+
+	
+
+.bundletitle
+	text-align: left
+	padding: 10px 0px 0px 0px
+	font-size: 14px
+
+.bundletitleSm
+	text-align: left
+	font-size: 12px
+	color: #888888
+
+.marketSidePanel
+	.bundleSearch
+		padding-top: 75px
+		padding-left: 0
+		h3
+			font-family: "Lato", sans-serif
+			color: #ea6060
+			font-weight: 300
+
+.bundleList
+	padding: 0
+	margin-top: 5px
+	margin-bottom: 20px
+	.bundleCat
+		background-color: #f2f5f8
+		padding: 12px 20px
+		border-top: 1px solid #f2fefe
+		border-bottom: 1px solid #dcdfe2
+		border-right: 1px solid #dcdfe2
+		border-left: 1px solid #dcdfe2
+		p 
+			margin: 0
+	.bundleCat:first-child
+		border-top-right-radius: 10px
+		border-top-left-radius: 10px
+	.bundleCat:last-child
+		border-bottom-right-radius: 10px
+		border-bottom-left-radius: 10px
+
+.singleMarketItem
+	min-height: 170px
+	width: 230px
+	float: left
+	margin: 10px
+
+
+
+

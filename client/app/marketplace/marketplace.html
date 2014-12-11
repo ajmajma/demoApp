@@ -1,0 +1,223 @@
+<!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
+
+<div ng-controller="MarketplaceCtrl" id="marketplaceView" class="container" >
+	<h3 class="locationTitle">Marketplace</h3>
+
+	<!-- Outer market row -->
+	<div class="row">
+		<!-- Tabs for marketplace -->
+		<div class="col-xs-12 marketTabs">
+			<ul>
+				<li ng-class="{activeTab : publicActive}" ng-click="publicActive = true; privateActive = false; myWidgActive = false">Private</li>
+				<li ng-class="{activeTab : privateActive}" ng-click="publicActive = false ;privateActive = true;myWidgActive = false">My Widgets</li>
+				<li ng-class="{activeTab : myWidgActive}" ng-click="publicActive = false ;privateActive = false;myWidgActive = true">My Bundles</li>
+		</div>
+		<!-- Main area marketplace -->
+		<div class="col-xs-12 marketContent">
+			<div class="col-xs-12 col-md-9">
+				<div id="publicMarket" ng-if="publicActive" class="marketTransitions velocity-opposites-transition-slideRightIn">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="typeOfMarket">Private Widgets</h3>
+						</div>
+					</div>
+
+					<!--Search/Filter Bar -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row filterBar">
+								<div class="filterBy">
+									Filter By
+								</div>
+								<div class="filterSearch">
+									<input type="text" placeholder="Search..." class="marketSearch" ng-model="searchPrivate">
+								</div>
+							</div>
+						</div>
+					</div><!--End Search/Filter Bar -->
+
+					<!-- Main Area -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row marketLargeArea">
+								<p class="mainTitle">Results</p>
+								<!-- <div class="marketFeature">
+									<div class="row">
+										<div class="featureLeft">
+											<div class="featureLeftRow featureRowActive">
+												Row1
+											</div>
+											<div class="featureLeftRow">
+												Row2
+											</div>	
+											<div class="featureLeftRow">
+												Row3
+											</div>	
+											<div class="featureLeftRow">
+												Row4
+											</div>		
+										</div>
+										<div class="featureRight">
+											<h3 class="featureRightTitle">Title Here</h3>
+											<span class="featureRightText">Text Here</span>
+										</div>
+									</div>
+								</div> -->
+					
+								<div class="marketMain">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="row">
+												<div ng-repeat="item in marketItemsTest | filter:searchPrivate" class=" singleMarketItem velocity-opposites-transition-flipBounceYIn"
+        data-velocity-opts="{ stagger: 20 }">	
+													<div class="grid">
+															
+															<figure class="effect-hera">
+															<img ng-src="assets/images/{{item.img}}.jpg" alt="img01"/>
+																<figcaption>
+																	<h2>{{item.name}} <br/><span>Bundle</span></h2>
+																	<p>
+																		<a href="#"><i class="fa fa-info-circle"></i></a>
+																		<a href="#"><i class="fa fa-cloud-upload"></i></a>
+																		<a href="#"><i class="fa fa-thumb-tack"></i></a>
+																		<a href="#"><i class="fa fa-tags"></i></a>
+																	</p>
+																</figcaption>			
+															</figure>
+													</div>
+													
+							
+														<div class="bundletitle">{{item.name}}</div>
+														<div class="bundletitleSm">{{item.name}}</div>
+												
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="marketMain">
+
+									
+								</div>
+							</div>
+						</div>
+					</div><!-- End Main Area -->
+
+				</div>
+				<!--Prviate Market -->
+				<div id="privateMarket" ng-if="privateActive" class="marketTransitions velocity-opposites-transition-slideRightIn">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="typeOfMarket">My Widgets</h3>
+						</div>
+					</div>
+
+					<!--Search/Filter Bar -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row filterBar">
+								<div class="filterBy">
+									Filter By
+								</div>
+								<div class="filterSearch">
+									<input type="text" placeholder="Search..." class="marketSearch" ng-model="searchMy">
+								</div>
+							</div>
+						</div>
+					</div><!--End Search/Filter Bar -->
+
+					<!-- Main Area -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row marketLargeArea">
+								<p class="mainTitle">Results</p>
+		
+								<div class="marketMain">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="row">
+												<div ng-repeat="item in marketItems | filter:searchMy" class="col-xs-6 col-sm-4 col-md-2 singleMarketItem">
+														<a ng-href="#/{{item.url}}"><div class="bundlePic"></div></a>
+														<div class="bundletitle">{{item.name}}</div>
+												
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="marketMain">
+
+									
+								</div>
+							</div>
+						</div>
+					</div><!-- End Main Area -->
+
+
+				</div><!-- end Private -->
+
+				<!-- My market -->
+				<div id="myMarket" ng-if="myWidgActive" class="marketTransitions velocity-opposites-transition-slideRightIn">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="typeOfMarket">My Bundles</h3>
+						</div>
+					</div>
+
+					<!--Search/Filter Bar -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row filterBar">
+								<div class="filterBy">
+									Filter By
+								</div>
+								<div class="filterSearch">
+									<input type="text" placeholder="Search..." class="marketSearch" ng-model="searchBundle">
+								</div>
+							</div>
+						</div>
+					</div><!--End Search/Filter Bar -->
+
+					<!-- Main Area -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row marketLargeArea">
+								<p class="mainTitle">Results</p>
+								<div class="marketMain">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="row">
+												<div ng-repeat="item in marketItems | filter:searchBundle" class="col-xs-6 col-sm-4 col-md-2 singleMarketItem">
+													<a ng-href="#/{{item.url}}"><div class="bundlePic"></div></a>
+													<div class="bundletitle">{{item.name}}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!-- End Main Area -->
+
+				</div><!-- end my market -->
+			</div>
+
+			<div class="col-xs-12 col-md-3">
+				<div class="row marketSidePanel">
+					<div class="col-xs-12 bundleSearch">
+						<h3>Bundles</h3>
+					</div>
+					<div class="col-xs-12 bundleList">
+						<div class="bundleCat" ng-repeat="item in marketItems" >
+							<p>{{item.name}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div><!--end outer market row -->
+
+
+</div>

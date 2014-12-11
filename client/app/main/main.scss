@@ -1,0 +1,256 @@
+.thing-form {
+    margin: 20px 0;
+}
+
+#banner {
+    border-bottom: none;
+    margin-top: -20px;
+}
+
+#banner h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.hero-unit {
+    position: relative;
+    padding: 30px 15px;
+    color: #F5F5F5;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: #4393B9;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 70px;
+    border-top: 1px solid #E5E5E5;
+}
+
+.menu-effect a::before,
+.menu-effect a::after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.menu-effect a::before {
+    margin-right: 10px;
+    content: '[';
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    transform: translateX(20px);
+}
+.menu-effect a::after {
+    margin-left: 10px;
+    content: ']';
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+
+}
+.menu-effect a:hover::before,
+.menu-effect a:hover::after,
+.menu-effect a:focus::before,
+.menu-effect a:focus::after {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+   
+}
+
+.gs-w {
+  perspective: 1000;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flipper {
+  transition: 0.6s all ease-in-out;
+    width: 100%;
+    height: 100%;
+  transform-style: preserve-3d;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 6px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.front {
+  z-index: 2;
+  background-color: #f7f7f7;
+  transform: rotateY(0deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: 0.6s;
+  padding-bottom: 40px;
+}
+.front p {
+  padding: 5px 10px;
+  color: #646464;
+}
+.front .flipCheck { 
+  color: #EFEFEF;
+}
+
+.back .flipCheck { 
+  color: #ea6060;
+  padding-left: 10px;
+}
+
+.back   {
+  transform: rotateY(180deg);
+  background-color: rgba(0,0,0, 0.2);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: 0.6s;
+}
+
+.flipMe .front {
+  transform: rotateY(180deg);
+}
+
+.flipMe .back {
+    transform: rotateY(0deg);
+}
+
+.angular-google-map-container { height: 200px; }
+
+#video-background {
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+.containLogin {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+
+}
+
+#loginWrapper {
+  width: 100%;
+  height: 100vh;
+
+}
+
+.loginContain {
+  padding-top: 10%;
+  z-index: 10;
+  max-width: 600px;
+ 
+}
+.loginContain .row {
+  background-color: rgba(40, 40, 46, 0.44);
+  padding: 20px;
+}
+
+.loginTitle {
+  color: #fff;
+}
+.loginTitle h1 {
+  color: #ea6060;
+  font-size: 180px;
+  font-family: 'futura_ltcondensed', sans-serif;
+}
+
+.loginTitle h3 {
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Merriweather', serif;
+  
+}
+.loginContain form {
+  color: #fff;
+
+}
+
+.hamburg {
+  position: relative;
+  float: right;
+  width: 30px;
+  margin: 15px;
+  height: 30px;
+}
+.hamburg span {
+  margin: 0 auto;
+  position: relative;
+  top: 12px;
+}
+.hamburg span:before, .hamburg span:after {
+  position: absolute;
+  content: '';
+}
+.hamburg span, .hamburg span:before, .hamburg span:after {
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  display: block;
+}
+.hamburg span:before {
+  margin-top: -12px;
+}
+.hamburg span:after {
+  margin-top: 12px;
+}
+
+/* example 5 */
+.cornerClean span {
+  -webkit-transition-duration: 0s;
+  -webkit-transition-delay: .2s;
+}
+.clickedCorner span {
+  background-color: rgba(0,0,0, 0.0);
+  -webkit-transition-delay: .2s;
+}
+.cornerClean span:before {
+  -webkit-transition-property: margin, -webkit-transform;
+  -webkit-transition-duration: .2s;
+  -webkit-transition-delay: .2s, 0;
+}
+.clickedCorner span:before {
+  margin-top: 0;
+  -webkit-transform: rotate(45deg);
+  -webkit-transition-delay: 0, .2s;
+}
+.cornerClean span:after {
+  -webkit-transition-property: margin, -webkit-transform;
+  -webkit-transition-duration: .2s;
+  -webkit-transition-delay: .2s, 0;
+}
+.clickedCorner span:after {
+  margin-top: 0;
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition-delay: 0, .2s;
+}

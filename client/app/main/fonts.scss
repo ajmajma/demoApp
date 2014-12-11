@@ -1,0 +1,587 @@
+
+@font-face {
+    font-family: 'futura_ltcondensedlight';
+    src: url('/assets/fonts/futuralt-condensedlight-webfont.eot');
+    src: url('/assets/fonts/futuralt-condensedlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-condensedlight-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-condensedlight-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-condensedlight-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-condensedlight-webfont.svg#futura_ltcondensedlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltcondensedlightobl';
+    src: url('/assets/fonts/futuralt-condensedlightobl-webfont.eot');
+    src: url('/assets/fonts/futuralt-condensedlightobl-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-condensedlightobl-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-condensedlightobl-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-condensedlightobl-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-condensedlightobl-webfont.svg#futura_ltcondensedlightobl') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltcondensedextrabold';
+    src: url('/assets/fonts/futuralt-condensedextrabold-webfont.eot');
+    src: url('/assets/fonts/futuralt-condensedextrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-condensedextrabold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-condensedextrabold-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-condensedextrabold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-condensedextrabold-webfont.svg#futura_ltcondensedextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltcondensedboldoblique';
+    src: url('/assets/fonts/futuralt-condensedboldoblique-webfont.eot');
+    src: url('/assets/fonts/futuralt-condensedboldoblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-condensedboldoblique-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-condensedboldoblique-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-condensedboldoblique-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-condensedboldoblique-webfont.svg#futura_ltcondensedboldoblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltcondensedbold';
+    src: url('/assets/fonts/futuralt-condensedbold-webfont.eot');
+    src: url('/assets/fonts/futuralt-condensedbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-condensedbold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-condensedbold-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-condensedbold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-condensedbold-webfont.svg#futura_ltcondensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltcondensed';
+    src: url('/assets/fonts/futuralt-condensed-webfont.eot');
+    src: url('/assets/fonts/futuralt-condensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-condensed-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-condensed-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-condensed-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-condensed-webfont.svg#futura_ltcondensed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltbookoblique';
+    src: url('/assets/fonts/futuralt-bookoblique-webfont.eot');
+    src: url('/assets/fonts/futuralt-bookoblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-bookoblique-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-bookoblique-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-bookoblique-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-bookoblique-webfont.svg#futura_ltbookoblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltbook';
+    src: url('/assets/fonts/futuralt-book-webfont.eot');
+    src: url('/assets/fonts/futuralt-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-book-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-book-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-book-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-book-webfont.svg#futura_ltbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltboldoblique';
+    src: url('/assets/fonts/futuralt-boldoblique-webfont.eot');
+    src: url('/assets/fonts/futuralt-boldoblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-boldoblique-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-boldoblique-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-boldoblique-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-boldoblique-webfont.svg#futura_ltboldoblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltbold';
+    src: url('/assets/fonts/futuralt-bold-webfont.eot');
+    src: url('/assets/fonts/futuralt-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-bold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-bold-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-bold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-bold-webfont.svg#futura_ltbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltregular';
+    src: url('/assets/fonts/futuralt-webfont.eot');
+    src: url('/assets/fonts/futuralt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-webfont.svg#futura_ltregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltoblique';
+    src: url('/assets/fonts/futuralt-oblique-webfont.eot');
+    src: url('/assets/fonts/futuralt-oblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-oblique-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-oblique-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-oblique-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-oblique-webfont.svg#futura_ltoblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltlightoblique';
+    src: url('/assets/fonts/futuralt-lightoblique-webfont.eot');
+    src: url('/assets/fonts/futuralt-lightoblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-lightoblique-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-lightoblique-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-lightoblique-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-lightoblique-webfont.svg#futura_ltlightoblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltlight';
+    src: url('/assets/fonts/futuralt-light-webfont.eot');
+    src: url('/assets/fonts/futuralt-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-light-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-light-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-light-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-light-webfont.svg#futura_ltlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltheavyoblique';
+    src: url('/assets/fonts/futuralt-heavyoblique-webfont.eot');
+    src: url('/assets/fonts/futuralt-heavyoblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-heavyoblique-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-heavyoblique-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-heavyoblique-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-heavyoblique-webfont.svg#futura_ltheavyoblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltheavy';
+    src: url('/assets/fonts/futuralt-heavy-webfont.eot');
+    src: url('/assets/fonts/futuralt-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-heavy-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-heavy-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-heavy-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-heavy-webfont.svg#futura_ltheavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltextraboldoblique';
+    src: url('/assets/fonts/futuralt-extraboldoblique-webfont.eot');
+    src: url('/assets/fonts/futuralt-extraboldoblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-extraboldoblique-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-extraboldoblique-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-extraboldoblique-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-extraboldoblique-webfont.svg#futura_ltextraboldoblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltextrabold';
+    src: url('/assets/fonts/futuralt-extrabold-webfont.eot');
+    src: url('/assets/fonts/futuralt-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-extrabold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-extrabold-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-extrabold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-extrabold-webfont.svg#futura_ltextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltcondextraboldobl';
+    src: url('/assets/fonts/futuralt-condextraboldobl-webfont.eot');
+    src: url('/assets/fonts/futuralt-condextraboldobl-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-condextraboldobl-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-condextraboldobl-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-condextraboldobl-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-condextraboldobl-webfont.svg#futura_ltcondextraboldobl') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'futura_ltcondensedoblique';
+    src: url('/assets/fonts/futuralt-condensedoblique-webfont.eot');
+    src: url('/assets/fonts/futuralt-condensedoblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/futuralt-condensedoblique-webfont.woff2') format('woff2'),
+         url('/assets/fonts/futuralt-condensedoblique-webfont.woff') format('woff'),
+         url('/assets/fonts/futuralt-condensedoblique-webfont.ttf') format('truetype'),
+         url('/assets/fonts/futuralt-condensedoblique-webfont.svg#futura_ltcondensedoblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'proxima_novasemibold';
+    src: url('/assets/fonts/proximanova-semibold-webfont.eot');
+    src: url('/assets/fonts/proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-semibold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-semibold-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-semibold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-semibold-webfont.svg#proxima_novasemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('/assets/fonts/proximanova-regular-webfont.eot');
+    src: url('/assets/fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-regular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-regular-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-regular-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_novaregular_italic';
+    src: url('/assets/fonts/proximanova-regularitalic-webfont.eot');
+    src: url('/assets/fonts/proximanova-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-regularitalic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-regularitalic-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-regularitalic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-regularitalic-webfont.svg#proxima_novaregular_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_novaregular_italic';
+    src: url('/assets/fonts/proximanova-regitalic-webfont.eot');
+    src: url('/assets/fonts/proximanova-regitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-regitalic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-regitalic-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-regitalic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-regitalic-webfont.svg#proxima_novaregular_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_novalight_italic';
+    src: url('/assets/fonts/proximanova-lightitalic-webfont.eot');
+    src: url('/assets/fonts/proximanova-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-lightitalic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-lightitalic-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-lightitalic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-lightitalic-webfont.svg#proxima_novalight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_novalight';
+    src: url('/assets/fonts/proximanova-light-webfont.eot');
+    src: url('/assets/fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-light-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-light-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-light-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-light-webfont.svg#proxima_novalight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_novaextrabold';
+    src: url('/assets/fonts/proximanova-extrabold-webfont.eot');
+    src: url('/assets/fonts/proximanova-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-extrabold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-extrabold-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-extrabold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-extrabold-webfont.svg#proxima_novaextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_rgbold';
+    src: url('/assets/fonts/proximanova-bold-webfont.eot');
+    src: url('/assets/fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-bold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-bold-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-bold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_rgbold_italic';
+    src: url('/assets/fonts/proximanova-boldit-webfont.eot');
+    src: url('/assets/fonts/proximanova-boldit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-boldit-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-boldit-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-boldit-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-boldit-webfont.svg#proxima_nova_rgbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_novablack';
+    src: url('/assets/fonts/proximanova-black-webfont.eot');
+    src: url('/assets/fonts/proximanova-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-black-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-black-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-black-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-black-webfont.svg#proxima_novablack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_condensedRgIt';
+    src: url('/assets/fonts/proximanovacond-regularit-webfont.eot');
+    src: url('/assets/fonts/proximanovacond-regularit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanovacond-regularit-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanovacond-regularit-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanovacond-regularit-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanovacond-regularit-webfont.svg#proxima_nova_condensedRgIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_cn_rgregular';
+    src: url('/assets/fonts/proximanovacond-regular-webfont.eot');
+    src: url('/assets/fonts/proximanovacond-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanovacond-regular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanovacond-regular-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanovacond-regular-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanovacond-regular-webfont.svg#proxima_nova_cn_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_novasemibold_italic';
+    src: url('/assets/fonts/proximanova-semibolditalic-webfont.eot');
+    src: url('/assets/fonts/proximanova-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanova-semibolditalic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanova-semibolditalic-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanova-semibolditalic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanova-semibolditalic-webfont.svg#proxima_novasemibold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_condensedLtIt';
+    src: url('/assets/fonts/proximanovacond-lightit-webfont.eot');
+    src: url('/assets/fonts/proximanovacond-lightit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanovacond-lightit-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanovacond-lightit-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanovacond-lightit-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanovacond-lightit-webfont.svg#proxima_nova_condensedLtIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_condensedlight';
+    src: url('/assets/fonts/proximanovacond-light-webfont.eot');
+    src: url('/assets/fonts/proximanovacond-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanovacond-light-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanovacond-light-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanovacond-light-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanovacond-light-webfont.svg#proxima_nova_condensedlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_condensedSBdIt';
+    src: url('/assets/fonts/proximanovacond-semiboldit-webfont.eot');
+    src: url('/assets/fonts/proximanovacond-semiboldit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanovacond-semiboldit-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanovacond-semiboldit-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanovacond-semiboldit-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanovacond-semiboldit-webfont.svg#proxima_nova_condensedSBdIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_condensedSBd';
+    src: url('/assets/fonts/proximanovacond-semibold-webfont.eot');
+    src: url('/assets/fonts/proximanovacond-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proximanovacond-semibold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/proximanovacond-semibold-webfont.woff') format('woff'),
+         url('/assets/fonts/proximanovacond-semibold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proximanovacond-semibold-webfont.svg#proxima_nova_condensedSBd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
