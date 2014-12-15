@@ -77,32 +77,33 @@ angular.module('demoAppApp')
        $scope.contentHere[parent].sides[$scope.indexFind].active = true;
     };
     //flip right
-    $scope.flipRight = function(index, parent){
-       var idx = index + 1;
-      if(idx >= $scope.contentHere[parent].sides.length){
-      idx = 0;
-      }
-      if($scope.contentHere[parent].sides[idx].sideIs == 'help'){
-          $scope.flipRight(idx, parent);
-          return;
-      }
+    $scope.flipSideRight = function(index, parent){
       $scope.contentHere[parent].sides[index].active = false;
+      var idx = index + 1;
+      if(idx >= $scope.contentHere[parent].sides.length){
+         idx = 0;
+      }else{}
+      if($scope.contentHere[parent].sides[idx].sideIs == 'help'){
+           $scope.flipSideRight(idx, parent); //Added to skip over to next item
+           return; // Added to skip execution of following line of codes incase of recursion
+      }else{}
+      //$scope.contentHere[parent].sides[index].active = false;
       $scope.contentHere[parent].sides[idx].active = true;
     };
+
     //flip left
-    $scope.flipLeft = function(index, parent){
-      var idxx = index - 1;
-      if (idxx < 0) {
-      idxx = $scope.contentHere[parent].sides.length - 1;
-
-      }
-      if($scope.contentHere[parent].sides[idxx].sideIs == 'help'){
-        $scope.flipLeft(idxx, parent);
-        return;
-      }
-
+    $scope.flipSideLeft = function(index, parent){
       $scope.contentHere[parent].sides[index].active = false;
-      $scope.contentHere[parent].sides[idxx].active = true;
+      var idx = index - 1;
+      if (idx < 0) {
+       idx = $scope.contentHere[parent].sides.length - 1;
+      }else{}
+      if($scope.contentHere[parent].sides[idx].sideIs == 'help'){
+           $scope.flipSideLeft(idx, parent); //Added to skip over to next item
+           return; // Added to skip execution of following line of codes incase of recursion
+      }else{}
+      //$scope.contentHere[parent].sides[index].active = false;
+      $scope.contentHere[parent].sides[idx].active = true;
     };
 
     $scope.contentHere = [
