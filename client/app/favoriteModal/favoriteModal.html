@@ -1,0 +1,28 @@
+ <script type="text/ng-template" id="shareModal.html">
+        <div class="modal-header'>
+            <h3 class="modal-title" style="font-size: 36px;
+text-align: center;word-spacing: -0.15em;
+font-weight: 300;text-transform:uppercase;">Share &nbsp;&nbsp;{{nameOfWidg}}</h3>
+        </div>
+        <div class="modal-body">
+          <div class="sharePers">
+          <figure class="effect-phoebe" ng-repeat="item in myShares">
+            <img src="assets/images/education.jpg" alt="img26"/>
+              <figcaption>
+              <h2>Alex <span>Employee</span></h2>
+              <p>
+                <a href="#"><i class="fa fa-fw fa-user"></i></a>
+                <a href="#"><i class="fa fa-fw fa-heart"></i></a>
+                <a href="#"><i class="fa fa-fw fa-cog"></i></a>
+              </p>
+            </figcaption>     
+          </figure>         
+        </div>
+        <div class="clear"></div>
+         
+        </div>
+        <div class="modal-footer">
+            <button class="btn" ng-click="ok()">OK</button>
+            <button class="btn" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>

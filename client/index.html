@@ -24,12 +24,14 @@
     <!-- endbuild -->
   </head>
   <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}">
+ 
+  
 
       <script type="text/ng-template" id="shareModal.html">
         <div class="modal-header'>
             <h3 class="modal-title" style="font-size: 36px;
 text-align: center;word-spacing: -0.15em;
-font-weight: 300;text-transform:uppercase;">Share &nbsp;&nbsp;{{nameOfWidg}}</h3>
+font-weight: 300;text-transform:uppercase;padding-top: 10px;">Share &nbsp;&nbsp; <span style="color:#ea6060;">{{nameOfWidg}}</span></h3>
         </div>
         <div class="modal-body">
           <div class="sharePers">
@@ -46,6 +48,24 @@ font-weight: 300;text-transform:uppercase;">Share &nbsp;&nbsp;{{nameOfWidg}}</h3
           </figure>         
         </div>
         <div class="clear"></div>
+         
+        </div>
+        <div class="modal-footer">
+            <button class="btn" ng-click="ok()">OK</button>
+            <button class="btn" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="favoriteModal.html">
+        <div class="modal-header'>
+            <h3 class="modal-title" style="font-size: 36px;
+text-align: center;word-spacing: -0.15em;
+font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favoirites</h3>
+        </div>
+        <div class="modal-body">
+        <p>Favorite this view?</p>
+        <p>My Favorites - </p>
+        <p>Dashboard</p>
          
         </div>
         <div class="modal-footer">
@@ -85,23 +105,24 @@ font-weight: 300;text-transform:uppercase;">Share &nbsp;&nbsp;{{nameOfWidg}}</h3
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/dashboard')}" class="menu-effect"><a href="/dashboard" >Dashboard</a></li>
         <!-- <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" class="menu-effect"><a href="/admin">Manage Users</a></li> -->
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/marketplace')}" class="menu-effect"><a href="/marketplace">Marketplace</a></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><a href="/activity"><i class="fa fa-comments-o"></i></a></li>
          <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><a href="/offline">{{trackSpace}} %<i class="fa fa-wifi"></i></a></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><a href="/activity"><i class="fa fa-comments-o"></i></a></li>
+        
 
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" class="menu-effect"><a href="/signup">Sign up</a></li>
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="menu-effect"><a href="/login">Login</a></li>
         <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li> -->
+        <li ng-show="isLoggedIn()" class="menu-effect"><a href="#" ng-click="openFavorites()"><i class="fa fa-heart"></i></a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><a href="/profile"><i class="fa fa-user"></i></a></li>
+         <li ng-show="isLoggedIn()" class="menu-effect"><a href="" ><i class="fa fa-bars"></i></a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="menu-effect"><a href="" ng-click="logout()"><i class="fa fa-sign-out"></i></a></li>
       </ul>
     </div>
   </div>
 </div>
 
-
-
     <!-- Add your site or application content here -->
-    <div ng-view="" class="view-container velocity-opposites-transition-perspectiveLeftIn" ></div>
+    <div ng-view="" class="view-container velocity-opposites-transition-bounceUpIn" ></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -177,6 +198,7 @@ font-weight: 300;text-transform:uppercase;">Share &nbsp;&nbsp;{{nameOfWidg}}</h3
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
           <script src="app/cacheCheck/cacheCheck.service.js"></script>
+          <script src="app/favoriteModal/favoriteModal.controller.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="app/marketplace/marketplace.controller.js"></script>

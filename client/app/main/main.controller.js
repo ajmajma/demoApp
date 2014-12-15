@@ -56,8 +56,6 @@ angular.module('demoAppApp')
       // themeFactory.setAlert($scope.prepForOffline);
     };
 
-  
-
 
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
@@ -71,7 +69,8 @@ angular.module('demoAppApp')
       'share' : true,
       'mobile' :  true,
       'native' :  true,
-      'space' : 10
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
     },
     {
@@ -83,7 +82,8 @@ angular.module('demoAppApp')
       'share' : true,
       'mobile' :  true,
       'native' :  false,
-      'space' : 10
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
     },
     {
@@ -95,7 +95,8 @@ angular.module('demoAppApp')
       'share' : true,
       'mobile' :  true,
       'native' :  false,
-      'space' : 10
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
     },
     {
@@ -107,7 +108,8 @@ angular.module('demoAppApp')
       'share' : true,
       'mobile' :  true,
       'native' :  false,
-      'space' : 10
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
     },
     {
@@ -119,7 +121,8 @@ angular.module('demoAppApp')
       'share' : true,
       'mobile' :  true,
       'native' :  false,
-      'space' : 10
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
     },
     {
@@ -131,7 +134,8 @@ angular.module('demoAppApp')
       'share' : true,
       'mobile' :  true,
       'native' :  false,
-      'space' : 10
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
     },
       
     {
@@ -143,7 +147,8 @@ angular.module('demoAppApp')
       'share' : true,
       'mobile' :  true,
       'native' :  false,
-      'space' : 10
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
     },
     {
@@ -155,7 +160,8 @@ angular.module('demoAppApp')
       'share' : true,
       'mobile' :  true,
       'native' :  false,
-      'space' : 10
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
     },
      {
@@ -167,7 +173,8 @@ angular.module('demoAppApp')
       'share' : true,
       'mobile' :  true,
       'native' :  false,
-      'space' : 10
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
     }];
     $scope.exampleData = [

@@ -4,7 +4,6 @@
     <p ng-show="isLoggedIn()">Welcome {{ getCurrentUser().name }}</p>
   </div>
 </div>
-
 <div class="container">
 
   <div class="row">
@@ -13,10 +12,17 @@
     <div class="item gs-w" ng-class="widget.size" ng-repeat="widget in contentHere" packery-angular >
       <div class="flipper" ng-class="{ 'flipMe' : flipWidg }">
         <div class="front clickFlip" ng-style="{ 'background-color' : themeHere.bg }">
-          <div class="handle"><h5 ng-style="{ 'color' : themeHere.h1 }"><span>{{$index + 1}}</span>{{widget.title}}</h5> 
 
-            <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions" ng-class="{'clickedCorner' : openActions}"><span></span></a>
+           <div class="handle">
+            <h5 class="handleTitle" ng-class="{'handleTitleFlip' : openActions }">
+              <span><span>{{$index + 1}} </span>{{widget.title}}</span>
+              <nav class="handleActions" >
+                <i ng-repeat="action in widget.actions | filter:filterActions" class="fa {{action}} velocity-opposites-transition-flipBounceYIn" ng-click="actionClicked()" data-velocity-opts="{ stagger: 100 }"></i>
+              </nav>
+            </h5>
           </div>
+
+           <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions; filterActions = '' " ng-class="{'clickedCorner' : openActions}"><span></span></a>
            <div recompiler="widget.content"></div>
           <div class="frontFooter">
             <ul class="footerActions">

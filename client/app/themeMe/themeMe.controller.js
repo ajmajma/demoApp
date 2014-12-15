@@ -5,6 +5,25 @@ angular.module('demoAppApp')
   	//Controller for handling anything global - currently handling :
   	//theme
   	//notifications
+    //offline
+    //actions
+    //favorites/publish
+    $scope.filterActions = "zzzz";
+
+    $scope.toggleActionsSleek = function(){
+      if($scope.filterActions === "zzzz"){
+         $scope.filterActions = "";
+      }else if($scope.filterActions === ""){
+         $scope.filterActions = "zzzz";
+      }
+
+    };
+
+     $scope.actionClicked = function(){
+
+      //console.log("clicked");
+    };
+
     $scope.modalOpen = false;
 
     //check our location
@@ -40,13 +59,22 @@ angular.module('demoAppApp')
           });
       socket.syncUpdates('offline', $scope.contentHere, function(event, item, object){
         if(event === "created"){
-          $scope.prepForOffline = {'type' : 1 , 'content': item.widget.title + ' has been added to Offline'};
+          $scope.prepForOffline = {'type' : 2 , 'content': item.widget.title + ' has been added to Offline'};
           $scope.trackSpace += item.widget.space;
        }else if(event == "deleted"){
           $scope.prepForOffline = {'type' : 3 , 'content': item.widget.title + ' has been removed from Offline'};
           $scope.trackSpace -= item.widget.space;
        }
           themeFactory.setAlert($scope.prepForOffline);
+           if ($scope.trackSpace < 25) {
+              $scope.offlineLevel = 'success';
+            } else if ($scope.trackSpace < 50) {
+              $scope.offlineLevel = 'info';
+            } else if ($scope.trackSpace < 75) {
+              $scope.offlineLevel = 'warning';
+            } else {
+              $scope.offlineLevel = 'danger';
+            }
       });
     });
     //close socket if we ever leave app
@@ -75,6 +103,35 @@ angular.module('demoAppApp')
   };
 
 
+  //favorites/publish
+
+  $scope.openFavorites = function(){
+    var name= "ea";
+     var modalInstance = $modal.open({
+      templateUrl: 'favoriteModal.html',
+      controller: 'FavoriteModalCtrl',
+      windowClass: 'shareModal',
+      resolve: {
+        name: function () {
+          return name;
+        }
+    
+      }
+    });
+
+    modalInstance.result.then(function () {
+     
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+
+
+
+  };
+
+
+  //global nav object
+  $scope.navObject = [{name : 'Education'},{name : 'Manufacturing'},{name : 'Healthcare'},{name : 'Insurance'},{name : 'Field Services'}];
 
     
   });

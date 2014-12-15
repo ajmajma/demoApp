@@ -10,7 +10,6 @@ angular.module('demoAppApp')
     $http.get('/api/offlines').success(function(awesomeThings) {
 
       $scope.contentHere = awesomeThings;
-
       socket.syncUpdates('offline', $scope.contentHere, function(event, item, object){
 
 
@@ -35,5 +34,6 @@ angular.module('demoAppApp')
          { key: "Six", y: 3 },
          { key: "Seven", y: 9 }
     ];
+
 
   });
