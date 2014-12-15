@@ -2,4 +2,19 @@
 	<div class="profilePerson">
 		<h3>Profile</h3>
 	</div>
+
+</div>
+<div class="container">
+	{{sides}}
+<div class="pflip">
+		<div class="pFlipper">
+			<div class="side{{side.name}} velocity-opposites-transition-swoopIn" ng-repeat="side in sides" ng-if="side.active" >
+				{{side.name}}
+				<i class="fa fa-chevron-circle-left" ng-click="flipLeft($index)"></i>
+				<i class="fa fa-chevron-circle-right" ng-click="flipRight($index)"></i>
+				<i class="fa fa-question" ng-click="flipHelp($index)"></i>
+
+			</div>
+		</div>
+	</div>
 </div>

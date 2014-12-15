@@ -128,10 +128,18 @@ angular.module('demoAppApp')
 
 
   };
-
-
   //global nav object
   $scope.navObject = [{name : 'Education'},{name : 'Manufacturing'},{name : 'Healthcare'},{name : 'Insurance'},{name : 'Field Services'}];
 
+  //detect mobile to disable view swicth animations on and off (off for mobile)
+  $scope.isMobileDevice = false;
+  function isMobile() {
+          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+      if(!isMobile()){
+          $scope.isMobileDevice = true;
+      }else{
+        $scope.isMobileDevice = false;
+      }
     
   });

@@ -122,7 +122,8 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favoirites</h3>
 </div>
 
     <!-- Add your site or application content here -->
-    <div ng-view="" class="view-container velocity-opposites-transition-bounceUpIn" ></div>
+  
+    <div ng-view="" ng-class="{ 'view-container velocity-opposites-transition-bounceUpIn' : isMobileDevice }" ></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>

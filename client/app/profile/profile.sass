@@ -7,3 +7,36 @@
 		display: block
 		background-color: #f6f6f6
 		float: left
+
+.pflip
+	perspective: 1000
+	width: 320px
+	height: 480px
+
+.pFlipper 
+	transform-style: preserve-3d
+
+
+.flip-container, .side1, .side2, .side3, .side4
+	width: 320px
+	height: 480px
+	backface-visibility: hidden
+
+.side1, .side2, .side3, .side4 
+	position: absolute
+	top: 0
+	left: 0
+	text-align: center
+
+.side1 
+	z-index: 2
+	background-color: #f9f9f9
+
+.side2
+	background-color: #c9c9c9
+
+.side3
+	background-color: #c2c2c2
+
+.side4
+	background-color: #f8f8f8

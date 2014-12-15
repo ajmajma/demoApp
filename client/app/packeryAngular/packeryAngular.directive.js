@@ -7,18 +7,24 @@ angular.module('demoAppApp')
       restrict: 'A',
       scope: true,
       link: function(scope, element, attrs) {
+
+        function isMobile() {
+          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
         //console.log("link called on", element[0]);
         scope.element = element;
         if (!$rootScope.packery) {
           $rootScope.packery = new Packery(element[0].parentElement, {
             gutter: '.gutter-sizer',
             columnWidth: '.grid-sizer',
-  			rowHeight: 300,
+  			     rowHeight: 300,
             itemSelector: '.item'
           });
 
-          var draggable1 = new Draggabilly(element[0]);
-          $rootScope.packery.bindDraggabillyEvents(draggable1);
+          if(!isMobile()){
+            var draggable1 = new Draggabilly(element[0]);
+            $rootScope.packery.bindDraggabillyEvents(draggable1);
+          }
 
           var orderItems = function() {
             var itemElems = ($rootScope.packery && $rootScope.packery.getItemElements) ? $rootScope.packery.getItemElements() : [];
@@ -35,8 +41,11 @@ angular.module('demoAppApp')
           $timeout(function() {
             $rootScope.packery.appended(element[0]);
           });
-          var draggable2 = new Draggabilly(element[0], {handle: '.handle'} );
-          $rootScope.packery.bindDraggabillyEvents(draggable2);
+
+          if(!isMobile()){
+            var draggable2 = new Draggabilly(element[0], {handle: '.handle'} );
+            $rootScope.packery.bindDraggabillyEvents(draggable2);
+          }
 
 
         }
