@@ -6,6 +6,12 @@ body
 h1,h2,h3,h4,h5,h6
 	font-family: 'futura_ltbook', sans-serif
 
+*:focus 
+	outline: 0
+
+textarea:focus, input:focus
+	outline: 0
+
 .container
 	@media screen and (min-width: 1200px)
 		width: 90%
@@ -179,6 +185,8 @@ growl-notification
 		-webkit-perspective: 1000px
 		-moz-perspective: 1000px
 		perspective: 1000px
+		backface-visibility:  hidden
+		transform: translate3d(0,0,0)
 	span
 		span
 			color: #ea6060
