@@ -24,8 +24,6 @@
     <!-- endbuild -->
   </head>
   <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}">
- 
-  
 
       <script type="text/ng-template" id="shareModal.html">
         <div class="modal-header'>
@@ -114,16 +112,16 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favoirites</h3>
         <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li> -->
         <li ng-show="isLoggedIn()" class="menu-effect"><a href="#" ng-click="openFavorites()"><i class="fa fa-heart"></i></a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><a href="/profile"><i class="fa fa-user"></i></a></li>
-         <li ng-show="isLoggedIn()" class="menu-effect"><a href="" ><i class="fa fa-bars"></i></a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="menu-effect"><a href="" ng-click="logout()"><i class="fa fa-sign-out"></i></a></li>
       </ul>
     </div>
   </div>
 </div>
 
+
+
     <!-- Add your site or application content here -->
-  
-    <div ng-view="" ng-class="{ 'view-container velocity-opposites-transition-bounceUpIn' : isMobileDevice }" ></div>
+    <div ng-view="" class="view-container velocity-opposites-transition-bounceUpIn" ></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>

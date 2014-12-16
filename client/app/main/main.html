@@ -5,59 +5,40 @@
   </div>
 </div>
 <div class="container">
-  {{contentHere[0].sides}}
 
   <div class="row">
     <div class="gutter-sizer"></div>
     <div class="grid-sizer"></div>
-
-    <!--start widget-->
     <div class="item gs-w" ng-class="widget.size" ng-repeat="widget in contentHere" packery-angular >
-      <div class="flipper" >
-
-        <!-- Sides Start -->
-        <div ng-repeat="side in widget.sides" class="front velocity-opposites-transition-whirlIn"  data-velocity-opts="{ duration: 350 }" ng-show="side.active">
+      <div class="flipper" ng-class="{ 'flipMe' : flipWidg }">
+        <div class="front clickFlip" ng-style="{ 'background-color' : themeHere.bg }">
 
            <div class="handle">
             <h5 class="handleTitle" ng-class="{'handleTitleFlip' : openActions }">
-              <span><span ng-show="side.sideIs == 'front'">{{$index + 1}} </span>{{side.title}}</span>
-              <nav class="handleActions" ng-show="side.sideIs == 'front'">
-                <i ng-repeat="action in widget.actions | filter:filterActions" class="fa {{action}} velocity-opposites-transition-flipBounceYIn" ng-click="actionClicked()" data-velocity-opts="{ stagger: 100 }" ></i>
+              <span><span>{{$index + 1}} </span>{{widget.title}}</span>
+              <nav class="handleActions" >
+                <i ng-repeat="action in widget.actions | filter:filterActions" class="fa {{action}} velocity-opposites-transition-flipBounceYIn" ng-click="actionClicked()" data-velocity-opts="{ stagger: 100 }"></i>
               </nav>
             </h5>
           </div>
 
-           <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions; filterActions = '' " ng-class="{'clickedCorner' : openActions}" ng-show="side.sideIs == 'front'"><span></span></a>
-           <div recompiler="side.content">{{side.content}}</div>
+           <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions; filterActions = '' " ng-class="{'clickedCorner' : openActions}"><span></span></a>
+           <div recompiler="widget.content"></div>
           <div class="frontFooter">
-            <ul class="footerActions" >
-              <!-- help actions -->
-              <li ng-show="side.sideIs == 'help'"><i class="fa fa-undo" ng-click="flipHelpBack($index, $parent.$index)"></i></li>
-              <!-- end help actions -->
-
-              <!-- front actions -->
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-refresh flipCheck" ng-click="flipHelp($index, $parent.$index)" ></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-wifi" ng-click="activateOffline($index, widget.title)"></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-share-alt" ng-click="shareWidg($index)"></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-cogs" ng-click="openShareModal(widget.title)"></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-mobile" ng-click="nativeWidg($index)"></i></li>
-              <!-- end front actions -->
-
-                <!-- multi side actions -->
-               <li ng-show="widget.sides.length > 2  && side.sideIs != 'help'"><i class="fa fa-caret-square-o-right" ng-click="flipSideRight($index, $parent.$index)"></i></li>
-              <li ng-show="widget.sides.length > 2 && side.sideIs != 'help'"><i class="fa fa-caret-square-o-left" ng-click="flipSideLeft($index, $parent.$index)"></i></li>
-              <!-- end multi side acitons -->
-
+            <ul class="footerActions">
+              <li><i class="fa fa-refresh flipCheck" ng-click="flipWidg = !flipWidg"></i></li>
+              <li><i class="fa fa-wifi" ng-click="activateOffline($index, widget.title)" ng-show="trackSpace != 100"></i></li>
+              <li><i class="fa fa-share-alt" ng-click="shareWidg($index)"></i></li>
+              <li><i class="fa fa-cogs" ng-click="openShareModal(widget.title)"></i></li>
+              <li><i class="fa fa-mobile" ng-click="nativeWidg($index)"></i></li>
             </ul>
           </div>  
         </div>
-        <!-- Sides End -->
-
+          <div class="back clickFlip" ng-click="flipWidg = !flipWidg">
+        <h4 class="flipCheck"><i class="fa fa-refresh"></i></h4>
+        </div>
       </div> 
     </div>
-    <!-- end widget -->
-
-
     <div class="clear"></div>
   </div>
 </div>

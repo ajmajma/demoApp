@@ -56,204 +56,127 @@ angular.module('demoAppApp')
       // themeFactory.setAlert($scope.prepForOffline);
     };
 
+
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-
-
-
-    //flip to help
-    $scope.flipHelp = function(index, parent){
-        $scope.contentHere[parent].sides[index].active = false;
-       $scope.indexFind = _.findIndex($scope.contentHere[parent].sides, function(idx){
-        return idx.sideIs == 'help';
-       });
-       $scope.contentHere[parent].sides[$scope.indexFind].active = true;
-    };
-    //flip back from help
-    $scope.flipHelpBack = function(index, parent){
-       $scope.contentHere[parent].sides[index].active = false;
-       $scope.indexFind = _.findIndex($scope.contentHere[parent].sides, function(idx){
-        return idx.sideIs == 'front';
-       });
-       $scope.contentHere[parent].sides[$scope.indexFind].active = true;
-    };
-    //flip right
-    $scope.flipSideRight = function(index, parent){
-      $scope.contentHere[parent].sides[index].active = false;
-      var idx = index + 1;
-      if(idx >= $scope.contentHere[parent].sides.length){
-         idx = 0;
-      }else{}
-      if($scope.contentHere[parent].sides[idx].sideIs == 'help'){
-           $scope.flipSideRight(idx, parent); //Added to skip over to next item
-           return; // Added to skip execution of following line of codes incase of recursion
-      }else{}
-      //$scope.contentHere[parent].sides[index].active = false;
-      $scope.contentHere[parent].sides[idx].active = true;
-    };
-
-    //flip left
-    $scope.flipSideLeft = function(index, parent){
-      $scope.contentHere[parent].sides[index].active = false;
-      var idx = index - 1;
-      if (idx < 0) {
-       idx = $scope.contentHere[parent].sides.length - 1;
-      }else{}
-      if($scope.contentHere[parent].sides[idx].sideIs == 'help'){
-           $scope.flipSideLeft(idx, parent); //Added to skip over to next item
-           return; // Added to skip execution of following line of codes incase of recursion
-      }else{}
-      //$scope.contentHere[parent].sides[index].active = false;
-      $scope.contentHere[parent].sides[idx].active = true;
-    };
 
     $scope.contentHere = [
     {
       'size' : '',
-      'name' : 'Utility Alerts',
-      'space' : 10,
+      'title' : 'Utility Alerts',
+      'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+      'help' : 'Help Text Here',
       'launch' :  true,
       'share' : true,
       'mobile' :  true,
       'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      }
-    // {
-    //   'size' : 'w3',
-    //   'title' : 'Profit Margins',
-    //   'content' : '<nvd3-stacked-area-chart data="exampleData" id="exampleId" showXAxis="true" showYAxis="true" showControls="true" width="750" height="150"> <svg></svg> </nvd3-stacked-area-chart>',
-    //   'help' : 'Help Text Here',
-    //   'launch' :  true,
-    //   'share' : true,
-    //   'mobile' :  true,
-    //   'native' :  false,
-    //   'space' : 10,
-    //   'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
-    // },
-    // {
-    //   'size' : 'darkMe',
-    //   'title' : 'Profile',
-    //   'content' : '<div class="profileWidget"></div>',
-    //   'help' : 'Help Text Here',
-    //   'launch' :  true,
-    //   'share' : true,
-    //   'mobile' :  true,
-    //   'native' :  false,
-    //   'space' : 10,
-    //   'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
+    },
+    {
+      'size' : 'w3',
+      'title' : 'Profit Margins',
+      'content' : '<nvd3-stacked-area-chart data="exampleData" id="exampleId" showXAxis="true" showYAxis="true" showControls="true" width="750" height="150"> <svg></svg> </nvd3-stacked-area-chart>',
+      'help' : 'Help Text Here',
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  false,
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
-    // },
-    // {
-    //   'size' : 'w3',
-    //   'title' : 'Profit Margins',
-    //   'content' : '<div class="filesWidget"></div>',
-    //   'help' : 'Help Text Here',
-    //   'launch' :  true,
-    //   'share' : true,
-    //   'mobile' :  true,
-    //   'native' :  false,
-    //   'space' : 10,
-    //   'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
+    },
+    {
+      'size' : 'darkMe',
+      'title' : 'Profile',
+      'content' : '<div class="profileWidget"></div>',
+      'help' : 'Help Text Here',
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  false,
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
-    // },
-    // {
-    //   'size' : 'w2',
-    //   'title' : 'Profit Margins',
-    //   'content' : '<div class="inputWidget"></div>',
-    //   'help' : 'Help Text Here',
-    //   'launch' :  true,
-    //   'share' : true,
-    //   'mobile' :  true,
-    //   'native' :  false,
-    //   'space' : 10,
-    //   'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
+    },
+    {
+      'size' : 'w3',
+      'title' : 'Profit Margins',
+      'content' : '<div class="filesWidget"></div>',
+      'help' : 'Help Text Here',
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  false,
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
-    // },
-    // {
-    //   'size' : 'w2',
-    //   'title' : 'Profit Margins',
-    //   'content' : '<div class="searchWidget"></div>',
-    //   'help' : 'Help Text Here',
-    //   'launch' :  true,
-    //   'share' : true,
-    //   'mobile' :  true,
-    //   'native' :  false,
-    //   'space' : 10,
-    //   'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
-    // },
+    },
+    {
+      'size' : 'w2',
+      'title' : 'Profit Margins',
+      'content' : '<div class="inputWidget"></div>',
+      'help' : 'Help Text Here',
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  false,
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
+
+    },
+    {
+      'size' : 'w2',
+      'title' : 'Profit Margins',
+      'content' : '<div class="searchWidget"></div>',
+      'help' : 'Help Text Here',
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  false,
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
+    },
       
-    // {
-    //   'size' : 'w5',
-    //   'title' : 'Training Video',
-    //   'content' : '<videogular vg-theme="config.theme"><vg-video vg-src="config.sources" vg-tracks="config.tracks"></vg-video><vg-controls><vg-play-pause-button></vg-play-pause-button><vg-timedisplay>{{ currentTime | date:"mm:ss" }}</vg-timedisplay><vg-scrubBar><vg-scrubbarcurrenttime></vg-scrubbarcurrenttime></vg-scrubBar><vg-timedisplay>{{ timeLeft | date:"mm:ss" }}</vg-timedisplay><vg-volume><vg-mutebutton></vg-mutebutton><vg-volumebar></vg-volumebar></vg-volume><vg-fullscreenButton></vg-fullscreenButton></vg-controls><vg-overlay-play></vg-overlay-play><vg-poster-image vg-url="controller.config.plugins.poster"></vg-poster-image></videogular>',
-    //   'help' : 'Help Text Here',
-    //   'launch' :  true,
-    //   'share' : true,
-    //   'mobile' :  true,
-    //   'native' :  false,
-    //   'space' : 10,
-    //   'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
+    {
+      'size' : 'w5',
+      'title' : 'Training Video',
+      'content' : '<videogular vg-theme="config.theme"><vg-video vg-src="config.sources" vg-tracks="config.tracks"></vg-video><vg-controls><vg-play-pause-button></vg-play-pause-button><vg-timedisplay>{{ currentTime | date:"mm:ss" }}</vg-timedisplay><vg-scrubBar><vg-scrubbarcurrenttime></vg-scrubbarcurrenttime></vg-scrubBar><vg-timedisplay>{{ timeLeft | date:"mm:ss" }}</vg-timedisplay><vg-volume><vg-mutebutton></vg-mutebutton><vg-volumebar></vg-volumebar></vg-volume><vg-fullscreenButton></vg-fullscreenButton></vg-controls><vg-overlay-play></vg-overlay-play><vg-poster-image vg-url="controller.config.plugins.poster"></vg-poster-image></videogular>',
+      'help' : 'Help Text Here',
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  false,
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
-    // },
-    // {
-    //   'size' : 'w3',
-    //   'title' : 'Profit Margins',
-    //   'content': '<ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>',
-    //   'help' : 'Help Text Here',
-    //   'launch' :  true,
-    //   'share' : true,
-    //   'mobile' :  true,
-    //   'native' :  false,
-    //   'space' : 10,
-    //   'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
+    },
+    {
+      'size' : 'w3',
+      'title' : 'Profit Margins',
+      'content': '<ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>',
+      'help' : 'Help Text Here',
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  false,
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
-    // },
-    //  {
-    //   'size' : 'w2',
-    //   'title' : 'Profit Margins',
-    //   'content' : '<div class="favWidget"></div>',
-    //   'help' : 'Help Text Here',
-    //   'launch' :  true,
-    //   'share' : true,
-    //   'mobile' :  true,
-    //   'native' :  false,
-    //   'space' : 10,
-    //   'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
+    },
+     {
+      'size' : 'w2',
+      'title' : 'Profit Margins',
+      'content' : '<div class="favWidget"></div>',
+      'help' : 'Help Text Here',
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  false,
+      'space' : 10,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print']
 
-    // }];
-
-    ];
+    }];
     $scope.exampleData = [
           {
               'key': 'Series 1',
