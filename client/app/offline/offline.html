@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <p ng-show="isLoggedIn()">Welcome {{ getCurrentUser().name }}</p>
-    
+    <progressbar class="progress-striped active" value="trackSpace" type="{{offlineLevel}}">{{trackSpace}}% </progressbar>
   </div>
 </div>
 
