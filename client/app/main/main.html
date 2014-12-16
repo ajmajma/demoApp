@@ -5,18 +5,15 @@
   </div>
 </div>
 <div class="container">
-  {{contentHere[0].sides}}
-
   <div class="row">
     <div class="gutter-sizer"></div>
     <div class="grid-sizer"></div>
-
     <!--start widget-->
     <div class="item gs-w" ng-class="widget.size" ng-repeat="widget in contentHere" packery-angular >
       <div class="flipper" >
-
+ 
         <!-- Sides Start -->
-        <div ng-repeat="side in widget.sides" class="front velocity-opposites-transition-whirlIn"  data-velocity-opts="{ duration: 350 }" ng-show="side.active">
+        <div ng-repeat="side in widget.sides" class="front velocity-opposites-transition-expandIn"  data-velocity-opts="{ duration: 550 }" ng-show="side.active">
 
            <div class="handle">
             <h5 class="handleTitle" ng-class="{'handleTitleFlip' : openActions }">

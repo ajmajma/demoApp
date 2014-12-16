@@ -24,6 +24,25 @@
     <!-- endbuild -->
   </head>
   <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}">
+
+    <div class="globalMenu velocity-opposites-transition-bounceDownIn" ng-show="showGlobalMenu" >
+ <script type="text/ng-template" id="menuTree">
+ <a>
+     <i class="fa {{category.icon}}"></i> <span class="subTitle"> {{category.title}} </span><span class="subCounter" ng-show="category.categories">{{category.categories.length}} </span> </a>
+        <ul ng-if="category.categories" ng-click="$event.stopPropagation()" ng-show="category.shown" class="velocity-opposites-transition-slideDownIn">
+     
+            <li ng-repeat="category in category.categories" ng-include="'menuTree'" ng-click="category.shown =! category.shown" ng-click="$event.stopPropagation()"> 
+             <a>
+            {{category.title}} <span class="subCounter">{{category.categories.length}} </span> </a>         
+            </li>
+        </ul>
+    </script>
+    <h3>Menu</h3>
+
+    <ul class="outerMenu">
+        <li ng-repeat="category in categories" ng-include="'menuTree'" ng-click="category.shown =! category.shown"> </li>
+    </ul> 
+    </div>   
  
   
 
@@ -114,7 +133,7 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favoirites</h3>
         <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li> -->
         <li ng-show="isLoggedIn()" class="menu-effect"><a href="#" ng-click="openFavorites()"><i class="fa fa-heart"></i></a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><a href="/profile"><i class="fa fa-user"></i></a></li>
-         <li ng-show="isLoggedIn()" class="menu-effect"><a href="" ><i class="fa fa-bars"></i></a></li>
+         <li ng-show="isLoggedIn()" class="menu-effect"><a href="#" ng-click="menuToggle()"><i class="fa fa-bars"></i></a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="menu-effect"><a href="" ng-click="logout()"><i class="fa fa-sign-out"></i></a></li>
       </ul>
     </div>

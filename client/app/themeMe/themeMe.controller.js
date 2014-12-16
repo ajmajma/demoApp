@@ -141,5 +141,91 @@ angular.module('demoAppApp')
       }else{
         $scope.isMobileDevice = false;
       }
+
+      $scope.showGlobalMenu = false;
+
+      $scope.menuToggle = function(){
+
+        $scope.showGlobalMenu = !$scope.showGlobalMenu;
+      };
+
+       $scope.categories = [
+  { 
+    title: 'Education',
+    icon: 'fa-graduation-cap',
+    shown: false,
+    categories: [
+      {
+        title: 'Laptops',
+        shown: false,
+        categories: [
+          {
+            title: 'Ultrabooks',
+            shown: false
+          },
+          {
+            title: 'Macbooks',
+            shown: false            
+          }
+        ]
+      },
+
+      {
+        title: 'Desktops'
+      },
+
+      {
+        title: 'Tablets',
+        shown: false,
+        categories: [
+          { 
+            title: 'Apple',
+            shown: false,
+
+          },
+          {
+            title: 'Android',
+        shown: true,
+
+          }
+        ]        
+      }
+    ]
+  },
+
+  {
+    title: 'Field services',
+    icon: 'fa-truck'
+  },
+  {
+    title: 'Insurance',
+    icon: 'fa-umbrella'
+  },
+  {
+    title: 'Healthcare',
+    icon: 'fa-coffee'
+  },
+  {
+    title: 'Manufacturing',
+    icon: 'fa-gears'
+  },
+  {
+    title: 'Retail',
+    icon: 'fa-shopping-cart'
+  },
+  {
+    title: 'Hospitality',
+    icon: 'fa-heart'
+  },
+  {
+    title: 'Finance',
+    icon: 'fa-line-chart'
+  },
+  {
+    title: 'Banking',
+    icon: 'fa-money'
+  }
+
+];
     
   });
