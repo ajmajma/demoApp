@@ -60,14 +60,16 @@
             <h3>SHARE <span style="color:#ea6060;">{{nameOfWidg}}</span></h3>
         </div>
         <div class="modal-body">
+        <i class="fa fa-bar-chart"></i> : Send Widget with any modifications you may have made to it.<br/>
+        <i class="fa fa-paper-plane-o"></i> : Send base version of widget.
           <div class="sharePers">
           <figure class="effect-phoebe" ng-repeat="item in myShares" ng-click="shareWith =! shareWith" ng-class="{ 'effect-phoebeActive' : shareWith }">
             <img src="assets/images/headshot.jpg" alt="img26"/>
               <figcaption>
-              <h2>Alex <span>Employee</span></h2>
+              <h2>Alex <br/><span>Sales</span></h2>
               <p>
                 <a ng-click="$event.stopPropagation(); sharedSemi =! sharedSemi" ><i class="fa fa-fw fa-paper-plane-o" ng-class="{'hasBeenShared' : sharedSemi }"></i></a>
-                <a ng-click="$event.stopPropagation(); sharedFull =! sharedFull"><i class="fa fa-fw fa-heart-o" ng-class="{'hasBeenShared' : sharedFull }"></i></a>
+                <a ng-click="$event.stopPropagation(); sharedFull =! sharedFull"><i class="fa fa-fw fa-bar-chart" ng-class="{'hasBeenShared' : sharedFull }"></i></a>
               </p>
             </figcaption>     
           </figure>         
@@ -88,11 +90,14 @@ text-align: center;word-spacing: -0.15em;
 font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
         </div>
         <div class="modal-body">
-        <p>Favorite this view?</p>
+        <p>Add this view to your favorites?</p><button class="btn">Add</button>
         <p>My Favorites - </p>
         <select>
-          <option>1</option>
+          <option>Favorite Dashboard</option>
+          <option>Favorite Dashboard</option>
+          <option>Favorite Dashboard</option>
         </select>
+        <button class="btn">Go</button>
         <p>Add/Remove apps from {{whereAmI}}</p>
         <div class="publish_widg_selector">
               <div class="publishSelectorWrap" >
