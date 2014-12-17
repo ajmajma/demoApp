@@ -25,14 +25,14 @@
   </head>
   <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}">
 
-    <div class="globalMenu velocity-opposites-transition-bounceDownIn" ng-show="showGlobalMenu" >
+    <div class="globalMenu velocity-opposites-transition-slideDownIn" ng-show="showGlobalMenu" data-velocity-opts="{ duration: 1000 }">
+      <div class="close_menu" ng-click="menuToggle()"><i class="fa fa-times"></i></div>
  <script type="text/ng-template" id="menuTree">
  <a>
-     <i class="fa {{category.icon}}"></i> <span class="subTitle"> {{category.title}} </span><span class="subCounter" ng-show="category.categories">{{category.categories.length}} </span> </a>
+     <i class="fa {{category.icon}}"></i> <span class="subTitle"> {{category.title}} </span><span class="subCounter" ng-show="category.categories">{{category.categories.length}} </span> <div class="clear"></div></a>
         <ul ng-if="category.categories" ng-click="$event.stopPropagation()" ng-show="category.shown" class="velocity-opposites-transition-slideDownIn">
-     
-            <li ng-repeat="category in category.categories" ng-include="'menuTree'" ng-click="category.shown =! category.shown" ng-click="$event.stopPropagation()"> 
-             <a>
+            <li ng-repeat="category in category.categories" class="item_shown velocity-opposites-transition-slideDownIn" ng-include="'menuTree'" ng-click="category.shown =! category.shown" ng-click="$event.stopPropagation()" > 
+             <a class="inner_menu_item">
             {{category.title}} <span class="subCounter">{{category.categories.length}} </span> </a>         
             </li>
         </ul>
@@ -40,7 +40,7 @@
     <h3>Menu</h3>
 
     <ul class="outerMenu">
-        <li ng-repeat="category in categories" ng-include="'menuTree'" ng-click="category.shown =! category.shown"> </li>
+        <li ng-repeat="category in categories" ng-include="'menuTree'" ng-click="category.shown =! category.shown" class="velocity-opposites-transition-perspectiveDownIn" data-velocity-opts="{ stagger: 50 }" ng-class="{ 'active_menu' : category.shown }"> </li>
     </ul> 
     </div>   
  

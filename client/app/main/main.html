@@ -19,12 +19,12 @@
             <h5 class="handleTitle" ng-class="{'handleTitleFlip' : openActions }">
               <span><span ng-show="side.sideIs == 'front'">{{$index + 1}} </span>{{side.title}}</span>
               <nav class="handleActions" ng-show="side.sideIs == 'front'">
-                <i ng-repeat="action in widget.actions | filter:filterActions" class="fa {{action}} velocity-opposites-transition-flipBounceYIn" ng-click="actionClicked()" data-velocity-opts="{ stagger: 100 }" ></i>
+                <i ng-repeat="action in widget.actions" class="fa {{action}} velocity-opposites-transition-flipBounceYIn" ng-click="actionClicked()" data-velocity-opts="{ stagger: 100 }" ></i>
               </nav>
             </h5>
           </div>
 
-           <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions; filterActions = '' " ng-class="{'clickedCorner' : openActions}" ng-show="side.sideIs == 'front'"><span></span></a>
+           <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions" ng-class="{'clickedCorner' : openActions}" ng-show="side.sideIs == 'front'"><span></span></a>
            <div recompiler="side.content">{{side.content}}</div>
           <div class="frontFooter">
             <ul class="footerActions" >
