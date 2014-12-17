@@ -24,44 +24,50 @@
     <!-- endbuild -->
   </head>
   <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}">
-
-    <div class="globalMenu velocity-opposites-transition-slideDownIn" ng-show="showGlobalMenu" data-velocity-opts="{ duration: 1000 }">
-      <div class="close_menu" ng-click="menuToggle()"><i class="fa fa-times"></i></div>
- <script type="text/ng-template" id="menuTree">
- <a>
-     <i class="fa {{category.icon}}"></i> <span class="subTitle"> {{category.title}} </span><span class="subCounter" ng-show="category.categories">{{category.categories.length}} </span> <div class="clear"></div></a>
-        <ul ng-if="category.categories" ng-click="$event.stopPropagation()" ng-show="category.shown" class="velocity-opposites-transition-slideDownIn">
-            <li ng-repeat="category in category.categories" class="item_shown velocity-opposites-transition-slideDownIn" ng-include="'menuTree'" ng-click="category.shown =! category.shown" ng-click="$event.stopPropagation()" > 
-             <a class="inner_menu_item">
+        <script type="text/ng-template" id="menuTree.html">
+            <a>
+            <i class="fa {{category.icon}}"></i> <span class="subTitle"> {{category.title}} </span><span class="subCounter" ng-show="category.categories">{{category.categories.length}} </span> <div class="clear"></div></a>
+            <ul ng-if="category.categories" ng-click="$event.stopPropagation()" ng-show="category.shown" class="velocity-opposites-transition-slideDownIn">
+            <li ng-repeat="category in category.categories" class="item_shown velocity-opposites-transition-slideDownIn" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" ng-click="$event.stopPropagation()" > 
+            <a class="inner_menu_item">
             {{category.title}} <span class="subCounter">{{category.categories.length}} </span> </a>         
             </li>
-        </ul>
-    </script>
-    <h3>Menu</h3>
+            </ul>
+      </script>
+    
+     <script type="text/ng-template" id="globalMenu.html">
+      <div class="modal-header">
+          <h3>Menu</h3>
+        </div>
+          <div class="modal-body">
+      <div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
+      <ul class="outerMenu">
+      <li ng-repeat="category in categories" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" class="velocity-opposites-transition-perspectiveDownIn" data-velocity-opts="{ stagger: 50 }" ng-class="{ 'active_menu' : category.shown }"> </li>
+      </ul> 
+      </div class="clear"></div>
+      </div>
 
-    <ul class="outerMenu">
-        <li ng-repeat="category in categories" ng-include="'menuTree'" ng-click="category.shown =! category.shown" class="velocity-opposites-transition-perspectiveDownIn" data-velocity-opts="{ stagger: 50 }" ng-class="{ 'active_menu' : category.shown }"> </li>
-    </ul> 
-    </div>   
+    </div>
+       <div class="modal-footer">
+            <button class="btn" ng-click="ok()">OK</button>
+            <button class="btn" ng-click="cancel()">Cancel</button>
+        </div>
+      </div>  
+    </script> 
  
-  
-
       <script type="text/ng-template" id="shareModal.html">
-        <div class="modal-header'>
-            <h3 class="modal-title" style="font-size: 36px;
-text-align: center;word-spacing: -0.15em;
-font-weight: 300;text-transform:uppercase;padding-top: 10px;">Share &nbsp;&nbsp; <span style="color:#ea6060;">{{nameOfWidg}}</span></h3>
+        <div class="modal-header">
+            <h3>SHARE <span style="color:#ea6060;">{{nameOfWidg}}</span></h3>
         </div>
         <div class="modal-body">
           <div class="sharePers">
-          <figure class="effect-phoebe" ng-repeat="item in myShares">
-            <img src="assets/images/education.jpg" alt="img26"/>
+          <figure class="effect-phoebe" ng-repeat="item in myShares" ng-click="shareWith =! shareWith" ng-class="{ 'effect-phoebeActive' : shareWith }">
+            <img src="assets/images/headshot.jpg" alt="img26"/>
               <figcaption>
               <h2>Alex <span>Employee</span></h2>
               <p>
-                <a href="#"><i class="fa fa-fw fa-user"></i></a>
-                <a href="#"><i class="fa fa-fw fa-heart"></i></a>
-                <a href="#"><i class="fa fa-fw fa-cog"></i></a>
+                <a ng-click="$event.stopPropagation(); sharedSemi =! sharedSemi" ><i class="fa fa-fw fa-paper-plane-o" ng-class="{'hasBeenShared' : sharedSemi }"></i></a>
+                <a ng-click="$event.stopPropagation(); sharedFull =! sharedFull"><i class="fa fa-fw fa-heart-o" ng-class="{'hasBeenShared' : sharedFull }"></i></a>
               </p>
             </figcaption>     
           </figure>         
@@ -76,15 +82,33 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Share &nbsp;&nbsp;
     </script>
 
     <script type="text/ng-template" id="favoriteModal.html">
-        <div class="modal-header'>
+        <div class="modal-header">
             <h3 class="modal-title" style="font-size: 36px;
 text-align: center;word-spacing: -0.15em;
-font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favoirites</h3>
+font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
         </div>
         <div class="modal-body">
         <p>Favorite this view?</p>
         <p>My Favorites - </p>
-        <p>Dashboard</p>
+        <select>
+          <option>1</option>
+        </select>
+        <p>Add/Remove apps from {{whereAmI}}</p>
+        <div class="publish_widg_selector">
+              <div class="publishSelectorWrap" >
+                <figure class="effect-ming" ng-repeat="widg in WidgetList" ng-class="{'effect-mingActive' : !widg.active }" ng-click="editActiveWidgets($index)">
+                <img src="assets/images/education.jpg" />
+                  <figcaption>
+                    <h2>Utility Alerts</h2>
+                    <h5>Education</h5>
+                    <p>Click to Activate</p>
+
+                  </figcaption>     
+                </figure>
+              </div>
+
+            <div class="clear"></div>
+        </div>
          
         </div>
         <div class="modal-footer">
@@ -133,7 +157,7 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favoirites</h3>
         <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li> -->
         <li ng-show="isLoggedIn()" class="menu-effect"><a href="#" ng-click="openFavorites()"><i class="fa fa-heart"></i></a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><a href="/profile"><i class="fa fa-user"></i></a></li>
-         <li ng-show="isLoggedIn()" class="menu-effect"><a href="#" ng-click="menuToggle()"><i class="fa fa-bars"></i></a></li>
+         <li ng-show="isLoggedIn()" class="menu-effect"><a href="#" ng-click="openGlobalMenu()"><i class="fa fa-bars"></i></a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="menu-effect"><a href="" ng-click="logout()"><i class="fa fa-sign-out"></i></a></li>
       </ul>
     </div>
@@ -219,6 +243,7 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favoirites</h3>
           <script src="app/admin/admin.js"></script>
           <script src="app/cacheCheck/cacheCheck.service.js"></script>
           <script src="app/favoriteModal/favoriteModal.controller.js"></script>
+          <script src="app/globalMenu/globalMenu.controller.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="app/marketplace/marketplace.controller.js"></script>

@@ -1,6 +1,9 @@
 body 
 	background: #ffffff
 	font-family: 'proxima_nova_rgregular', sans-serif
+	overflow-y: auto
+	height: 100%
+	width: 100%
 	//background: url('/assets/images/bg2.png') repeat center
 
 h1,h2,h3,h4,h5,h6
@@ -290,7 +293,11 @@ growl-notification
 		border-radius: 0
 		color: #fff
 		.modal-header
-			font-size: 24px
+			color: #fff
+			text-align: center
+			border-bottom: none
+			h3
+				font-size: 42px
 		.modal-footer
 			border-top: none
 
@@ -304,3 +311,18 @@ growl-notification
 	width: 200px
 	height: 600px
 	background-color: #fff
+
+.publish_widg_selector
+	width: 100%
+	height: auto
+	padding: 2%
+	max-height: 600px
+	overflow-y: auto
+	.publish_widg_single
+		float: left
+		display: block
+		width: 23%
+		margin: 1%
+		color: #28282e
+		height: 75px
+		background-color: #fff

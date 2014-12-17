@@ -5,6 +5,7 @@
   </div>
 </div>
 <div class="container">
+  
   <div class="row">
     <div class="gutter-sizer"></div>
     <div class="grid-sizer"></div>
@@ -36,7 +37,7 @@
               <li ng-show="side.sideIs == 'front'"><i class="fa fa-refresh flipCheck" ng-click="flipHelp($index, $parent.$index)" ></i></li>
               <li ng-show="side.sideIs == 'front'"><i class="fa fa-wifi" ng-click="activateOffline($index, widget.title)"></i></li>
               <li ng-show="side.sideIs == 'front'"><i class="fa fa-share-alt" ng-click="shareWidg($index)"></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-cogs" ng-click="openShareModal(widget.title)"></i></li>
+              <li ng-show="side.sideIs == 'front'"><i class="fa fa-upload" ng-click="openShareModal(widget.name)"></i></li>
               <li ng-show="side.sideIs == 'front'"><i class="fa fa-mobile" ng-click="nativeWidg($index)"></i></li>
               <!-- end front actions -->
 

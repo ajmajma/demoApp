@@ -208,9 +208,12 @@
 						<h3>Bundles</h3>
 					</div>
 					<div class="col-xs-12 bundleList">
-						<div class="bundleCat" ng-repeat="item in marketItems" >
-							<p>{{item.name}}</p>
-						</div>
+						<div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
+					      <ul class="outerMenu">
+					      <li ng-repeat="category in categoriess" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" class="velocity-opposites-transition-perspectiveDownIn" data-velocity-opts="{ stagger: 50 }" ng-class="{ 'active_menu' : category.shown }"> </li>
+					      </ul> 
+					      </div class="clear"></div>
+					      </div>
 					</div>
 				</div>
 			</div>

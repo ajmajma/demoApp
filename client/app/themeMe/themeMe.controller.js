@@ -77,11 +77,12 @@ angular.module('demoAppApp')
             }
       });
     });
-    //close socket if we ever leave app
+    //close socket if user leaves app
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('offline');
     });
 
+    //open share modal
     $scope.openShareModal  = function(name){
     
        var modalInstance = $modal.open({
@@ -103,17 +104,22 @@ angular.module('demoAppApp')
   };
 
 
-  //favorites/publish
+  //favorites/publish modal
+  $scope.widgPublishControl = [{'name' : '1', 'active': true},{'name' : '2', 'active': true},{'name' : '3', 'active': false},{'name' : '4', 'active': false},{'name' : '5', 'active': false},{'name' : '6', 'active': false},{'name' : '7', 'active': false},{'name' : '8', 'active': false},{'name' : '9', 'active': false},{'name' : '10', 'active': false},{'name' : '11', 'active': false},{'name' : '12', 'active': false}];
 
   $scope.openFavorites = function(){
-    var name= "ea";
+
      var modalInstance = $modal.open({
       templateUrl: 'favoriteModal.html',
       controller: 'FavoriteModalCtrl',
       windowClass: 'shareModal',
+      size: 'lg',
       resolve: {
-        name: function () {
-          return name;
+        widgets: function () {
+          return $scope.widgPublishControl;
+        },
+        location: function(){
+          return $location.path();
         }
     
       }
@@ -124,10 +130,9 @@ angular.module('demoAppApp')
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
-
-
-
   };
+
+  
   //global nav object
   $scope.navObject = [{name : 'Education'},{name : 'Manufacturing'},{name : 'Healthcare'},{name : 'Insurance'},{name : 'Field Services'}];
 
@@ -142,22 +147,18 @@ angular.module('demoAppApp')
         $scope.isMobileDevice = false;
       }
 
-      $scope.showGlobalMenu = false;
-
-      $scope.menuToggle = function(){
-        if($scope.showGlobalMenu == false){
-          $scope.showGlobalMenu = true;
-          $scope.categories = $scope.categoriess;
-        }else{
-             $scope.showGlobalMenu = false;
-             $scope.categories = [];
-        } 
+      // $scope.menuToggle = function(){
+      //   if($scope.showGlobalMenu == false){
+      //     $scope.showGlobalMenu = true;
+      //     $scope.categories = $scope.categoriess;
+      //   }else{
+      //        $scope.showGlobalMenu = false;
+      //        $scope.categories = [];
+      //   } 
        
-      };
+      // };
 
-      $scope.categories = [];
-
-       $scope.categoriess = [
+      $scope.categoriess = [
   { 
     title: 'Education',
     icon: 'fa-graduation-cap',
@@ -235,5 +236,26 @@ angular.module('demoAppApp')
   }
 
 ];
+//gobal nav modal
+$scope.openGlobalMenu = function(){
+   
+     var modalInstance = $modal.open({
+      templateUrl: 'globalMenu.html',
+      controller: 'GlobalMenuCtrl',
+      windowClass: 'menuModal',
+      resolve: {
+        menu: function () {
+          return $scope.categoriess;
+        }
+    
+      }
+    });
+
+    modalInstance.result.then(function () {
+     
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
     
   });
