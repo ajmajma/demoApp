@@ -49,7 +49,7 @@ exports.destroy = function(req, res) {
     if(!offline) { return res.send(404); }
     offline.remove(function(err) {
       if(err) { return handleError(res, err); }
-      return res.send(204);
+      return res.send("ok");
     });
   });
 };

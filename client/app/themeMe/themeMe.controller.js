@@ -54,16 +54,16 @@ angular.module('demoAppApp')
     $http.get('/api/offlines').success(function(awesomeThings) {
       $scope.contentHere = awesomeThings;
       angular.forEach($scope.contentHere, function(val) {
-           $scope.trackSpace += val.widget.space;
+           $scope.trackSpace += val.space;
 
           });
       socket.syncUpdates('offline', $scope.contentHere, function(event, item, object){
         if(event === "created"){
-          $scope.prepForOffline = {'type' : 2 , 'content': item.widget.title + ' has been added to Offline'};
-          $scope.trackSpace += item.widget.space;
+          $scope.prepForOffline = {'type' : 2 , 'content': item.name + ' has been added to Offline'};
+          $scope.trackSpace += item.space;
        }else if(event == "deleted"){
-          $scope.prepForOffline = {'type' : 3 , 'content': item.widget.title + ' has been removed from Offline'};
-          $scope.trackSpace -= item.widget.space;
+          $scope.prepForOffline = {'type' : 3 , 'content': item.name + ' has been removed from Offline'};
+          $scope.trackSpace -= item.space;
        }
           themeFactory.setAlert($scope.prepForOffline);
            if ($scope.trackSpace < 25) {
@@ -257,5 +257,6 @@ $scope.openGlobalMenu = function(){
       $log.info('Modal dismissed at: ' + new Date());
     });
   };
+
     
   });
