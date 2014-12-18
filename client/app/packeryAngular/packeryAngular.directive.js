@@ -22,8 +22,10 @@ angular.module('demoAppApp')
           });
 
           if(!isMobile()){
-            var draggable1 = new Draggabilly(element[0]);
+             $timeout(function(){
+            var draggable1 = new Draggabilly(element[0], {handle: '.handle'});
             $rootScope.packery.bindDraggabillyEvents(draggable1);
+          })
           }
 
           var orderItems = function() {

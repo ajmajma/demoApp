@@ -99,7 +99,6 @@ angular.module('demoAppApp')
     modalInstance.result.then(function (selectedItem) {
       $scope.selected = selectedItem;
     }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
     });
   };
 
@@ -128,7 +127,6 @@ angular.module('demoAppApp')
     modalInstance.result.then(function () {
      
     }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
     });
   };
 

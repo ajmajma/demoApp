@@ -72,16 +72,36 @@ growl-notification
 	float: right
 	font-size: 20px
 
+.navbar-toggle
+	margin-top: 18px
 
 .locationTitle
 	font-family: 'proxima_nova_rgregular', sans-serif
 
 .loginTitle
 	text-align: center
+	h1
+		@media screen and (max-width: 600px)
+			font-size: 110px
 
 .loginScreen
 	background: #f7f7f7 url(/assets/images/noise1.png) repeat center
 	background-size: cover
+
+.loginContain
+	input
+		display: block
+		width: 50%
+		margin: 20px auto
+		padding: 15px
+		background: rgba(0,0,0,0.4)
+		color: #fff
+		border: 0
+	.btn
+		margin: 5px 25%
+		width: 50%
+	p 
+		text-align: center
 
 .navWrap
 	background: #f7f7f7 url(/assets/images/noise1.png) repeat center
@@ -175,6 +195,8 @@ growl-notification
 
 .gutter-sizer 
 	width: 1%
+	@media screen and (max-width: 600px)
+		width: 15px
 
 .handle
 	width: 100%

@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('demoAppApp')
-  .controller('ModalInstanceCtrl', function ($scope, $modalInstance, name) {
+  .controller('ModalInstanceCtrl', function ($scope, $modalInstance, name, User) {
 
+    $scope.users = User.query();
   $scope.nameOfWidg = name;
 
   $scope.myShares = [1,2,3,4,5,6,7,8];

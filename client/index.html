@@ -66,10 +66,10 @@
         <i class="fa fa-bar-chart"></i> : Send Widget with any modifications you may have made to it.<br/>
         <i class="fa fa-paper-plane-o"></i> : Send base version of widget.
           <div class="sharePers">
-          <figure class="effect-phoebe velocity-opposites-transition-flipYIn" data-velocity-opts="{ stagger: 20, duration: 500 }" ng-repeat="item in myShares | filter:searchConnections" ng-click="shareWith =! shareWith" ng-class="{ 'effect-phoebeActive' : shareWith }">
+          <figure class="effect-phoebe velocity-opposites-transition-flipYIn" data-velocity-opts="{ stagger: 20, duration: 500 }" ng-repeat="item in users | filter:searchConnections" ng-click="shareWith =! shareWith" ng-class="{ 'effect-phoebeActive' : shareWith }">
             <img src="assets/images/headshot.jpg" alt="img26"/>
               <figcaption>
-              <h2>Alex <br/><span>Sales</span></h2>
+              <h2>{{item.name}} <br/><span>Sales</span></h2>
               <p>
                 <a ng-click="$event.stopPropagation(); sharedSemi =! sharedSemi" ><i class="fa fa-fw fa-paper-plane-o" ng-class="{'hasBeenShared' : sharedSemi }"></i></a>
                 <a ng-click="$event.stopPropagation(); sharedFull =! sharedFull"><i class="fa fa-fw fa-bar-chart" ng-class="{'hasBeenShared' : sharedFull }"></i></a>
@@ -175,7 +175,7 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
 
     <!-- Add your site or application content here -->
   
-    <div ng-view="" ng-class="{ 'view-container velocity-opposites-transition-bounceUpIn' : isMobileDevice }" ></div>
+    <div ng-view="" ng-class="{ 'view-container velocity-opposites-transition-slideUpBigIn' : isMobileDevice }" ></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>

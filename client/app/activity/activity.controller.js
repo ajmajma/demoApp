@@ -3,6 +3,7 @@
 angular.module('demoAppApp')
   .controller('ActivityCtrl', function ($scope, $http, socket, Auth, $sce, themeFactory, $rootScope) {
     $scope.getCurrentUser = Auth.getCurrentUser;
+    
     $scope.isLoggedIn = Auth.isLoggedIn;
 
 

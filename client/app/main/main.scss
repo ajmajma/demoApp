@@ -96,7 +96,10 @@
   color: #EFEFEF;
 }
 
-.angular-google-map-container { height: 200px; }
+.angular-google-map-container { 
+  height: 200px;
+  width: 100%;
+ }
 
 #video-background {
   position: fixed;
@@ -133,7 +136,7 @@
  
 }
 .loginContain .row {
-  background-color: rgba(40, 40, 46, 0.44);
+  background-color: rgba(40, 40, 46, 0.64);
   padding: 20px;
 }
 
@@ -146,10 +149,9 @@
   font-family: 'futura_ltcondensed', sans-serif;
 }
 
-.loginTitle h3 {
+.loginTitle p {
   font-size: 18px;
   font-weight: 300;
-  font-family: 'Merriweather', serif;
   
 }
 .loginContain form {
