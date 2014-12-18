@@ -60,10 +60,13 @@
             <h3>SHARE <span style="color:#ea6060;">{{nameOfWidg}}</span></h3>
         </div>
         <div class="modal-body">
+        <h5>My Connections</h5>
+
+        <input type="text" placeholder="Search..." ng-model="searchConnections"> <br/>
         <i class="fa fa-bar-chart"></i> : Send Widget with any modifications you may have made to it.<br/>
         <i class="fa fa-paper-plane-o"></i> : Send base version of widget.
           <div class="sharePers">
-          <figure class="effect-phoebe" ng-repeat="item in myShares" ng-click="shareWith =! shareWith" ng-class="{ 'effect-phoebeActive' : shareWith }">
+          <figure class="effect-phoebe velocity-opposites-transition-flipYIn" data-velocity-opts="{ stagger: 20, duration: 500 }" ng-repeat="item in myShares | filter:searchConnections" ng-click="shareWith =! shareWith" ng-class="{ 'effect-phoebeActive' : shareWith }">
             <img src="assets/images/headshot.jpg" alt="img26"/>
               <figcaption>
               <h2>Alex <br/><span>Sales</span></h2>
@@ -72,9 +75,10 @@
                 <a ng-click="$event.stopPropagation(); sharedFull =! sharedFull"><i class="fa fa-fw fa-bar-chart" ng-class="{'hasBeenShared' : sharedFull }"></i></a>
               </p>
             </figcaption>     
-          </figure>         
+          </figure>   
+               <div class="clear"></div>      
         </div>
-        <div class="clear"></div>
+   
          
         </div>
         <div class="modal-footer">

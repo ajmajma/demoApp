@@ -42,8 +42,8 @@
               <!-- end front actions -->
 
                 <!-- multi side actions -->
-               <li ng-show="widget.sides.length > 2  && side.sideIs != 'help'"><i class="fa fa-caret-square-o-right" ng-click="flipSideRight($index, $parent.$index)"></i></li>
-              <li ng-show="widget.sides.length > 2 && side.sideIs != 'help'"><i class="fa fa-caret-square-o-left" ng-click="flipSideLeft($index, $parent.$index)"></i></li>
+                <li ng-show="widget.sides.length > 2 && side.sideIs != 'help'" class="flipItems"><i class="fa fa-caret-square-o-left" ng-click="flipSideLeft($index, $parent.$index)"></i></li>
+               <li ng-show="widget.sides.length > 2  && side.sideIs != 'help'" class="flipItems"><i class="fa fa-caret-square-o-right" ng-click="flipSideRight($index, $parent.$index)"></i></li>
               <!-- end multi side acitons -->
 
             </ul>
@@ -60,7 +60,7 @@
   </div>
 </div>
 
-
+<!-- 
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
@@ -81,7 +81,7 @@
     </p>
   </form>
 </div>
-
+ -->
 
 <!-- <footer class="footer">
   <div class="container">
