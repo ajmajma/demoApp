@@ -32,9 +32,9 @@ angular.module('demoAppApp')
     $scope.shareWidg = function(index){
       //store object for socket send
       var widgForSend = {};
-       widgForSend = $scope.contentHere[index];;
+       widgForSend = angular.toJson($scope.contentHere[index]);
        
-      $http.post('/api/alertss', { widget: widgForSend });
+      $http.post('/api/alertss', widgForSend );
        $scope.shareSuccess = {'type' : 2 , 'content': 'Share Successful'};
       themeFactory.setAlert($scope.shareSuccess);
 

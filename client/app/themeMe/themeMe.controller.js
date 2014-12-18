@@ -147,18 +147,8 @@ angular.module('demoAppApp')
         $scope.isMobileDevice = false;
       }
 
-      // $scope.menuToggle = function(){
-      //   if($scope.showGlobalMenu == false){
-      //     $scope.showGlobalMenu = true;
-      //     $scope.categories = $scope.categoriess;
-      //   }else{
-      //        $scope.showGlobalMenu = false;
-      //        $scope.categories = [];
-      //   } 
-       
-      // };
-
-      $scope.categoriess = [
+    //Object for Global Nav
+    $scope.categoriess = [
   { 
     title: 'Education',
     icon: 'fa-graduation-cap',

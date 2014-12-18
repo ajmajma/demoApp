@@ -4,16 +4,16 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var AlertsSchema = new Schema({
-  widget: {
-  	  size : String,
-      title : String,
-      content : String,
-      help : String,
-      launch :  Boolean,
-      share : Boolean,
-      mobile :  Boolean,
-      space : Number
-  },
+  size : String,
+  name : String,
+  space : Number,
+  launch :  Boolean,
+  share : Boolean,
+  mobile :  Boolean,
+  native :  Boolean,
+  flipAction : String,
+  actions : Array,
+  sides : [{title :  String, content: 'string', sideIs :  String, active : Boolean}],
   info: String,
   active: Boolean
 });
