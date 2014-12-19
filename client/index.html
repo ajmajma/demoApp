@@ -15,6 +15,7 @@
       <!-- bower:css -->
       <link rel="stylesheet" href="bower_components/nvd3/src/nv.d3.css" />
       <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
+      <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -61,8 +62,9 @@
         </div>
         <div class="modal-body">
         <h5>My Connections</h5>
-
-        <input type="text" placeholder="Search..." ng-model="searchConnections"> <br/>
+        
+        <md-text-float label="Search Connections" ng-model="searchConnections"></md-text-float>
+      
         <i class="fa fa-bar-chart"></i> : Send Widget with any modifications you may have made to it.<br/>
         <i class="fa fa-paper-plane-o"></i> : Send base version of widget.
           <div class="sharePers">
@@ -94,13 +96,10 @@ text-align: center;word-spacing: -0.15em;
 font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
         </div>
         <div class="modal-body">
-        <p>Add this view to your favorites?</p><button class="btn">Add</button>
-        <p>My Favorites - </p>
-        <select>
-          <option>Favorite Dashboard</option>
-          <option>Favorite Dashboard</option>
-          <option>Favorite Dashboard</option>
-        </select>
+          <md-button class="md-colored">
+          Favorite This View
+          </md-button>
+        
         <button class="btn">Go</button>
         <p>Add/Remove apps from {{whereAmI}}</p>
         <div class="publish_widg_selector">
@@ -121,8 +120,8 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
          
         </div>
         <div class="modal-footer">
-            <button class="btn" ng-click="ok()">OK</button>
-            <button class="btn" ng-click="cancel()">Cancel</button>
+          <md-button class="md-raised" ng-click="ok()"> OK</md-button>
+          <md-button class="md-raised" ng-click="cancel()"> Cancel</md-button>
         </div>
     </script>
 
@@ -152,22 +151,23 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
       </button>
       <a href="/dashboard" class="navbar-brand" ng-click="addQuick()">Volute</a>
     </div>
+
     <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav navbar-right">
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/dashboard')}" class="menu-effect"><a href="/dashboard" >Dashboard</a></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/dashboard')}" class="menu-effect"> <md-button ng-href="/dashboard">Dashboard</md-button></li>
         <!-- <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" class="menu-effect"><a href="/admin">Manage Users</a></li> -->
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/marketplace')}" class="menu-effect"><a href="/marketplace">Marketplace</a></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><a href="/offline">{{trackSpace}} %<i class="fa fa-wifi"></i></a></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><a href="/activity"><i class="fa fa-comments-o"></i></a></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/marketplace')}" class="menu-effect"><md-button ng-href="/marketplace">Marketplace</md-button></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><md-button ng-href="/offline">{{trackSpace}} %<i class="fa fa-wifi"></i></md-button></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><md-button ng-href="/activity"><i class="fa fa-comments-o"></i></md-button></li>
         
 
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" class="menu-effect"><a href="/signup">Sign up</a></li>
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="menu-effect"><a href="/login">Login</a></li>
+       <!--  <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" class="menu-effect"><a href="/signup">Sign up</a></li>
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="menu-effect"><a href="/login">Login</a></li> -->
         <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li> -->
-        <li ng-show="isLoggedIn()" class="menu-effect"><a href="#" ng-click="openFavorites()"><i class="fa fa-heart"></i></a></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><a href="/profile"><i class="fa fa-user"></i></a></li>
-         <li ng-show="isLoggedIn()" class="menu-effect"><a href="#" ng-click="openGlobalMenu()"><i class="fa fa-bars"></i></a></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="menu-effect"><a href="" ng-click="logout()"><i class="fa fa-sign-out"></i></a></li>
+        <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openFavorites()" ng-href=""><i class="fa fa-heart"></i></md-button></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><md-button ng-href="/profile"><i class="fa fa-user"></i></md-button></li>
+         <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openGlobalMenu()" ng-href=""><i class="fa fa-bars"></i></md-button></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="menu-effect"><md-button ng-click="logout()" ng-href=""><i class="fa fa-sign-out"></i></md-button></li>
       </ul>
     </div>
   </div>
@@ -234,6 +234,9 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
       <script src="bower_components/videogular-youtube/youtube.js"></script>
       <script src="bower_components/angular-growl-notifications/dist/angular-growl-notifications.js"></script>
       <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+      <script src="bower_components/angular-aria/angular-aria.js"></script>
+      <script src="bower_components/hammerjs/hammer.js"></script>
+      <script src="bower_components/angular-material/angular-material.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->

@@ -5,6 +5,7 @@
   </div>
 </div>
 <div class="container">
+
   
   <div class="row">
     <div class="gutter-sizer"></div>
@@ -25,7 +26,7 @@
             </h5>
           </div>
 
-           <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions" ng-class="{'clickedCorner' : openActions}" ng-show="side.sideIs == 'front'"><span></span></a>
+           <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions" ng-class="{'clickedCorner' : openActions}" ng-show="side.sideIs == 'front'"><span></span><md-tooltip>Open/Close Actions</md-tooltip></a>
            <div recompiler="side.content">{{side.content}}</div>
           <div class="frontFooter">
             <ul class="footerActions" >
@@ -34,16 +35,16 @@
               <!-- end help actions -->
 
               <!-- front actions -->
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-refresh flipCheck" ng-click="flipHelp($index, $parent.$index)" ></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-wifi" ng-click="activateOffline($index, widget.title)"></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-share-alt" ng-click="shareWidg($index)"></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-upload" ng-click="openShareModal(widget.name)"></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-mobile" ng-click="nativeWidg($index)"></i></li>
+              <li ng-show="side.sideIs == 'front'"><i class="fa fa-refresh flipCheck" ng-click="flipHelp($index, $parent.$index)" > <md-tooltip>Turn For Help</md-tooltip></i></li>
+              <li ng-show="side.sideIs == 'front'"><i class="fa fa-wifi" ng-click="activateOffline($index, widget.title)"><md-tooltip>Offline Mode</md-tooltip></i></li>
+              <li ng-show="side.sideIs == 'front'"><i class="fa fa-share-alt" ng-click="shareWidg($index)"><md-tooltip>Share</md-tooltip></i></li>
+              <li ng-show="side.sideIs == 'front'"><i class="fa fa-upload" ng-click="openShareModal(widget.name)"><md-tooltip>Launch</md-tooltip></i></li>
+              <li ng-show="side.sideIs == 'front'"><i class="fa fa-mobile" ng-click="nativeWidg($index)"><md-tooltip>Launch Widget in native mode</md-tooltip></i></li>
               <!-- end front actions -->
 
                 <!-- multi side actions -->
-                <li ng-show="widget.sides.length > 2 && side.sideIs != 'help'" class="flipItems"><i class="fa fa-caret-square-o-left" ng-click="flipSideLeft($index, $parent.$index)"></i></li>
-               <li ng-show="widget.sides.length > 2  && side.sideIs != 'help'" class="flipItems"><i class="fa fa-caret-square-o-right" ng-click="flipSideRight($index, $parent.$index)"></i></li>
+                <li ng-show="widget.sides.length > 2 && side.sideIs != 'help'" class="flipItems"><i class="fa fa-caret-square-o-left" ng-click="flipSideLeft($index, $parent.$index)"><md-tooltip>Flip to previous side</md-tooltip></i></li>
+               <li ng-show="widget.sides.length > 2  && side.sideIs != 'help'" class="flipItems"><i class="fa fa-caret-square-o-right" ng-click="flipSideRight($index, $parent.$index)"><md-tooltip>Flip to next side</md-tooltip></i></li>
               <!-- end multi side acitons -->
 
             </ul>

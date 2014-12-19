@@ -17,7 +17,8 @@ angular.module('demoAppApp', [
   'com.2fdevs.videogular.plugins.poster',
   'com.2fdevs.videogular.plugins.buffering',
   'info.vietnamcode.nampnq.videogular.plugins.youtube',
-  'growlNotifications'
+  'growlNotifications',
+  'ngMaterial'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

@@ -7,15 +7,33 @@
 	<div class="row">
 		<!-- Tabs for marketplace -->
 		<div class="col-xs-12 marketTabs">
-			<ul>
+		<!-- 	<ul>
 				<li ng-class="{activeTab : publicActive}" ng-click="publicActive = true; privateActive = false; myWidgActive = false">Private</li>
 				<li ng-class="{activeTab : privateActive}" ng-click="publicActive = false ;privateActive = true;myWidgActive = false">My Widgets</li>
 				<li ng-class="{activeTab : myWidgActive}" ng-click="publicActive = false ;privateActive = false;myWidgActive = true">My Bundles</li>
+			</ul> -->
+
+		<md-tabs class="md-accent" md-selected="data.selectedIndex">
+
+			<md-tab id="tab1" aria-controls="tab1-content">
+			Private
+			</md-tab>
+
+			<md-tab id="tab2" aria-controls="tab2-content" >
+			My Widgets
+			</md-tab>
+
+			<md-tab id="tab3" aria-controls="tab3-content">
+			My Bundles
+			</md-tab>
+		</md-tabs>
 		</div>
 		<!-- Main area marketplace -->
 		<div class="col-xs-12 marketContent">
 			<div class="col-xs-12 col-md-9 contentMarket">
-				<div id="publicMarket" ng-if="publicActive" class="marketTransitions velocity-opposites-transition-slideRightIn">
+				<ng-switch on="data.selectedIndex" class="tabpanel-container">
+
+				<div id="publicMarket"  role="tabpanel" id="tab1-content" aria-labelledby="tab1" ng-switch-when="0" md-swipe-left="next()" md-swipe-right="previous()" class="velocity-opposites-transition-expandIn">
 					<div class="row">
 						<div class="col-sm-12">
 							<h3 class="typeOfMarket">Private Widgets</h3>
@@ -30,7 +48,8 @@
 									Filter By
 								</div>
 								<div class="filterSearch">
-									<input type="text" placeholder="Search..." class="marketSearch" ng-model="searchPrivate">
+									<md-text-float label="Title" ng-model="searchPrivate"></md-text-float>
+								
 								</div>
 							</div>
 						</div>
@@ -105,7 +124,7 @@
 
 				</div>
 				<!--Prviate Market -->
-				<div id="privateMarket" ng-if="privateActive" class="marketTransitions velocity-opposites-transition-slideRightIn">
+				<div id="privateMarket" role="tabpanel" id="tab2-content" aria-labelledby="tab2" ng-switch-when="1" md-swipe-left="next()" md-swipe-right="previous()" class="velocity-opposites-transition-expandIn">
 					<div class="row">
 						<div class="col-sm-12">
 							<h3 class="typeOfMarket">My Widgets</h3>
@@ -120,7 +139,7 @@
 									Filter By
 								</div>
 								<div class="filterSearch">
-									<input type="text" placeholder="Search..." class="marketSearch" ng-model="searchMy">
+									<md-text-float label="Title" ng-model="searchPrivate"></md-text-float>
 								</div>
 							</div>
 						</div>
@@ -157,7 +176,7 @@
 				</div><!-- end Private -->
 
 				<!-- My market -->
-				<div id="myMarket" ng-if="myWidgActive" class="marketTransitions velocity-opposites-transition-slideRightIn">
+				<div id="myMarket" role="tabpanel" id="tab3-content" aria-labelledby="tab3" ng-switch-when="2" md-swipe-left="next()" md-swipe-right="previous()" class="velocity-opposites-transition-expandIn">
 					<div class="row">
 						<div class="col-sm-12">
 							<h3 class="typeOfMarket">My Bundles</h3>
@@ -172,7 +191,7 @@
 									Filter By
 								</div>
 								<div class="filterSearch">
-									<input type="text" placeholder="Search..." class="marketSearch" ng-model="searchBundle">
+									<md-text-float label="Title" ng-model="searchPrivate"></md-text-float>
 								</div>
 							</div>
 						</div>
@@ -200,7 +219,8 @@
 					</div><!-- End Main Area -->
 
 				</div><!-- end my market -->
-			</div>
+			</ng-switch>
+			</div><!-- end content markt -->
 
 			<div class="col-xs-12 col-md-3">
 				<div class="row marketSidePanel">
