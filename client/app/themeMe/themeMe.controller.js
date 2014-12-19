@@ -147,6 +147,48 @@ angular.module('demoAppApp')
 
     //Object for Global Nav
     $scope.categoriess = [
+    { 
+    title: 'Favorites',
+    icon: 'fa-heart',
+    shown: false,
+    categories: [
+      {
+        title: 'Laptops',
+        shown: false,
+        categories: [
+          {
+            title: 'Ultrabooks',
+            shown: false
+          },
+          {
+            title: 'Macbooks',
+            shown: false            
+          }
+        ]
+      },
+
+      {
+        title: 'Desktops'
+      },
+
+      {
+        title: 'Tablets',
+        shown: false,
+        categories: [
+          { 
+            title: 'Apple',
+            shown: false,
+
+          },
+          {
+            title: 'Android',
+        shown: true,
+
+          }
+        ]        
+      }
+    ]
+  },
   { 
     title: 'Education',
     icon: 'fa-graduation-cap',

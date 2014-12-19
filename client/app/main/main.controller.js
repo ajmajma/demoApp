@@ -302,6 +302,48 @@ angular.module('demoAppApp')
         }]
       },
       {
+      'size' : '0',
+      'name' : 'Utility Alerts',
+      'space' : 10,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      {
       'size' : 'w5',
       'name' : 'Training Video',
       'space' : 10,
@@ -315,6 +357,48 @@ angular.module('demoAppApp')
         {
           'title' : 'Utility Alerts',
           'content' : '<videogular vg-theme="config.theme"><vg-video vg-src="config.sources" vg-tracks="config.tracks"></vg-video><vg-controls><vg-play-pause-button></vg-play-pause-button><vg-timedisplay>{{ currentTime | date:"mm:ss" }}</vg-timedisplay><vg-scrubBar><vg-scrubbarcurrenttime></vg-scrubbarcurrenttime></vg-scrubBar><vg-timedisplay>{{ timeLeft | date:"mm:ss" }}</vg-timedisplay><vg-volume><vg-mutebutton></vg-mutebutton><vg-volumebar></vg-volumebar></vg-volume><vg-fullscreenButton></vg-fullscreenButton></vg-controls><vg-overlay-play></vg-overlay-play><vg-poster-image vg-url="controller.config.plugins.poster"></vg-poster-image></videogular>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      {
+      'size' : '0',
+      'name' : 'Utility Alerts',
+      'space' : 10,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
           'sideIs' : 'front',
           'active' : true
         },
@@ -362,13 +446,55 @@ angular.module('demoAppApp')
         },
         {
           'title' : 'Track Trucks',
-          'content': '<ui-gmap-google-map center="mac.center" zoom="mac.zoom"></ui-gmap-google-map>',
+          'content': 'dasdsa',
           'sideIs' : 'side',
           'active' : false
         },
         {
           'title' : 'Track Shipments',
-          'content': '<ui-gmap-google-map center="man.center" zoom="man.zoom"></ui-gmap-google-map>',
+          'content': 'dsadas',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      {
+      'size' : '0',
+      'name' : 'Utility Alerts',
+      'space' : 10,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
           'sideIs' : 'side',
           'active' : false
         },

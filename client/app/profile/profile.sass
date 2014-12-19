@@ -51,6 +51,7 @@
 	width: 100%
 	height: auto
 	padding: 5px
+	cursor: pointer
 	margin: 0 auto
 	background-color: #28282e
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
@@ -70,7 +71,7 @@
 		.active_menu
 			background-color: #DB7474
 			li:hover
-				a 
+				.subTitle
 					color: #fff
 				ul
 					li 
@@ -102,16 +103,27 @@
 				position: relative
 				background-color: #dddddd
 				transition: 0.5s all
+				a
+					padding: 10px 15px
+				.subCounter
+					font-size: 12px
+					padding: 2px 8px
+					border: 1px solid #D1D1D1
+					border-radius: 10px
+					position: absolute
+					top: 10px
+					right: 15px
 				li 
 					color: #c7c7c7
 			li:hover
 				background-color: #28282e
 				color: #fff
-		a
+		.md-button
 			padding: 20px 15px
 			text-decoration: none
 			color: #8B8E93
 			display: block
+			width: 100%
 			border-bottom: 1px solid #F0F0F0
 		.subCounter
 			font-size: 12px

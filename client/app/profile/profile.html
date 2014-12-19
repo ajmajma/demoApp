@@ -1,138 +1,152 @@
 <div class="container profileContain">
 	<div class="container">
     <div class="profile_pic"></div>
-    <h3>Person Personson</h3>
-	<h3>Personal Control</h3>
+    <h3>Joe Lastname</h3>
 	<div class="row">
 		<div class="col-sm-12">
 			Profile Information
 		</div>
+        <md-tabs class="md-accent" md-selected="data.selectedIndex">
+      <md-tab id="tab1" aria-controls="tab1-content">
+        General Contact
+      </md-tab>
+      <md-tab id="tab2" aria-controls="tab2-content" >
+        User Management
+      </md-tab>
+      <md-tab id="tab3" aria-controls="tab3-content">
+        Customization
+      </md-tab>
+    </md-tabs>
+    <ng-switch on="data.selectedIndex" class="tabpanel-container">
+        <div role="tabpanel" id="tab1-content" aria-labelledby="tab1" ng-switch-when="0" md-swipe-left="next()" md-swipe-right="previous()">
+          <form>
+          <div class="row">
+              <md-text-float label="Title" ng-model="user.title"></md-text-float>
+              <md-text-float label="eMail" ng-model="user.email" type="email"></md-text-float>
+              <md-text-float label="Company" ng-model="user.company" > </md-text-float>
+              <md-text-float label="FirstName" ng-model="user.firstName"> </md-text-float>
+              <md-text-float label="LastName" ng-model="user.lastName" class="long"> </md-text-float>
+              <md-text-float label="Address" ng-model="user.address"> </md-text-float>
+              <md-text-float label="City" ng-model="user.city"> </md-text-float>
+              <md-text-float label="State" ng-model="user.state"> </md-text-float>
+              <md-text-float label="Postal Code" ng-model="user.postalCode"> </md-text-float>
+              <md-text-float label="Country" ng-model="user.country" > </md-text-float>
+          </div>
+          </form>
+        </div>
+        <div role="tabpanel" id="tab2-content" aria-labelledby="tab2" ng-switch-when="1" md-swipe-left="next()" md-swipe-right="previous()">
+              <div class="container">
+              <div class="row">
+              <div class="col-sm-12">
+              <h3>Change Password</h3>
+              </div>
+              <div class="col-sm-12">
+              <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
 
-    <form>
-      <div class="row">
-        <md-text-float label="Title" ng-model="user.title"></md-text-float>
-        <md-text-float label="eMail" ng-model="user.email" type="email"></md-text-float>
-      </div>
-    </form>
-  </md-content>
-  <md-content>
-    <form style="padding: 20px;">
-      <md-text-float label="Company" ng-model="user.company" disabled> </md-text-float>
-      <div class="row">
-          <md-text-float label="FirstName" ng-model="user.firstName"> </md-text-float>
-          <md-text-float label="LastName" ng-model="user.lastName" class="long"> </md-text-float>
-      </div>
-      <md-text-float label="Address" ng-model="user.address"> </md-text-float>
-      <div class="row">
-        <md-text-float label="City" ng-model="user.city"> </md-text-float>
-        <md-text-float label="State" ng-model="user.state"> </md-text-float>
-        <md-text-float label="Postal Code" ng-model="user.postalCode"> </md-text-float>
-      </div>
-      <md-text-float label="Country" ng-model="user.country" disabled> </md-text-float>
-    </form>
- 
-
-	</div>
-
-
-	</div>
-
-	<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <h3>Change Password</h3>
-    </div>
-    <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
-
-        <div class="form-group">
-          <label>Current Password</label>
-          <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
-                 mongoose-error/>
-          <p class="help-block" ng-show="form.password.$error.mongoose">
+              <div class="form-group">
+              <label>Current Password</label>
+              <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
+              mongoose-error/>
+              <p class="help-block" ng-show="form.password.$error.mongoose">
               {{ errors.other }}
-          </p>
+              </p>
+              </div>
+
+              <div class="form-group">
+              <label>New Password</label>
+
+              <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword"
+              ng-minlength="3"
+              required/>
+              <p class="help-block"
+              ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
+              Password must be at least 3 characters.
+              </p>
+              </div>
+
+              <p class="help-block"> {{ message }} </p>
+
+              <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+              </form>
+              </div>
+              </div>
+              </div>
+
+            <div class="container">
+            <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
+            <ul class="list-group">
+            <li class="list-group-item" ng-repeat="user in users">
+            <strong>{{user.name}}</strong><br>
+            <span class="text-muted">{{user.email}}</span>
+            <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+            </li>
+            </ul>
+
+            </div>
         </div>
+        <div role="tabpanel" id="tab3-content" aria-labelledby="tab3" ng-switch-when="2" md-swipe-left="next()" md-swipe-right="previous()">
+              <div class="container">
+              <h3>Theme Control</h3>
+              <div class="row">
+              <div class="col-sm-12">
+              Theme controls here
+              <md-radio-group ng-model="data.group1">
+              <md-radio-button value="Apple" aria-label="Label 1">Theme 1</md-radio-button>
+              <md-radio-button value="Banana"> Theme 2 </md-radio-button>
+              <md-radio-button value="Mango" aria-label="Label 3">Theme 3</md-radio-button>
+              </md-radio-group>
+              <h3>
+              RGB <span ng-attr-style="border: 1px solid #333; background: rgb({{color.red}},{{color.green}},{{color.blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              </h3>
+              <div layout>
+              <div flex="10" layout layout-align="center center">
+              <span>R</span>
+              </div>
+              <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider" class="md-warn">
+              </md-slider>
+              <div flex="20" layout layout-align="center center">
+              <input type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider">
+              </div>
+              </div>
+              <div layout>
+              <div flex="10" layout layout-align="center center">
+              <span>G</span>
+              </div>
+              <md-slider flex ng-model="color.green" min="0" max="255" aria-label="green" id="green-slider" class="md-accent">
+              </md-slider>
+              <div flex="20" layout layout-align="center center">
+              <input type="number" ng-model="color.green" aria-label="green" aria-controls="green-slider">
+              </div>
+              </div>
+              <div layout>
+              <div flex="10" layout layout-align="center center">
+              <span>B</span>
+              </div>
+              <md-slider flex ng-model="color.blue" min="0" max="255" aria-label="blue" id="blue-slider">
+              </md-slider>
+              <div flex="20" layout layout-align="center center">
+              <input type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider">
+              </div>
+              </div>
 
-        <div class="form-group">
-          <label>New Password</label>
 
-          <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword"
-                 ng-minlength="3"
-                 required/>
-          <p class="help-block"
-             ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
-            Password must be at least 3 characters.
-          </p>
+              </div>
+              </div>
+
+
+              </div>
         </div>
+    </ng-switch>
 
-        <p class="help-block"> {{ message }} </p>
-
-        <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="user in users">
-        <strong>{{user.name}}</strong><br>
-        <span class="text-muted">{{user.email}}</span>
-        <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
-    </li>
-  </ul>
-  
-</div>
-
-	<div class="container">
-	<h3>Theme Control</h3>
-		<div class="row">
-		<div class="col-sm-12">
-			Theme controls here
-          <md-radio-group ng-model="data.group1">
-      <md-radio-button value="Apple" aria-label="Label 1">Theme 1</md-radio-button>
-      <md-radio-button value="Banana"> Theme 2 </md-radio-button>
-      <md-radio-button value="Mango" aria-label="Label 3">Theme 3</md-radio-button>
-    </md-radio-group>
-    <h3>
-      RGB <span ng-attr-style="border: 1px solid #333; background: rgb({{color.red}},{{color.green}},{{color.blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    </h3>
-    <div layout>
-      <div flex="10" layout layout-align="center center">
-        <span>R</span>
-      </div>
-      <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider" class="md-warn">
-      </md-slider>
-      <div flex="20" layout layout-align="center center">
-        <input type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider">
-      </div>
-    </div>
-    <div layout>
-      <div flex="10" layout layout-align="center center">
-        <span>G</span>
-      </div>
-      <md-slider flex ng-model="color.green" min="0" max="255" aria-label="green" id="green-slider" class="md-accent">
-      </md-slider>
-      <div flex="20" layout layout-align="center center">
-        <input type="number" ng-model="color.green" aria-label="green" aria-controls="green-slider">
-      </div>
-    </div>
-    <div layout>
-      <div flex="10" layout layout-align="center center">
-        <span>B</span>
-      </div>
-      <md-slider flex ng-model="color.blue" min="0" max="255" aria-label="blue" id="blue-slider">
-      </md-slider>
-      <div flex="20" layout layout-align="center center">
-        <input type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider">
-      </div>
-    </div>
-
-    
-		</div>
+	</div><!-- End row -->
 	</div>
 
-	</div>
+	
+
+	
+
+  <div class="container">
+
+
+</div>
 </div>

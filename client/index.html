@@ -25,13 +25,14 @@
     <!-- endbuild -->
   </head>
   <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}">
+
         <script type="text/ng-template" id="menuTree.html">
-            <a>
-            <i class="fa {{category.icon}}"></i> <span class="subTitle"> {{category.title}} </span><span class="subCounter" ng-show="category.categories">{{category.categories.length}} </span> <div class="clear"></div></a>
+            <md-button>
+            <i class="fa {{category.icon}}"></i> <span class="subTitle"> {{category.title}} </span><span class="subCounter" ng-show="category.categories">{{category.categories.length}} </span> <div class="clear"></div></md-button>
             <ul ng-if="category.categories" ng-click="$event.stopPropagation()" ng-show="category.shown" class="velocity-opposites-transition-slideDownIn">
             <li ng-repeat="category in category.categories" class="item_shown velocity-opposites-transition-slideDownIn" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" ng-click="$event.stopPropagation()" > 
-            <a class="inner_menu_item">
-            {{category.title}} <span class="subCounter">{{category.categories.length}} </span> </a>         
+             <md-button>
+            {{category.title}} <span class="subCounter">{{category.categories.length}} </span> </md-button>         
             </li>
             </ul>
       </script>
