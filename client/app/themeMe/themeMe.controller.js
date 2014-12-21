@@ -112,7 +112,7 @@ angular.module('demoAppApp')
       templateUrl: 'favoriteModal.html',
       controller: 'FavoriteModalCtrl',
       windowClass: 'shareModal',
-      size: 'lg',
+      size: 'sm',
       resolve: {
         widgets: function () {
           return $scope.widgPublishControl;
@@ -284,9 +284,37 @@ $scope.openGlobalMenu = function(){
     modalInstance.result.then(function () {
      
     }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
+
     });
   };
 
+
+  $scope.openPublishMenu = function(){
+   
+     var modalInstance = $modal.open({
+      templateUrl: 'publishModal.html',
+      controller: 'PublishModalCtrl',
+      windowClass: 'publishModal',
+      resolve: {
+         widgets: function () {
+          return $scope.widgPublishControl;
+        },
+        location: function(){
+          return $location.path();
+        }
+    
+      }
+    });
+
+    modalInstance.result.then(function () {
+     
+    }, function () {
+      
+    });
+  };
+
+
     
   });
+
+

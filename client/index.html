@@ -40,6 +40,7 @@
      <script type="text/ng-template" id="globalMenu.html">
       <div class="modal-header">
           <h3>Menu</h3>
+          <i class="fa fa-times closeModals" ng-click="cancel()"></i>
         </div>
           <div class="modal-body">
       <div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
@@ -51,8 +52,8 @@
 
     </div>
        <div class="modal-footer">
-            <button class="btn" ng-click="ok()">OK</button>
-            <button class="btn" ng-click="cancel()">Cancel</button>
+           
+            <md-button class="md-raised" ng-click="cancel()"> Close</md-button>
         </div>
       </div>  
     </script> 
@@ -94,29 +95,27 @@
         <div class="modal-header">
             <h3 class="modal-title" style="font-size: 36px;
 text-align: center;word-spacing: -0.15em;
+font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorite this View?</h3>
+        </div>
+
+        <div class="modal-footer">
+          <md-button class="md-raised" ng-click="ok()"> yes</md-button>
+          <md-button class="md-raised" ng-click="cancel()"> No</md-button>
+        </div>
+    </script>
+
+      <script type="text/ng-template" id="publishModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title" style="font-size: 36px;
+text-align: center;word-spacing: -0.15em;
 font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
         </div>
         <div class="modal-body">
-          <md-button class="md-colored">
-          Favorite This View
-          </md-button>
-        
-        <button class="btn">Go</button>
         <p>Add/Remove apps from {{whereAmI}}</p>
         <div class="publish_widg_selector">
-              <div class="publishSelectorWrap" >
-                <figure class="effect-ming" ng-repeat="widg in WidgetList" ng-class="{'effect-mingActive' : !widg.active }" ng-click="editActiveWidgets($index)">
-                <img src="assets/images/education.jpg" />
-                  <figcaption>
-                    <h2>Utility Alerts</h2>
-                    <h5>Education</h5>
-                    <p>Click to Activate</p>
 
-                  </figcaption>     
-                </figure>
-              </div>
+            <md-checkbox  ng-repeat="d in WidgetList" aria-label="{{ d.name }}" ng-model="d.active" > {{d.name}} </md-checkbox>
 
-            <div class="clear"></div>
         </div>
          
         </div>
@@ -267,6 +266,7 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
           <script src="app/packeryAngular/packeryAngular.directive.js"></script>
           <script src="app/profile/profile.controller.js"></script>
           <script src="app/profile/profile.js"></script>
+          <script src="app/publishModal/publishModal.controller.js"></script>
           <script src="app/recompiler/recompiler.directive.js"></script>
           <script src="app/testPackery/testPackery.directive.js"></script>
           <script src="app/themeFactory/themeFactory.service.js"></script>
