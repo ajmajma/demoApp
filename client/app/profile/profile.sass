@@ -12,7 +12,10 @@
 		border-radius: 75px
 		width: 150px
 		height: 150px
-		margin-top: 25px
+		z-index: 1
+		margin: 0 auto
+		position: relative
+		border: 5px solid #28282e
 
 .pflip
 	perspective: 1000
@@ -178,5 +181,36 @@
 .clear
 	clear: both
 
+.profileInfoForm
+	md-input-group
+		width: 24%
+		float: left
+		margin-right: 1%
+		@media screen and (max-width: 600px)
+			width: 49%
+	md-input-group.md-default-theme input
+		width: 100%
 
+
+.profileLeftSide
+	padding-top: 25px
+	margin-top: 15px
+	text-align: center
+	.detail_left	
+		background-color: rgba(40, 40, 46, 0.2)
+
+.profileRightSide
+	padding: 15px
+	#tab1-content, #tab2-content, #tab3-content
+		background-color: #fff
+		padding: 15px
+	.formHeader
+		width: 100%
+		font-size: 14px
+		border-bottom: 1px solid #ea6060
+		margin-bottom: 20px
+	.formHeader:not(:first-child)
+		margin-top: 25px
+	.face
+		border-radius: 50%
 

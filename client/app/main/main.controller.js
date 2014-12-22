@@ -524,7 +524,7 @@ angular.module('demoAppApp')
       'sides' : [
         {
           'title' : 'Input',
-          'content' : '<div class="inputWidget"><md-text-float label="Title" ng-model="user.title"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-switch  aria-label="Switch 1">on/off</md-switch></div>',
+          'content' : '<div class="inputWidget"><md-text-float label="Title" ng-model="user.title"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-switch  aria-label="Switch 1">on/off</md-switch><md-slider md-discrete ng-model="rating" step="1" min="1" max="5" aria-label="rating"></md-slider></div>',
           'sideIs' : 'front',
           'active' : true
         },

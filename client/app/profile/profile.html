@@ -1,11 +1,19 @@
 <div class="container profileContain">
-	<div class="container">
-    <div class="profile_pic"></div>
-    <h3>Joe Lastname</h3>
-	<div class="row">
-		<div class="col-sm-12">
-			Profile Information
-		</div>
+    <div class="col-sm-12 col-md-3 profileLeftSide">
+      <div class="profile_pic"></div>
+      <h3>Joe Lastname</h3>
+  		<div>
+  			Profile Information
+  		</div>
+      <div class="detail_left">
+          <i class="fa fa-line-chart"></i> User Status<br/>
+          <i class="fa fa-info"></i> Last Logged In :<br/>
+          <i class="fa fa-info"></i> Account Created : <br/>
+          <i class="fa fa-info"></i> Account Last Activity : <br/>
+
+      </div>
+  </div>
+   <div class="col-sm-12 col-md-9 profileRightSide">
         <md-tabs class="md-accent" md-selected="data.selectedIndex">
       <md-tab id="tab1" aria-controls="tab1-content">
         General Contact
@@ -19,10 +27,14 @@
     </md-tabs>
     <ng-switch on="data.selectedIndex" class="tabpanel-container">
         <div role="tabpanel" id="tab1-content" aria-labelledby="tab1" ng-switch-when="0" md-swipe-left="next()" md-swipe-right="previous()">
+      
+          <div class="formHeader">
+          My Information
+        </div>
           <form>
-          <div class="row">
+          <div class="profileInfoForm">
               <md-text-float label="Title" ng-model="user.title"></md-text-float>
-              <md-text-float label="eMail" ng-model="user.email" type="email"></md-text-float>
+              <md-text-float label="Email" ng-model="user.email" type="email"></md-text-float>
               <md-text-float label="Company" ng-model="user.company" > </md-text-float>
               <md-text-float label="FirstName" ng-model="user.firstName"> </md-text-float>
               <md-text-float label="LastName" ng-model="user.lastName" class="long"> </md-text-float>
@@ -33,6 +45,45 @@
               <md-text-float label="Country" ng-model="user.country" > </md-text-float>
           </div>
           </form>
+          <div class="clear"></div>
+
+            <div class="formHeader">
+          Business Contact
+        </div>
+          <form>
+          <div class="profileInfoForm">
+              <md-text-float label="Title" ng-model="user.title"></md-text-float>
+              <md-text-float label="Email" ng-model="user.email" type="email"></md-text-float>
+              <md-text-float label="Company" ng-model="user.company" > </md-text-float>
+              <md-text-float label="FirstName" ng-model="user.firstName"> </md-text-float>
+              <md-text-float label="LastName" ng-model="user.lastName" class="long"> </md-text-float>
+              <md-text-float label="Address" ng-model="user.address"> </md-text-float>
+              <md-text-float label="City" ng-model="user.city"> </md-text-float>
+              <md-text-float label="State" ng-model="user.state"> </md-text-float>
+              <md-text-float label="Postal Code" ng-model="user.postalCode"> </md-text-float>
+              <md-text-float label="Country" ng-model="user.country" > </md-text-float>
+          </div>
+          </form>
+          <div class="clear"></div>
+            <div class="formHeader">
+          Business Profile
+        </div>
+          <form>
+          <div class="profileInfoForm">
+              <md-text-float label="Title" ng-model="user.title"></md-text-float>
+              <md-text-float label="Email" ng-model="user.email" type="email"></md-text-float>
+              <md-text-float label="Company" ng-model="user.company" > </md-text-float>
+              <md-text-float label="FirstName" ng-model="user.firstName"> </md-text-float>
+              <md-text-float label="LastName" ng-model="user.lastName" class="long"> </md-text-float>
+              <md-text-float label="Address" ng-model="user.address"> </md-text-float>
+              <md-text-float label="City" ng-model="user.city"> </md-text-float>
+              <md-text-float label="State" ng-model="user.state"> </md-text-float>
+              <md-text-float label="Postal Code" ng-model="user.postalCode"> </md-text-float>
+              <md-text-float label="Country" ng-model="user.country" > </md-text-float>
+          </div>
+          </form>
+          <div class="clear"></div>
+           <md-button class="md-raised">Save</md-button>
         </div>
         <div role="tabpanel" id="tab2-content" aria-labelledby="tab2" ng-switch-when="1" md-swipe-left="next()" md-swipe-right="previous()">
               <div class="container">
@@ -45,6 +96,7 @@
 
               <div class="form-group">
               <label>Current Password</label>
+
               <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
               mongoose-error/>
               <p class="help-block" ng-show="form.password.$error.mongoose">
@@ -74,16 +126,36 @@
 
             <div class="container">
             <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
-            <ul class="list-group">
+           <!--  <ul class="list-group">
             <li class="list-group-item" ng-repeat="user in users">
             <strong>{{user.name}}</strong><br>
             <span class="text-muted">{{user.email}}</span>
             <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
             </li>
-            </ul>
+            </ul> -->
+
+            <md-list>
+              <md-item ng-repeat="item in users">
+                <md-item-content>
+                <div class="md-tile-left">
+                <img ng-src="/assets/images/headSmall.jpg" class="face" alt="{{item.who}}">
+                </div>
+                <div class="md-tile-content">
+                <h3>{{item.name}}</h3>
+                <h4>{{item.email}}</h4>
+                <p>
+                {{item.name}}
+                </p>
+                 <i class="fa fa-trash pull-right" ng-click="delete(item)"></i>
+                </div>
+                </md-item-content>
+              </md-item>
+            </md-list>
 
             </div>
         </div>
+
+
         <div role="tabpanel" id="tab3-content" aria-labelledby="tab3" ng-switch-when="2" md-swipe-left="next()" md-swipe-right="previous()">
               <div class="container">
               <h3>Theme Control</h3>
@@ -138,8 +210,8 @@
         </div>
     </ng-switch>
 
-	</div><!-- End row -->
-	</div>
+	
+  </div>
 
 	
 

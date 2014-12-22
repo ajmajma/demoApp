@@ -94,7 +94,7 @@ figure.effect-hera:hover {
 }
 
 figure.effect-hera h2 {
-	font-size: 158.75%;
+	font-size: 127.75%;
 }
 
 figure.effect-hera h2,
@@ -139,7 +139,7 @@ figure.effect-hera p a {
 }
 figure.effect-hera img {
 	width: 100%;
-	opacity: 0.6;
+	opacity: 0.4;
 	-webkit-transition: opacity 1s, -webkit-transform 1s;
 	transition: opacity 1s, transform 1s;
 	-webkit-backface-visibility: hidden;
@@ -147,7 +147,7 @@ figure.effect-hera img {
 }
 
 figure.effect-hera:hover img {
-	opacity: 0.2;
+	opacity: 0.1;
 	-webkit-transform: scale3d(1.2,1.2,1);
 	transform: scale3d(1.2,1.2,1);
 }
