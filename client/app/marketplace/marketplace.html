@@ -156,9 +156,27 @@
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="row">
-												<div ng-repeat="item in marketItems | filter:searchMy" class="col-xs-6 col-sm-4 col-md-2 singleMarketItem">
-														<a ng-href="#/{{item.url}}"><div class="bundlePic"></div></a>
+														<div ng-repeat="item in marketItemsTest | filter:searchPrivate" class=" singleMarketItem velocity-opposites-transition-flipBounceYIn"
+        data-velocity-opts="{ stagger: 20, duration: 500}">	
+													<div class="grid">
+															
+															<figure class="effect-hera">
+															<img ng-src="assets/images/{{item.img}}.jpg" alt="img01"/>
+																<figcaption>
+																	<h2>{{item.name}} <br/><span>Bundle</span></h2>
+																	<p>
+																		<a href="#"><i class="fa fa-info-circle"></i></a>
+																		<a href="#"><i class="fa fa-cloud-upload"></i></a>
+																		<a href="#"><i class="fa fa-thumb-tack"></i></a>
+																		<a href="#"><i class="fa fa-tags"></i></a>
+																	</p>
+																</figcaption>			
+															</figure>
+													</div>
+													
+							
 														<div class="bundletitle">{{item.name}}</div>
+														<div class="bundletitleSm">{{item.name}}</div>
 												
 												</div>
 											</div>
@@ -207,9 +225,28 @@
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="row">
-												<div ng-repeat="item in marketItems | filter:searchBundle" class="col-xs-6 col-sm-4 col-md-2 singleMarketItem">
-													<a ng-href="#/{{item.url}}"><div class="bundlePic"></div></a>
-													<div class="bundletitle">{{item.name}}</div>
+														<div ng-repeat="item in marketItemsTest | filter:searchPrivate" class=" singleMarketItem velocity-opposites-transition-flipBounceYIn"
+        data-velocity-opts="{ stagger: 20, duration: 500}">	
+													<div class="grid">
+															
+															<figure class="effect-hera">
+															<img ng-src="assets/images/{{item.img}}.jpg" alt="img01"/>
+																<figcaption>
+																	<h2>{{item.name}} <br/><span>Bundle</span></h2>
+																	<p>
+																		<a href="#"><i class="fa fa-info-circle"></i></a>
+																		<a href="#"><i class="fa fa-cloud-upload"></i></a>
+																		<a href="#"><i class="fa fa-thumb-tack"></i></a>
+																		<a href="#"><i class="fa fa-tags"></i></a>
+																	</p>
+																</figcaption>			
+															</figure>
+													</div>
+													
+							
+														<div class="bundletitle">{{item.name}}</div>
+														<div class="bundletitleSm">{{item.name}}</div>
+												
 												</div>
 											</div>
 										</div>
