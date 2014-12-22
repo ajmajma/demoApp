@@ -510,6 +510,48 @@ angular.module('demoAppApp')
           'sideIs' : 'help',
           'active' : false
         }]
+      },
+      {
+      'size' : 'w2',
+      'name' : 'Input',
+      'space' : 10,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Input',
+          'content' : '<div class="inputWidget"><md-text-float label="Title" ng-model="user.title"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-switch  aria-label="Switch 1">on/off</md-switch></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
       }
       ];
 

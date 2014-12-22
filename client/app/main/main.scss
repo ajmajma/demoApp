@@ -130,11 +130,15 @@
 }
 
 .loginContain {
-  padding-top: 10%;
+  padding-top: 5%;
   z-index: 10;
   max-width: 600px;
  
 }
+.loginContain img {
+  margin: 20px 5px
+
+  }
 .loginContain .row {
   background-color: rgba(40, 40, 46, 0.64);
   padding: 20px;
