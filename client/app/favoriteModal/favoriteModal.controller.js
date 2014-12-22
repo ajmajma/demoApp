@@ -2,7 +2,7 @@
 
 angular.module('demoAppApp')
   .controller('FavoriteModalCtrl', function ($scope, $modalInstance, widgets, location) {
-
+       $scope.toggle = false;
   	$scope.WidgetList = widgets;
 
   	$scope.whereAmI = location.replace("/", "");
