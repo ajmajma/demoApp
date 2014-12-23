@@ -7,6 +7,10 @@ angular.module('demoAppApp')
 	  	     //bundle scope
 	  	     $scope.marketItems = [{name: 'education', url: 'education', img: 'education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'insurance', url: 'insurance', img: 'insurance'},{name: 'healthcare', url: 'bi', img: 'healthcare'},{name: 'manufacturing', url: 'manufacturing', img: 'inventory'},{name: 'retail', url: 'retail', img: 'retail'},{name: 'hospitality', url: 'hospitality', img: 'hospitality'},{name: 'finance', url: 'finance' , img: 'finance'},{name: 'banking', url: 'banking', img: 'banking'},{name: 'erp', url: 'erp', img: 'finance'}];
 	    	$scope.marketItemsTest = [{name: 'education', url: 'education', img: 'education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'insurance', url: 'insurance', img: 'insurance'},{name: 'healthcare', url: 'bi', img: 'healthcare'},{name: 'manufacturing', url: 'manufacturing', img: 'inventory'},{name: 'retail', url: 'retail', img: 'retail'},{name: 'hospitality', url: 'hospitality', img: 'hospitality'},{name: 'finance', url: 'finance' , img: 'finance'},{name: 'banking', url: 'banking', img: 'banking'},{name: 'ERP', url: 'erp', img: 'erp'},{name: 'CRM', url: 'crm', img: 'crm'},{name: 'BI', url: 'banking', img: 'bi'}];
+	    
+	    	$scope.myBundles = [{name: 'education', url: 'education', img: 'education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'insurance', url: 'insurance', img: 'insurance'},{name: 'healthcare', url: 'bi', img: 'healthcare'},{name: 'manufacturing', url: 'manufacturing', img: 'inventory'},{name: 'retail', url: 'retail', img: 'retail'},{name: 'hospitality', url: 'hospitality', img: 'hospitality'},{name: 'finance', url: 'finance' , img: 'finance'},{name: 'banking', url: 'banking', img: 'banking'},{name: 'ERP', url: 'erp', img: 'erp'},{name: 'CRM', url: 'crm', img: 'crm'},{name: 'BI', url: 'banking', img: 'bi'}];
+
+
 	    //start these off fasle
 	    $scope.publicActive = true;
 	    $scope.myWidgActive = false;
@@ -72,7 +76,14 @@ angular.module('demoAppApp')
 			}else{
 				return false;
 			}
-			
+		};
+
+		$scope.openBundle = function(index, parent){
+		
+			$scope.marketItemsTest2[parent].onlyMe = true;
+			$scope.levelTracker = 3;
+			$scope.whichSub = index;
+
 		};
 
 		$scope.marketItemsTest2 = [
@@ -88,7 +99,7 @@ angular.module('demoAppApp')
 					img: 'education',
 					subs: [
 							{
-								name: 'Ed Sub 1-1', 
+								name: 'Teaching Resources 1-1', 
 								url: 'education', 
 								img: 'education',
 								apps: [
@@ -102,7 +113,7 @@ angular.module('demoAppApp')
 					],
 					apps: [
 							{
-								name: 'app1 sub 1', 
+								name: 'Teaching Resources app sub 1', 
 								url: 'app1', 
 								img: 'app1'
 							}
@@ -404,32 +415,6 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'HIPPA & Security', 
-					url: 'education', 
-					img: 'healthcare',
-					subs: [
-							{
-								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
-								apps: [
-									{
-									name: 'app1 sub 1-1', 
-									url: 'app1', 
-									img: 'app1'
-									}
-								]
-							}
-					],
-					apps: [
-							{
-								name: 'app1 sub 1', 
-								url: 'app1', 
-								img: 'app1'
-							}
-					]
-				},
-				{
-					name: 'Accounting', 
 					url: 'education', 
 					img: 'healthcare',
 					subs: [

@@ -266,6 +266,105 @@ angular.module('demoAppApp')
   }
 
 ];
+//Object for Global Nav
+    $scope.categoriesForMarket = [
+    { 
+    title: 'Education',
+    icon: 'fa-graduation-cap',
+    shown: false,
+    categories: [
+      {
+        title: 'Teaching Resource',
+        shown: false,
+        categories: [
+          {
+            title: 'Ultrabooks',
+            shown: false
+          },
+          {
+            title: 'Macbooks',
+            shown: false            
+          }
+        ]
+      },
+
+      {
+        title: ' Learning Resources'
+      },
+      {
+        title: ' Financial Administration'
+      },
+      {
+        title: ' Staff Resources'
+      },
+      {
+        title: ' Student Resources'
+      },
+      {
+        title: ' Program Management'
+      },
+      {
+        title: ' Room Scheduling'
+      },
+      {
+        title: ' Managing Student'
+      },
+      {
+        title: ' Parent Resources'
+      },
+      {
+        title: 'Reporting',
+        shown: false,
+        categories: [
+          { 
+            title: 'Apple',
+            shown: false,
+
+          },
+          {
+            title: 'Android',
+        shown: true,
+
+          }
+        ]        
+      }
+    ]
+  },
+
+  {
+    title: 'Field services',
+    icon: 'fa-truck'
+  },
+  {
+    title: 'Insurance',
+    icon: 'fa-umbrella'
+  },
+  {
+    title: 'Healthcare',
+    icon: 'fa-coffee'
+  },
+  {
+    title: 'Manufacturing',
+    icon: 'fa-gears'
+  },
+  {
+    title: 'Retail',
+    icon: 'fa-shopping-cart'
+  },
+  {
+    title: 'Hospitality',
+    icon: 'fa-heart'
+  },
+  {
+    title: 'Finance',
+    icon: 'fa-line-chart'
+  },
+  {
+    title: 'Banking',
+    icon: 'fa-money'
+  }
+
+];
 //gobal nav modal
 $scope.openGlobalMenu = function(){
    
