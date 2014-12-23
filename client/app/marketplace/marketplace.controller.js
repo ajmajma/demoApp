@@ -11,4 +11,2067 @@ angular.module('demoAppApp')
 	    $scope.publicActive = true;
 	    $scope.myWidgActive = false;
 	    $scope.privateActive = false;
+
+		var sizeCheck2 = window.innerWidth;
+
+		if(sizeCheck2 >= 2250){
+			$scope.sizeControl = 6;
+		}else if(sizeCheck2 < 2250 && sizeCheck2 >= 1800){
+			$scope.sizeControl = 5;
+		}else if(sizeCheck2 < 1800 && sizeCheck2 >= 1600){
+			$scope.sizeControl = 4;
+		}else if(sizeCheck2 < 1600 && sizeCheck2 >= 1260){
+			$scope.sizeControl = 3;
+		}else if(sizeCheck2 < 1260 && sizeCheck2 >= 600){
+			$scope.sizeControl = 2;
+		}else if(sizeCheck2 < 600){
+			$scope.sizeControl = 1;
+		}
+		
+	    $(window).resize(function(){
+			var sizeCheck = window.innerWidth;
+			$scope.$apply(function(){
+				if(sizeCheck >= 2250){
+					$scope.sizeControl = 6;
+				}else if(sizeCheck < 2250 && sizeCheck >= 1800){
+					$scope.sizeControl = 5;
+				}else if(sizeCheck < 1800 && sizeCheck >= 1600){
+					$scope.sizeControl = 4;
+				}else if(sizeCheck < 1600 && sizeCheck >= 1260){
+					$scope.sizeControl = 3;
+				}else if(sizeCheck < 1260 && sizeCheck >= 600){
+					$scope.sizeControl = 2;
+				}else if(sizeCheck < 600){
+					$scope.sizeControl = 1;
+				}
+			});
+		});
+
+		$scope.parentIndexForFilter = "";
+
+	    $scope.levelTracker = 0;
+
+	    $scope.backToParent = function(index){
+	    	$scope.levelTracker = 0;
+	    	$scope.marketItemsTest2[index].onlyMe = false;
+	    };
+	    //view all for highest level
+		$scope.viewAllSub1 = function(index){
+			$scope.levelTracker = 1;
+			$scope.marketItemsTest2[index].onlyMe = true;
+
+		};
+
+		$scope.aloneNow = function(index){
+			//if no other 
+			var here = _.findIndex($scope.marketItemsTest2, 'onlyMe');
+			if(here == -1){
+				return true;
+			}else if(here == index){
+				return true;
+			}else{
+				return false;
+			}
+			
+		};
+
+		$scope.marketItemsTest2 = [
+		{
+			name: 'Education', 
+			url: 'education', 
+			img: 'education',
+			onlyMe: false,
+			subs: [
+				{
+					name: 'Teaching Resources', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Learning Resources', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Financial Administration', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Staff Resources', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Student Resources', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Program Management', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Room Scheduling', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Managing Student', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Reporting', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Parent Resources', 
+					url: 'education', 
+					img: 'education',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				}
+			]
+		},
+		{
+			name: 'Healthcare', 
+			url: 'education', 
+			img: 'healthcare',
+			onlyMe: false,
+			subs: [
+				{
+					name: 'Patient Administration', 
+					url: 'education', 
+					img: 'healthcare',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Electronic Health Records', 
+					url: 'education', 
+					img: 'healthcare',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'HIPPA & Security', 
+					url: 'education', 
+					img: 'healthcare',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'healthcare',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'healthcare',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Staff Management', 
+					url: 'education', 
+					img: 'healthcare',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Supply Chain Management', 
+					url: 'education', 
+					img: 'healthcare',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Patient Flow Management', 
+					url: 'education', 
+					img: 'healthcare',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				}
+			]
+		},
+		{
+			name: 'Field Services', 
+			url: 'education', 
+			img: 'field',
+			onlyMe: false,
+			subs: [
+				{
+					name: 'Patient Administration', 
+					url: 'education', 
+					img: 'field',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Electronic Health Records', 
+					url: 'education', 
+					img: 'field',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'HIPPA & Security', 
+					url: 'education', 
+					img: 'field',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'field',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'field',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Staff Management', 
+					url: 'education', 
+					img: 'field',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Supply Chain Management', 
+					url: 'education', 
+					img: 'field',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Patient Flow Management', 
+					url: 'education', 
+					img: 'field',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				}
+			]
+		},
+		{
+			name: 'Insurance', 
+			url: 'education', 
+			img: 'insurance',
+			onlyMe: false,
+			subs: [
+				{
+					name: 'Patient Administration', 
+					url: 'education', 
+					img: 'insurance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Electronic Health Records', 
+					url: 'education', 
+					img: 'insurance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'HIPPA & Security', 
+					url: 'education', 
+					img: 'insurance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'insurance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'insurance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Staff Management', 
+					url: 'education', 
+					img: 'insurance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Supply Chain Management', 
+					url: 'education', 
+					img: 'insurance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Patient Flow Management', 
+					url: 'education', 
+					img: 'insurance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				}
+			]
+		},
+		{
+			name: 'Manufacturing', 
+			url: 'education', 
+			img: 'inventory',
+			onlyMe: false,
+			subs: [
+				{
+					name: 'Patient Administration', 
+					url: 'education', 
+					img: 'inventory',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Electronic Health Records', 
+					url: 'education', 
+					img: 'inventory',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'HIPPA & Security', 
+					url: 'education', 
+					img: 'inventory',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'inventory',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'inventory',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Staff Management', 
+					url: 'education', 
+					img: 'inventory',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Supply Chain Management', 
+					url: 'education', 
+					img: 'inventory',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Patient Flow Management', 
+					url: 'education', 
+					img: 'inventory',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				}
+			]
+		},
+		{
+			name: 'Retail', 
+			url: 'education', 
+			img: 'retail',
+			onlyMe: false,
+			subs: [
+				{
+					name: 'Patient Administration', 
+					url: 'education', 
+					img: 'retail',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Electronic Health Records', 
+					url: 'education', 
+					img: 'retail',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'HIPPA & Security', 
+					url: 'education', 
+					img: 'retail',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'retail',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'retail',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Staff Management', 
+					url: 'education', 
+					img: 'retail',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Supply Chain Management', 
+					url: 'education', 
+					img: 'retail',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Patient Flow Management', 
+					url: 'education', 
+					img: 'retail',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				}
+			]
+		},
+		{
+			name: 'Hospitality', 
+			url: 'education', 
+			img: 'hospitality',
+			onlyMe: false,
+			subs: [
+				{
+					name: 'Patient Administration', 
+					url: 'education', 
+					img: 'hospitality',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Electronic Health Records', 
+					url: 'education', 
+					img: 'hospitality',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'HIPPA & Security', 
+					url: 'education', 
+					img: 'hospitality',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'hospitality',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'hospitality',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Staff Management', 
+					url: 'education', 
+					img: 'hospitality',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Supply Chain Management', 
+					url: 'education', 
+					img: 'hospitality',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Patient Flow Management', 
+					url: 'education', 
+					img: 'hospitality',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				}
+			]
+		},
+		{
+			name: 'Finance', 
+			url: 'education', 
+			img: 'finance',
+			onlyMe: false,
+			subs: [
+				{
+					name: 'Patient Administration', 
+					url: 'education', 
+					img: 'finance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Electronic Health Records', 
+					url: 'education', 
+					img: 'finance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'HIPPA & Security', 
+					url: 'education', 
+					img: 'finance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'finance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'finance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Staff Management', 
+					url: 'education', 
+					img: 'finance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Supply Chain Management', 
+					url: 'education', 
+					img: 'finance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Patient Flow Management', 
+					url: 'education', 
+					img: 'finance',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				}
+			]
+		},
+		{
+			name: 'Banking', 
+			url: 'education', 
+			img: 'banking',
+			onlyMe: false,
+			subs: [
+				{
+					name: 'Patient Administration', 
+					url: 'education', 
+					img: 'banking',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Electronic Health Records', 
+					url: 'education', 
+					img: 'banking',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'HIPPA & Security', 
+					url: 'education', 
+					img: 'banking',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'banking',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Accounting', 
+					url: 'education', 
+					img: 'banking',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Staff Management', 
+					url: 'education', 
+					img: 'banking',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Supply Chain Management', 
+					url: 'education', 
+					img: 'banking',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				},
+				{
+					name: 'Patient Flow Management', 
+					url: 'education', 
+					img: 'banking',
+					subs: [
+							{
+								name: 'Ed Sub 1-1', 
+								url: 'education', 
+								img: 'education',
+								apps: [
+									{
+									name: 'app1 sub 1-1', 
+									url: 'app1', 
+									img: 'app1'
+									}
+								]
+							}
+					],
+					apps: [
+							{
+								name: 'app1 sub 1', 
+								url: 'app1', 
+								img: 'app1'
+							}
+					]
+				}
+			]
+		}
+	];
+
   });
