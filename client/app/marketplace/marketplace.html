@@ -20,7 +20,7 @@
 			</md-tab>
 
 			<md-tab id="tab2" aria-controls="tab2-content" >
-			My Widgets
+			My Volute Apps
 			</md-tab>
 
 			<md-tab id="tab3" aria-controls="tab3-content">
@@ -30,7 +30,7 @@
 		</div>
 		<!-- Main area marketplace -->
 		<div class="col-xs-12 marketContent">
-			<div class="col-xs-12 col-md-9 contentMarket">
+			<div class="col-xs-12 contentMarket">
 				<ng-switch on="data.selectedIndex" class="tabpanel-container">
 
 				<div id="publicMarket"  role="tabpanel" id="tab1-content" aria-labelledby="tab1" ng-switch-when="0" md-swipe-left="next()" md-swipe-right="previous()" class="velocity-opposites-transition-expandIn">
@@ -43,7 +43,7 @@
 
 					<!--Search/Filter Bar -->
 					<div class="row">
-						<div class="col-sm-12">
+						<div class="col-sm-12 col-md-9">
 							<div class="row filterBar">
 								<div class="filterBy">
 									Filter By
@@ -54,37 +54,10 @@
 									<md-text-float label="Management Software" ng-model="searchPrivateMng"></md-text-float> -->
 								</div>
 							</div>
-						</div>
-					</div><!--End Search/Filter Bar -->
-
-					<!-- Main Area -->
-					<div class="row">
-						<div class="col-sm-12">
+			
+				
 							<div class="row marketLargeArea">
 								<p class="mainTitle">Results</p>
-
-								<!-- <div class="marketFeature">
-									<div class="row">
-										<div class="featureLeft">
-											<div class="featureLeftRow featureRowActive">
-												Row1
-											</div>
-											<div class="featureLeftRow">
-												Row2
-											</div>	
-											<div class="featureLeftRow">
-												Row3
-											</div>	
-											<div class="featureLeftRow">
-												Row4
-											</div>		
-										</div>
-										<div class="featureRight">
-											<h3 class="featureRightTitle">Title Here</h3>
-											<span class="featureRightText">Text Here</span>
-										</div>
-									</div>
-								</div> -->
 					
 								<div class="marketMain">
 
@@ -178,6 +151,20 @@
 								</div>
 							</div>
 						</div>
+
+				<div class="col-xs-12 col-md-3">
+				<div class="row marketSidePanel">
+					<div class="col-xs-12 bundleSearch">
+						<h3>Bundles</h3>
+					</div>
+					<div class="col-xs-12 bundleList">
+						<div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
+					      <ul class="outerMenu">
+					      <li ng-repeat="category in categoriess" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" class="velocity-opposites-transition-perspectiveDownIn" data-velocity-opts="{ stagger: 50 }" ng-class="{ 'active_menu' : category.shown }"> </li>
+					      </ul> 
+					      </div class="clear"></div>
+					      </div>
+					</div>
 					</div><!-- End Main Area -->
 
 				</div>
@@ -191,7 +178,7 @@
 
 					<!--Search/Filter Bar -->
 					<div class="row">
-						<div class="col-sm-12">
+						<div class="col-sm-12 col-md-9">
 							<div class="row filterBar">
 								<div class="filterBy">
 									Filter By
@@ -200,12 +187,7 @@
 									<md-text-float label="Title" ng-model="searchPrivate"></md-text-float>
 								</div>
 							</div>
-						</div>
-					</div><!--End Search/Filter Bar -->
-
-					<!-- Main Area -->
-					<div class="row">
-						<div class="col-sm-12">
+					
 							<div class="row marketLargeArea">
 								<p class="mainTitle">Results</p>
 		
@@ -246,6 +228,19 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-xs-12 col-md-3">
+				<div class="row marketSidePanel">
+					<div class="col-xs-12 bundleSearch">
+						<h3>Bundles</h3>
+					</div>
+					<div class="col-xs-12 bundleList">
+						<div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
+					      <ul class="outerMenu">
+					      <li ng-repeat="category in categoriess" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" class="velocity-opposites-transition-perspectiveDownIn" data-velocity-opts="{ stagger: 50 }" ng-class="{ 'active_menu' : category.shown }"> </li>
+					      </ul> 
+					      </div class="clear"></div>
+					      </div>
+					</div>
 					</div><!-- End Main Area -->
 
 
@@ -311,25 +306,14 @@
 								</div>
 							</div>
 						</div>
+
 					</div><!-- End Main Area -->
 
 				</div><!-- end my market -->
 			</ng-switch>
 			</div><!-- end content markt -->
 
-			<div class="col-xs-12 col-md-3">
-				<div class="row marketSidePanel">
-					<div class="col-xs-12 bundleSearch">
-						<h3>Bundles</h3>
-					</div>
-					<div class="col-xs-12 bundleList">
-						<div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
-					      <ul class="outerMenu">
-					      <li ng-repeat="category in categoriess" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" class="velocity-opposites-transition-perspectiveDownIn" data-velocity-opts="{ stagger: 50 }" ng-class="{ 'active_menu' : category.shown }"> </li>
-					      </ul> 
-					      </div class="clear"></div>
-					      </div>
-					</div>
+			
 				</div>
 			</div>
 
