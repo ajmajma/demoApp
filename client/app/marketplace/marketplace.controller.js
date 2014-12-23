@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('demoAppApp')
-  .controller('MarketplaceCtrl', function ($scope) {
+  .controller('MarketplaceCtrl', function ($scope, $modal) {
     //page transition style
 	  	     $scope.pageClass = 'page-market';
 	  	     //bundle scope
@@ -86,6 +86,25 @@ angular.module('demoAppApp')
 
 		};
 
+		$scope.fullInfoBundle = function(item){
+			//pass item to modal
+			var modalInstance = $modal.open({
+		      templateUrl: 'marketModal.html',
+		      controller: 'MarketModalCtrl',
+		      windowClass: 'marketModal',
+		      resolve: {
+		        widget: function () {
+		          return item;
+		        }
+		      }
+		    });
+		    modalInstance.result.then(function () {
+		     
+		    }, function () {
+		   });
+
+		};
+
 		$scope.marketItemsTest2 = [
 		{
 			name: 'Education', 
@@ -99,23 +118,23 @@ angular.module('demoAppApp')
 					img: 'education',
 					subs: [
 							{
-								name: 'Teaching Resources 1-1', 
+								name: 'Teaching Resources sub1-1', 
 								url: 'education', 
 								img: 'education',
 								apps: [
 									{
-									name: 'app1 sub 1-1', 
+									name: 'Teaching Resources APP 1-1', 
 									url: 'app1', 
-									img: 'app1'
+									img: 'education'
 									}
 								]
 							}
 					],
 					apps: [
 							{
-								name: 'Teaching Resources app sub 1', 
+								name: 'Teaching Resources APP sub 1', 
 								url: 'app1', 
-								img: 'app1'
+								img: 'education'
 							}
 					]
 				},

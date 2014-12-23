@@ -63,7 +63,7 @@
 
 									<div class="row" ng-repeat="item in marketItemsTest2">
 										<div class="col-xs-12" ng-if="aloneNow($index)" >
-											<div class="market_categories" ><p ng-click="backToParent($index)">{{item.name}}<md-tooltip>Return to Categories</md-tooltip></p><p ng-if="levelTracker == 3" class="sub_sub"> {{item.subs[whichSub].name}}</p><span ng-click="viewAllSub1($index)">View All<md-tooltip>View all {{item.name}}</md-tooltip></span> <div class="clear"></div></div>
+											<div class="market_categories" ><p ng-click="backToParent($index)">{{item.name}}<md-tooltip ng-if="levelTracker != 0">Return to Categories</md-tooltip></p><p ng-if="levelTracker == 3" class="sub_sub"> {{item.subs[whichSub].name}}</p><span ng-click="viewAllSub1($index)">View All<md-tooltip>View all {{item.name}}</md-tooltip></span> <div class="clear"></div></div>
 											<div class="row market_category_row">
 
 												<!--Highest level 0 -->
@@ -76,7 +76,7 @@
 																<figcaption>
 																	<h2>{{subs.name}} <br/><span>Bundle</span></h2>
 																	<p>
-																		<a href="#"><i class="fa fa-info-circle"><md-tooltip>Full Info</md-tooltip></i></a>
+																		<a href="#" ng-click="fullInfoBundle(subs)"><i class="fa fa-info-circle"><md-tooltip>Full Info</md-tooltip></i></a>
 																		<a href="#" ng-click="openBundle($index, $parent.$parent.$index)"><i class="fa fa-cloud-upload"><md-tooltip>Open</md-tooltip></i></a>
 																		<a href="#"><i class="fa fa-thumb-tack"><md-tooltip>Save This</md-tooltip></i></a>
 																		<a href="#"><i class="fa fa-tags"><md-tooltip>Tags</md-tooltip></i></a>

@@ -10,6 +10,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+     <script src="bower_components/angular/angular.js"></script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
@@ -24,7 +25,7 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}" class="ng-cloak">
+  <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}" ng-cloak>
 
         <script type="text/ng-template" id="menuTree.html">
             <md-button>
@@ -63,7 +64,6 @@
             <h3>SHARE <span style="color:#ea6060;">{{nameOfWidg}}</span></h3>
         </div>
         <div class="modal-body">
-        <h5>My Connections</h5>
         
         <md-text-float label="Search Connections" ng-model="searchConnections"></md-text-float>
       
@@ -125,6 +125,20 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
         </div>
     </script>
 
+    <script type="text/ng-template" id="marketModal.html">
+        <div class="modal-header">
+           <h3>{{Widg.name}}</h3>
+        </div>
+        <div class="modal-body">
+        <img ng-src="assets/images/{{Widg.img}}.jpg" alt="img01"/>
+         
+        </div>
+        <div class="modal-footer">
+          <md-button class="md-raised" ng-click="ok()"> OK</md-button>
+          <md-button class="md-raised" ng-click="cancel()"> Cancel</md-button>
+        </div>
+    </script>
+
 
     <growl-notifications></growl-notifications>
 
@@ -140,7 +154,7 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="navbar navbar-default navbar-static-top navWrap" ng-controller="NavbarCtrl" ng-show="isLoggedIn()" >
+    <div class="navbar navbar-default navbar-static-top navWrap" ng-controller="NavbarCtrl" ng-show="isLoggedIn() && !isActive('/')" >
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
@@ -187,7 +201,6 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
     <!-- build:js({client,node_modules}) app/vendor.js -->
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
-      <script src="bower_components/angular/angular.js"></script>
       <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -251,6 +264,7 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
           <script src="app/globalMenu/globalMenu.controller.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/marketModal/marketModal.controller.js"></script>
           <script src="app/marketplace/marketplace.controller.js"></script>
           <script src="app/marketplace/marketplace.js"></script>
           <script src="app/offline/offline.controller.js"></script>
