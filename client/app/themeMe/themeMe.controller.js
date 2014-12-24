@@ -83,7 +83,7 @@ angular.module('demoAppApp')
     });
 
     //open share modal
-    $scope.openShareModal  = function(name){
+    $scope.openShareModal  = function(name, widg){
     
        var modalInstance = $modal.open({
       templateUrl: 'shareModal.html',
@@ -92,12 +92,20 @@ angular.module('demoAppApp')
       resolve: {
         name: function () {
           return name;
+        },
+        widget: function(){
+          return widg;
         }
       }
     });
 
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
+    modalInstance.result.then(function (widget) {
+    
+       var widgForSend = angular.toJson(widget);
+       
+      $http.post('/api/alertss', widgForSend );
+      $scope.shareSuccess = {'type' : 2 , 'content': 'Share Successful'};
+      themeFactory.setAlert($scope.shareSuccess);
     }, function () {
     });
   };
@@ -129,6 +137,8 @@ angular.module('demoAppApp')
     }, function () {
     });
   };
+
+
 
   
   //global nav object

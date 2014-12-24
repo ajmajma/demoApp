@@ -75,8 +75,8 @@
               <figcaption>
               <h2>{{item.name}} <br/><span>Sales</span></h2>
               <p>
-                <a ng-click="$event.stopPropagation(); sharedSemi =! sharedSemi" ><i class="fa fa-fw fa-paper-plane-o" ng-class="{'hasBeenShared' : sharedSemi }"></i></a>
-                <a ng-click="$event.stopPropagation(); sharedFull =! sharedFull"><i class="fa fa-fw fa-bar-chart" ng-class="{'hasBeenShared' : sharedFull }"></i></a>
+                <a ng-click="$event.stopPropagation(); shareBase($index)" ><i class="fa fa-fw fa-paper-plane-o" ng-class="{'hasBeenShared' : item.shareBase }"></i></a>
+                <a ng-click="$event.stopPropagation(); shareFull($index)"><i class="fa fa-fw fa-bar-chart" ng-class="{'hasBeenShared' : item.shareFull }"></i></a>
               </p>
             </figcaption>     
           </figure>   

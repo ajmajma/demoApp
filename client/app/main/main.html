@@ -39,8 +39,8 @@
               <!-- front actions -->
               <li ng-show="side.sideIs == 'front'"><i class="fa fa-refresh flipCheck" ng-click="flipHelp($index, $parent.$index)" > <md-tooltip>Turn For Help</md-tooltip></i></li>
               <li ng-show="side.sideIs == 'front'"><i class="fa fa-wifi" ng-click="activateOffline($parent.$index, widget.title)"><md-tooltip >Offline Mode</md-tooltip></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-share-alt" ng-click="shareWidg($parent.$index)"><md-tooltip>Share</md-tooltip></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="fa fa-upload" ng-click="openShareModal(widget.name)"><md-tooltip>Launch</md-tooltip></i></li>
+              <li ng-show="side.sideIs == 'front'"><i class="fa fa-share-alt" ng-click="openShareModal(widget.name, widget)"><md-tooltip>Share</md-tooltip></i></li>
+              <li ng-show="side.sideIs == 'front'"><i class="fa fa-upload" ><md-tooltip>Launch</md-tooltip></i></li>
               <li ng-show="side.sideIs == 'front'"><i class="fa fa-mobile" ng-click="nativeWidg($index)"><md-tooltip>Launch Widget in native mode</md-tooltip></i></li>
               <!-- end front actions -->
 
