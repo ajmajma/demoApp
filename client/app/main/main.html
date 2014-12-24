@@ -3,10 +3,12 @@
   <div class="row">
     <p ng-show="isLoggedIn()" style="float: left;" ng-click="openPublishMenu()"> Dashboard </p>
     <p ng-show="isLoggedIn()" style="float: right;">Welcome {{ getCurrentUser().name }}</p>
-  
   </div>
+
 </div>
+
 <div class="container">
+
 
   
   <div class="row">
@@ -17,11 +19,11 @@
       <div class="flipper" >
  
         <!-- Sides Start -->
-        <div ng-repeat="side in widget.sides" class="front velocity-opposites-transition-expandIn"  data-velocity-opts="{ duration: 550 }" ng-show="side.active">
+        <div ng-repeat="side in widget.sides" class="front "   ng-show="side.active">
 
            <div class="handle">
             <h5 class="handleTitle" ng-class="{'handleTitleFlip' : openActions }">
-              <span><span ng-show="side.sideIs == 'front'">{{$index + 1}} </span>{{side.title}}</span>
+              <span><span ng-show="side.sideIs == 'front'">{{$parent.$index + 1}} </span>{{side.title}}</span>
               <nav class="handleActions" ng-show="side.sideIs == 'front'">
                 <i ng-repeat="action in widget.actions" class="fa {{action}} velocity-opposites-transition-flipBounceYIn" ng-click="actionClicked()" data-velocity-opts="{ stagger: 100 }" ></i>
               </nav>

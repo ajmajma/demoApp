@@ -28,12 +28,10 @@
   <body ng-app="demoAppApp" ng-controller="ThemeMeCtrl" ng-class="{loginScreen: locationPlease('/')}" ng-cloak>
 
         <script type="text/ng-template" id="menuTree.html">
-            <md-button>
-            <i class="fa {{category.icon}}"></i> <span class="subTitle"> {{category.title}} </span><span class="subCounter" ng-show="category.categories">{{category.categories.length}} </span> <div class="clear"></div></md-button>
-            <ul ng-if="category.categories" ng-click="$event.stopPropagation()" ng-show="category.shown" class="velocity-opposites-transition-slideDownIn">
-            <li ng-repeat="category in category.categories" class="item_shown velocity-opposites-transition-slideDownIn" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" ng-click="$event.stopPropagation()" > 
-             <md-button>
-            {{category.title}} <span class="subCounter">{{category.categories.length}} </span> </md-button>         
+            <md-button> <i class="fa {{category.icon}}"></i> <span class="subTitle"> {{category.title}} </span><span class="subCounter" ng-show="category.categories">{{category.categories.length}} </span> <div class="clear"></div></md-button>
+            <ul ng-if="category.categories" ng-click="$event.stopPropagation()" ng-show="category.shown" >
+            <li ng-repeat="category in category.categories" class="item_shown" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" ng-click="$event.stopPropagation()" > 
+             <md-button>{{category.title}} <span class="subCounter">{{category.categories.length}} </span> </md-button>         
             </li>
             </ul>
       </script>
@@ -86,7 +84,7 @@
          
         </div>
         <div class="modal-footer">
-            <button class="btn" ng-click="ok()">OK</button>
+            <button class="btn" ng-click="ok()">Share</button>
             <button class="btn" ng-click="cancel()">Cancel</button>
         </div>
     </script>
@@ -97,12 +95,15 @@
 text-align: center;word-spacing: -0.15em;
 font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorite this View?</h3>
         </div>
+        <div class="modal-body">
+        </div>
 
         <div class="modal-footer">
           <md-button class="md-raised" ng-click="ok()"> yes</md-button>
           <md-button class="md-raised" ng-click="cancel()"> No</md-button>
         </div>
     </script>
+
 
       <script type="text/ng-template" id="publishModal.html">
         <div class="modal-header">
@@ -171,8 +172,8 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/dashboard')}" class="menu-effect"> <md-button ng-href="/dashboard" aria-label="Dash">Dashboard</md-button></li>
         <!-- <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" class="menu-effect"><a href="/admin">Manage Users</a></li> -->
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/marketplace')}" class="menu-effect"><md-button ng-href="/marketplace" aria-label="Dash">Marketplace</md-button></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><md-button ng-href="/offline" aria-label="Dash">{{trackSpace}} %<i class="fa fa-wifi"></i></md-button></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><md-button ng-href="/activity" aria-label="Dash"><i class="fa fa-comments-o"></i></md-button></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><md-button ng-href="/offline" aria-label="Dash"><i class="fa fa-wifi"></i></md-button><md-tooltip>{{trackSpace}} %</md-tooltip></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><md-button ng-href="/activity" aria-label="Dash"><i class="fa fa-comments-o" ng-class="{ 'hasActivity' : shareAmount }"></i></md-button><md-tooltip>{{shareAmount}}</md-tooltip></li>
         
 
        <!--  <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" class="menu-effect"><a href="/signup">Sign up</a></li>

@@ -2,7 +2,6 @@
   <div class="row">
     <p ng-show="isLoggedIn()">Welcome {{ getCurrentUser().name }}</p>
     <progressbar class="progress-striped active" value="trackSpace" type="{{offlineLevel}}">{{trackSpace}}% </progressbar>
-      <md-progress-circular md-mode="determinate" value="{{trackSpace}}"></md-progress-circular>
   </div>
 </div>
 

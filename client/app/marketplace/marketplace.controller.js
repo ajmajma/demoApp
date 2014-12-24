@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('demoAppApp')
-  .controller('MarketplaceCtrl', function ($scope, $modal) {
+  .controller('MarketplaceCtrl', function ($scope, $modal, themeFactory) {
     //page transition style
 	  	     $scope.pageClass = 'page-market';
 	  	     //bundle scope
@@ -16,36 +16,41 @@ angular.module('demoAppApp')
 	    $scope.myWidgActive = false;
 	    $scope.privateActive = false;
 
+	    //control item limits for marketplace row
 		var sizeCheck2 = window.innerWidth;
-
 		if(sizeCheck2 >= 2250){
+			$scope.sizeControl = 8;
+		}else if(sizeCheck2 < 2250 && sizeCheck2 >= 1900){
 			$scope.sizeControl = 6;
-		}else if(sizeCheck2 < 2250 && sizeCheck2 >= 1800){
+		}else if(sizeCheck2 < 1900 && sizeCheck2 >= 1420){
 			$scope.sizeControl = 5;
-		}else if(sizeCheck2 < 1800 && sizeCheck2 >= 1600){
+		}else if(sizeCheck2 < 1420 && sizeCheck2 >= 1050){
 			$scope.sizeControl = 4;
-		}else if(sizeCheck2 < 1600 && sizeCheck2 >= 1260){
+		}else if(sizeCheck2 < 1050 && sizeCheck2 >= 670){
 			$scope.sizeControl = 3;
-		}else if(sizeCheck2 < 1260 && sizeCheck2 >= 600){
+		}else if(sizeCheck2 < 670 && sizeCheck2 >= 490){
 			$scope.sizeControl = 2;
-		}else if(sizeCheck2 < 600){
+		}else if(sizeCheck2 < 490){
 			$scope.sizeControl = 1;
 		}
-		
+
+		 //control item limits for marketplace row
 	    $(window).resize(function(){
 			var sizeCheck = window.innerWidth;
 			$scope.$apply(function(){
 				if(sizeCheck >= 2250){
+					$scope.sizeControl = 8;
+				}else if(sizeCheck < 2250 && sizeCheck >= 1900){
 					$scope.sizeControl = 6;
-				}else if(sizeCheck < 2250 && sizeCheck >= 1800){
+				}else if(sizeCheck < 1900 && sizeCheck >= 1420){
 					$scope.sizeControl = 5;
-				}else if(sizeCheck < 1800 && sizeCheck >= 1600){
+				}else if(sizeCheck < 1420 && sizeCheck >= 1050){
 					$scope.sizeControl = 4;
-				}else if(sizeCheck < 1600 && sizeCheck >= 1260){
+				}else if(sizeCheck < 1050 && sizeCheck >= 670){
 					$scope.sizeControl = 3;
-				}else if(sizeCheck < 1260 && sizeCheck >= 600){
+				}else if(sizeCheck < 670 && sizeCheck >= 490){
 					$scope.sizeControl = 2;
-				}else if(sizeCheck < 600){
+				}else if(sizeCheck < 490){
 					$scope.sizeControl = 1;
 				}
 			});
@@ -53,6 +58,7 @@ angular.module('demoAppApp')
 
 		$scope.parentIndexForFilter = "";
 
+		//tracker for how many levels deep we are in marketplace browsing
 	    $scope.levelTracker = 0;
 
 	    $scope.backToParent = function(index){
@@ -104,6 +110,27 @@ angular.module('demoAppApp')
 		   });
 
 		};
+			//array for build list
+		$scope.itemsForBuild = [];
+
+		$scope.addToSelect = function(item){
+			var result = _.some($scope.itemsForBuild, function(topic) {
+			     return topic === item;
+			 });	
+			if(!result){
+				$scope.itemsForBuild.push(item);
+			}else{
+				   $scope.shareSuccess = {'type' : 3 , 'content': 'Already In List'};
+      				themeFactory.setAlert($scope.shareSuccess);
+			}
+		};
+		$scope.removeBuildItem = function(item){
+			$scope.itemsForBuild.splice(item, 1);
+
+		}
+
+		//array for build list
+		$scope.itemsForBuild = [];
 
 		$scope.marketItemsTest2 = [
 		{
@@ -2077,5 +2104,7 @@ angular.module('demoAppApp')
 			]
 		}
 	];
+
+
 
   });

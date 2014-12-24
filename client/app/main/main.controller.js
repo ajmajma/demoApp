@@ -512,7 +512,7 @@ angular.module('demoAppApp')
         }]
       },
       {
-      'size' : 'w2',
+      'size' : 'w5',
       'name' : 'Input',
       'space' : 10,
       'launch' :  true,
@@ -523,14 +523,14 @@ angular.module('demoAppApp')
       'flipAction' : '',
       'sides' : [
         {
-          'title' : 'Input',
-          'content' : '<div class="inputWidget"><md-text-float label="Title" ng-model="user.title"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-text-float label="e-mail" ng-model="user.email" type="email"></md-text-float><md-switch  aria-label="Switch 1">on/off</md-switch><md-slider md-discrete ng-model="rating" step="1" min="1" max="5" aria-label="rating"></md-slider></div>',
+          'title' : 'Schedule Shift',
+          'content' : '<div class="inputDate"><div class="tableHolder"><datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker></div><div class="dateSelected" ng-if="dt">Date Selected : <b>{{dt | date:"fullDate" }}</b></div><div class="clear"></div><md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" ng-if="dt">Shift 1</md-checkbox><md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-if="dt">Shift 2</md-checkbox><md-checkbox ng-model="data.cb3" aria-label="Checkbox 3" ng-if="dt">Shift 3</md-checkbox><div class="clear"></div><div class="dateComment" ng-if="dt"><textarea placeholder="Additional Comments..."></textarea><div class="clear"></div><md-button class="md-raised" ng-if="dt">Submit</md-button></div><p ng-if="!dt">Please select a date to begin</p></div> ',
           'sideIs' : 'front',
           'active' : true
         },
         {
           'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
+          'content' : '',
           'sideIs' : 'side',
           'active' : false
         },
@@ -555,6 +555,5 @@ angular.module('demoAppApp')
       }
       ];
 
-      
 
   });

@@ -43,7 +43,7 @@
 
 					<!--Search/Filter Bar -->
 					<div class="row">
-						<div class="col-sm-12 col-md-9">
+						<div class="col-sm-12">
 							<div class="row filterBar">
 								<div class="filterBy">
 									Filter By
@@ -206,17 +206,6 @@
 							</div>
 						</div>
 
-				<div class="col-xs-12 col-md-3">
-				<div class="row marketSidePanel">
-
-					<div class="col-xs-12 bundleList">
-						<div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
-					      <ul class="outerMenu">
-					      <li ng-repeat="category in categoriesForMarket" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" class="velocity-opposites-transition-perspectiveDownIn" data-velocity-opts="{ stagger: 50 }" ng-class="{ 'active_menu' : category.shown }"> </li>
-					      </ul> 
-					      </div class="clear"></div>
-					      </div>
-					</div>
 					</div><!-- End Main Area -->
 
 				</div>
@@ -257,7 +246,7 @@
 																	<h2>{{item.name}} <br/><span>Bundle</span></h2>
 																	<p>
 																		<a href="#"><i class="fa fa-info-circle"></i></a>
-																		<a href="#"><i class="fa fa-cloud-upload"></i></a>
+																		<a href="#" ng-click="addToSelect(item)"><i class="fa fa-check"></i></a>
 																		<a href="#"><i class="fa fa-thumb-tack"></i></a>
 																		<a href="#"><i class="fa fa-tags"></i></a>
 																	</p>
@@ -265,7 +254,6 @@
 															</figure>
 													</div>
 													
-							
 														<div class="bundletitle">{{item.name}}</div>
 														<div class="bundletitleSm">{{item.name}}</div>
 												
@@ -284,11 +272,22 @@
 				<div class="row marketSidePanel">
 	
 					<div class="col-xs-12 bundleList">
-						<div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
+						<div class="sideMarketMenu" data-velocity-opts="{ duration: 1000 }">
 					      <ul class="outerMenu">
 					      <li ng-repeat="category in categoriesForMarket" ng-include="'menuTree.html'" ng-click="category.shown =! category.shown" class="velocity-opposites-transition-perspectiveDownIn" data-velocity-opts="{ stagger: 50 }" ng-class="{ 'active_menu' : category.shown }"> </li>
 					      </ul> 
 					      </div class="clear"></div>
+					      </div>
+
+					      <div class="row">
+					      	<div class="col-xs-12 select_myApps">
+					      		<h4>Selected Items</h4>
+					      		<ul>
+					      			<li ng-repeat="item in itemsForBuild" class="velocity-opposites-transition-slideUpIn">{{item.name}} <i class="fa fa-trash" ng-click="removeBuildItem($index)"></i></li>
+
+					      		</ul>
+					      		    <md-button ng-if="itemsForBuild.length"  class="md-raised">Build</md-button>
+					      	</div>
 					      </div>
 					</div>
 					</div><!-- End Main Area -->

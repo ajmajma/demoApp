@@ -10,13 +10,15 @@ angular.module('demoAppApp')
     $http.get('/api/alertss').success(function(awesomeThings) {
       $scope.contentHere = awesomeThings;
 
+
       socket.syncUpdates('alerts', $scope.contentHere, function(event, item, object){
+
         if(event === "created"){
           $scope.prepForOffline = {'type' : 1 , 'content': item.widget.title + ' has been shared with you'};
        }else if(event == "deleted"){
           $scope.prepForOffline = {'type' : 3 , 'content': item.widget.title + ' has been removed from your activity'};
        }
-     
+ 
       themeFactory.setAlert($scope.prepForOffline);
       });
     });
@@ -25,9 +27,7 @@ angular.module('demoAppApp')
       $http.delete('/api/alertss/' + thing._id);
     };
 
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('alerts');
-    });
+
 
     $scope.exampleData = [
           {

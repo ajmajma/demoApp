@@ -77,6 +77,22 @@ angular.module('demoAppApp')
             }
       });
     });
+
+    //share tracker
+    $http.get('/api/alertss').success(function(awesomeThings) {
+      $scope.newShareHold = awesomeThings;
+      $scope.shareAmount = $scope.newShareHold.length;
+
+      socket.syncUpdates('alerts', $scope.newShareHold, function(event, item, object){
+          if(event === "created"){
+            console.log("Added");
+            $scope.shareAmount += 1;
+       }else if(event == "deleted"){ 
+          $scope.shareAmount -= 1;
+       }
+     
+      });
+    });
     //close socket if user leaves app
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('offline');
@@ -423,7 +439,6 @@ $scope.openGlobalMenu = function(){
   };
 
 
-    
   });
 
 
