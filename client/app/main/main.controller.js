@@ -33,7 +33,7 @@ angular.module('demoAppApp')
       //store object for socket send
       var widgForSend = {};
     
-       widgForSend = angular.toJson($scope.contentHere[index]);
+       widgForSend = angular.toJson($scope.contentHereCurrent[index]);
        
       $http.post('/api/alertss', widgForSend );
       $scope.shareSuccess = {'type' : 2 , 'content': 'Share Successful'};
@@ -43,14 +43,14 @@ angular.module('demoAppApp')
 
     $scope.nativeWidg = function(index){
       
-      $scope.prepForSend = $scope.contentHere[index];
+      $scope.prepForSend = $scope.contentHereCurrent[index];
       themeFactory.setModal($scope.prepForSend);
 
     };
 
     $scope.activateOffline = function(index, name) {
       var widgForSendOff = {};
-       widgForSendOff = angular.toJson($scope.contentHere[index]);
+       widgForSendOff = angular.toJson($scope.contentHereCurrent[index]);
       $http.post('/api/offlines', widgForSendOff );
   
       // $scope.prepForOffline = {'type' : 2 , 'content': name + ' Available For Offline'};
@@ -65,36 +65,36 @@ angular.module('demoAppApp')
 
     //flip to help
     $scope.flipHelp = function(index, parent){
-        $scope.contentHere[parent].sides[index].active = false;
-       $scope.indexFind = _.findIndex($scope.contentHere[parent].sides, function(idx){
+        $scope.contentHereCurrent[parent].sides[index].active = false;
+       $scope.indexFind = _.findIndex($scope.contentHereCurrent[parent].sides, function(idx){
         return idx.sideIs == 'help';
        });
-       $scope.contentHere[parent].sides[$scope.indexFind].active = true;
+       $scope.contentHereCurrent[parent].sides[$scope.indexFind].active = true;
     };
     //flip back from help
     $scope.flipHelpBack = function(index, parent){
-       $scope.contentHere[parent].sides[index].active = false;
-       $scope.indexFind = _.findIndex($scope.contentHere[parent].sides, function(idx){
+       $scope.contentHereCurrent[parent].sides[index].active = false;
+       $scope.indexFind = _.findIndex($scope.contentHereCurrent[parent].sides, function(idx){
         return idx.sideIs == 'front';
        });
-       $scope.contentHere[parent].sides[$scope.indexFind].active = true;
+       $scope.contentHereCurrent[parent].sides[$scope.indexFind].active = true;
     };
     //flip right
     $scope.flipSideRight = function(index, parent){
      
 
-      $scope.contentHere[parent].sides[index].active = false;
+      $scope.contentHereCurrent[parent].sides[index].active = false;
       var idx = index + 1;
-      if(idx >= $scope.contentHere[parent].sides.length){
+      if(idx >= $scope.contentHereCurrent[parent].sides.length){
          idx = 0;
       }else{}
-      if($scope.contentHere[parent].sides[idx].sideIs == 'help'){
+      if($scope.contentHereCurrent[parent].sides[idx].sideIs == 'help'){
            $scope.flipSideRight(idx, parent); //Added to skip over to next item
-           $scope.contentHere[parent].sides[index].active = false;
+           $scope.contentHereCurrent[parent].sides[index].active = false;
            return; // Added to skip execution of following line of codes incase of recursion
       }else{}
-      $scope.contentHere[parent].sides[index].active = false;
-      $scope.contentHere[parent].sides[idx].active = true;
+      $scope.contentHereCurrent[parent].sides[index].active = false;
+      $scope.contentHereCurrent[parent].sides[idx].active = true;
     };
 
     //flip left
@@ -102,15 +102,15 @@ angular.module('demoAppApp')
 
       var idx = index - 1;
       if (idx < 0) {
-       idx = $scope.contentHere[parent].sides.length - 1;
+       idx = $scope.contentHereCurrent[parent].sides.length - 1;
       }else{}
-      if($scope.contentHere[parent].sides[idx].sideIs == 'help'){
+      if($scope.contentHereCurrent[parent].sides[idx].sideIs == 'help'){
            $scope.flipSideLeft(idx, parent); //Added to skip over to next item
-           $scope.contentHere[parent].sides[index].active = false;
+           $scope.contentHereCurrent[parent].sides[index].active = false;
            return; // Added to skip execution of following line of codes incase of recursion
       }else{}
-      $scope.contentHere[parent].sides[index].active = false;
-      $scope.contentHere[parent].sides[idx].active = true;
+      $scope.contentHereCurrent[parent].sides[index].active = false;
+      $scope.contentHereCurrent[parent].sides[idx].active = true;
     };
 
     $scope.exampleData = [
@@ -172,388 +172,7 @@ angular.module('demoAppApp')
         }
       };
 
-      //content for main page
-        $scope.contentHere = [
-    {
-      'size' : '0',
-      'name' : 'Utility Alerts',
-      'space' : 10,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-      {
-      'size' : 'darkMe',
-      'name' : 'Utility Alerts',
-      'space' : 10,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'flipAction' : '',
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-       {
-      'size' : 'w3',
-      'name' : 'Statistics',
-      'space' : 10,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'flipAction' : '',
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'sides' : [
-        {
-          'title' : 'Statistics',
-          'content' : '<nvd3-stacked-area-chart data="exampleData" id="exampleId" showXAxis="true" showYAxis="true" showControls="true" responsive="true"  height="220"> <svg></svg> </nvd3-stacked-area-chart>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Alternative graph 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Alternative graph 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Alternartive graph 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Documentation for graphs</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-      {
-      'size' : '0',
-      'name' : 'Utility Alerts',
-      'space' : 10,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-      {
-      'size' : 'w5',
-      'name' : 'Training Video',
-      'space' : 10,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'flipAction' : '',
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<videogular vg-theme="config.theme"><vg-video vg-src="config.sources" vg-tracks="config.tracks"></vg-video><vg-controls><vg-play-pause-button></vg-play-pause-button><vg-timedisplay>{{ currentTime | date:"mm:ss" }}</vg-timedisplay><vg-scrubBar><vg-scrubbarcurrenttime></vg-scrubbarcurrenttime></vg-scrubBar><vg-timedisplay>{{ timeLeft | date:"mm:ss" }}</vg-timedisplay><vg-volume><vg-mutebutton></vg-mutebutton><vg-volumebar></vg-volumebar></vg-volume><vg-fullscreenButton></vg-fullscreenButton></vg-controls><vg-overlay-play></vg-overlay-play><vg-poster-image vg-url="controller.config.plugins.poster"></vg-poster-image></videogular>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-      {
-      'size' : '0',
-      'name' : 'Utility Alerts',
-      'space' : 10,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-       {
-      'size' : 'w3',
-      'name' : 'Track Employees',
-      'space' : 10,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'flipAction' : '',
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-           'content': '<ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>',
-           'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Track Trucks',
-          'content': 'dasdsa',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Track Shipments',
-          'content': 'dsadas',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-      {
-      'size' : '0',
-      'name' : 'Utility Alerts',
-      'space' : 10,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-      {
-      'size' : 'w5',
-      'name' : 'Input',
-      'space' : 10,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Schedule Shift',
-          'content' : '<div class="inputDate"><div class="tableHolder"><datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker></div><div class="dateSelected" ng-if="dt">Date Selected : <b>{{dt | date:"fullDate" }}</b></div><div class="clear"></div><md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" ng-if="dt">Shift 1</md-checkbox><md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-if="dt">Shift 2</md-checkbox><md-checkbox ng-model="data.cb3" aria-label="Checkbox 3" ng-if="dt">Shift 3</md-checkbox><div class="clear"></div><div class="dateComment" ng-if="dt"><textarea placeholder="Additional Comments..."></textarea><div class="clear"></div><md-button class="md-raised" ng-if="dt">Submit</md-button></div><p ng-if="!dt">Please select a date to begin</p></div> ',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      }
-      ];
+     
 
 
   });

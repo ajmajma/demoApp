@@ -7,10 +7,6 @@ angular.module('demoAppApp')
 
   	$scope.whereAmI = location.replace("/", "");
 
-  	$scope.editActiveWidgets = function (index) {
-  		$scope.WidgetList[index].active = ! $scope.WidgetList[index].active;
-
-  	};
 
   	$scope.ok = function () {
     	$modalInstance.close($scope.WidgetList);

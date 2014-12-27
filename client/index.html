@@ -17,6 +17,7 @@
       <link rel="stylesheet" href="bower_components/nvd3/src/nv.d3.css" />
       <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
       <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+      <link rel="stylesheet" href="bower_components/material-design-iconic-font/css/material-design-iconic-font.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -39,7 +40,7 @@
      <script type="text/ng-template" id="globalMenu.html">
       <div class="modal-header">
           <h3>Menu</h3>
-          <i class="fa fa-times closeModals" ng-click="cancel()"></i>
+          <i class="md-close closeModals" ng-click="cancel()"></i>
         </div>
           <div class="modal-body">
       <div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
@@ -95,8 +96,6 @@
 text-align: center;word-spacing: -0.15em;
 font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorite this View?</h3>
         </div>
-        <div class="modal-body">
-        </div>
 
         <div class="modal-footer">
           <md-button class="md-raised" ng-click="ok()"> yes</md-button>
@@ -109,13 +108,13 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorite this View
         <div class="modal-header">
             <h3 class="modal-title" style="font-size: 36px;
 text-align: center;word-spacing: -0.15em;
-font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
+font-weight: 300;text-transform:uppercase;padding-top: 10px;">Publish</h3>
         </div>
         <div class="modal-body">
-        <p>Add/Remove apps from {{whereAmI}}</p>
+        <p>Add/Remove widgets from {{whereAmI}}</p>
         <div class="publish_widg_selector">
 
-            <md-checkbox  ng-repeat="d in WidgetList" aria-label="{{ d.name }}" ng-model="d.active" > {{d.name}} </md-checkbox>
+            <md-checkbox  ng-repeat="d in WidgetList" aria-label="{{ d.name }}" ng-model="d.published" > {{d.name}} </md-checkbox>
 
         </div>
          
@@ -172,16 +171,16 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Favorites</h3>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/dashboard')}" class="menu-effect"> <md-button ng-href="/dashboard" aria-label="Dash">Dashboard</md-button></li>
         <!-- <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" class="menu-effect"><a href="/admin">Manage Users</a></li> -->
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/marketplace')}" class="menu-effect"><md-button ng-href="/marketplace" aria-label="Dash">Marketplace</md-button></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><md-button ng-href="/offline" aria-label="Dash"><i class="fa fa-wifi"></i></md-button><md-tooltip>{{trackSpace}} %</md-tooltip></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><md-button ng-href="/activity" aria-label="Dash"><i class="fa fa-comments-o" ng-class="{ 'hasActivity' : shareAmount }"></i></md-button><md-tooltip>{{shareAmount}}</md-tooltip></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><md-button ng-href="/offline" aria-label="Dash"><i class="md-signal-wifi-4-bar"></i></md-button><md-tooltip>{{trackSpace}} %</md-tooltip></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><md-button ng-href="/activity" aria-label="Dash"><i class="md-question-answer" ng-class="{ 'hasActivity' : shareAmount }"></i></md-button><md-tooltip>{{shareAmount}}</md-tooltip></li>
         
 
        <!--  <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" class="menu-effect"><a href="/signup">Sign up</a></li>
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="menu-effect"><a href="/login">Login</a></li> -->
         <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li> -->
-        <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openFavorites()" ng-href="" aria-label="Dash"><i class="fa fa-heart"></i></md-button></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><md-button ng-href="/profile" aria-label="Dash"><i class="fa fa-user"></i></md-button></li>
-         <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openGlobalMenu()" ng-href="" aria-label="Dash"><i class="fa fa-bars"></i></md-button></li>
+        <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openFavorites()" ng-href="" aria-label="Dash"><i class="md-favorite"></i></md-button></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><md-button ng-href="/profile" aria-label="Dash"><i class="md-person"></i></md-button></li>
+         <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openGlobalMenu()" ng-href="" aria-label="Dash"><i class="md-menu"></i></md-button></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="menu-effect"><md-button ng-click="logout()" ng-href="" aria-label="Dash"><i class="fa fa-sign-out"></i></md-button></li>
       </ul>
     </div>

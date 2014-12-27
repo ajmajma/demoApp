@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/viewFetch/viewFetch.socket').register(socket);
   require('../api/offline/offline.socket').register(socket);
   require('../api/notify/notify.socket').register(socket);
   require('../api/alerts/alerts.socket').register(socket);

@@ -52,12 +52,12 @@ angular.module('demoAppApp')
     //track available space left for offline
     $scope.trackSpace = 0;
     $http.get('/api/offlines').success(function(awesomeThings) {
-      $scope.contentHere = awesomeThings;
-      angular.forEach($scope.contentHere, function(val) {
+      $scope.trackDat = awesomeThings;
+      angular.forEach($scope.trackDat, function(val) {
            $scope.trackSpace += val.space;
 
           });
-      socket.syncUpdates('offline', $scope.contentHere, function(event, item, object){
+      socket.syncUpdates('offline', $scope.trackDat, function(event, item, object){
         if(event === "created"){
           $scope.prepForOffline = {'type' : 2 , 'content': item.name + ' has been added to Offline'};
           $scope.trackSpace += item.space;
@@ -422,7 +422,7 @@ $scope.openGlobalMenu = function(){
       windowClass: 'publishModal',
       resolve: {
          widgets: function () {
-          return $scope.widgPublishControl;
+          return $scope.contentHereCurrent;
         },
         location: function(){
           return $location.path();
@@ -431,12 +431,405 @@ $scope.openGlobalMenu = function(){
       }
     });
 
-    modalInstance.result.then(function () {
+    modalInstance.result.then(function (newWidgets) {
+      $scope.contentHereCurrent = newWidgets;
      
     }, function () {
       
     });
   };
+
+   //content for main page
+        $scope.contentHereCurrent = [
+    {
+      'size' : '0',
+      'name' : 'Utility Alerts',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      {
+      'size' : 'darkMe',
+      'name' : 'Utility Alerts',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'flipAction' : '',
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+       {
+      'size' : 'w3',
+      'name' : 'Statistics',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'flipAction' : '',
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'sides' : [
+        {
+          'title' : 'Statistics',
+          'content' : '<nvd3-stacked-area-chart data="exampleData" id="exampleId" showXAxis="true" showYAxis="true" showControls="true" responsive="true"  height="220"> <svg></svg> </nvd3-stacked-area-chart>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Alternative graph 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Alternative graph 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Alternartive graph 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Documentation for graphs</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      {
+      'size' : '0',
+      'name' : 'Utility Alerts',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      {
+      'size' : 'w5',
+      'name' : 'Training Video',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'flipAction' : '',
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+          'content' : '<videogular vg-theme="config.theme"><vg-video vg-src="config.sources" vg-tracks="config.tracks"></vg-video><vg-controls><vg-play-pause-button></vg-play-pause-button><vg-timedisplay>{{ currentTime | date:"mm:ss" }}</vg-timedisplay><vg-scrubBar><vg-scrubbarcurrenttime></vg-scrubbarcurrenttime></vg-scrubBar><vg-timedisplay>{{ timeLeft | date:"mm:ss" }}</vg-timedisplay><vg-volume><vg-mutebutton></vg-mutebutton><vg-volumebar></vg-volumebar></vg-volume><vg-fullscreenButton></vg-fullscreenButton></vg-controls><vg-overlay-play></vg-overlay-play><vg-poster-image vg-url="controller.config.plugins.poster"></vg-poster-image></videogular>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      {
+      'size' : '0',
+      'name' : 'Utility Alerts',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+       {
+      'size' : 'w3',
+      'name' : 'Track Employees',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'flipAction' : '',
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+           'content': '<ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>',
+           'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Track Trucks',
+          'content': 'dasdsa',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Track Shipments',
+          'content': 'dsadas',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      {
+      'size' : '0',
+      'name' : 'Utility Alerts',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Utility Alerts',
+          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Side 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      {
+      'size' : 'w5',
+      'name' : 'Input',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Schedule Shift',
+          'content' : '<div class="inputDate"><div class="tableHolder"><datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker></div><div class="dateSelected" ng-if="dt">Date Selected : <b>{{dt | date:"fullDate" }}</b></div><div class="clear"></div><md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" ng-if="dt">Shift 1</md-checkbox><md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-if="dt">Shift 2</md-checkbox><md-checkbox ng-model="data.cb3" aria-label="Checkbox 3" ng-if="dt">Shift 3</md-checkbox><div class="clear"></div><div class="dateComment" ng-if="dt"><textarea placeholder="Additional Comments..."></textarea><div class="clear"></div><md-button class="md-raised" ng-if="dt">Submit</md-button></div><p ng-if="!dt">Please select a date to begin</p></div> ',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      }
+      ];
 
 
   });

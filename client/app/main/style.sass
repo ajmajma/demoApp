@@ -270,7 +270,7 @@ growl-notification
 			padding: 0 10px
 			i 
 				font-size: 22px
-				color: #878796
+				color: #a9a9a9
 				transition: 0.5s all
 			i:hover 
 				text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
@@ -372,7 +372,7 @@ growl-notification
 	width: 100%
 	height: auto
 	padding: 2%
-	max-height: 600px
+	max-height: 300px
 	overflow-y: auto
 	.publish_widg_single
 		float: left
@@ -382,6 +382,15 @@ growl-notification
 		color: #28282e
 		height: 75px
 		background-color: #fff
+
+.publishModal
+	.modal-content
+		.modal-header
+			border-bottom: none
+		.modal-body
+		.modal-footer
+			border-top: none
+
 
 .inputWidget
 	padding: 10px 20px
@@ -393,6 +402,8 @@ growl-notification
 		width: 98%
 		margin: 0 auto
 		overflow: auto
+		table 
+			margin: 0 auto
 	md-checkbox
 		float: left
 	.dateComment	
@@ -408,6 +419,7 @@ growl-notification
 		float: left
 	.md-button
 		margin-top: 10px
+
 
 .hasActivity
 	color: #ea6060

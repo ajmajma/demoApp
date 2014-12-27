@@ -1,10 +1,7 @@
 <div class="container profileContain">
     <div class="col-sm-12 col-md-3 profileLeftSide">
       <div class="profile_pic"></div>
-      <h3>Joe Lastname</h3>
-  		<div>
-  			Profile Information
-  		</div>
+      <div class="profileName">Lastname,<br/>joe</div>
       <div class="detail_left">
           <i class="fa fa-line-chart"></i> User Status<br/>
           <i class="fa fa-info"></i> Last Logged In :<br/>
@@ -94,7 +91,6 @@
               <div class="col-sm-12">
               <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
 
-              <div class="form-group">
               <label>Current Password</label>
 
               <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
@@ -102,9 +98,7 @@
               <p class="help-block" ng-show="form.password.$error.mongoose">
               {{ errors.other }}
               </p>
-              </div>
-
-              <div class="form-group">
+            
               <label>New Password</label>
 
               <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword"
@@ -114,18 +108,17 @@
               ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
               Password must be at least 3 characters.
               </p>
-              </div>
+              
 
               <p class="help-block"> {{ message }} </p>
-              <md-button class="md-raised">Save</md-button>
-              <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+              <md-button class="md-raised" type="submit">Save</md-button>
+<!--               <button class="btn btn-lg btn-primary" type="submit">Save changes</button> -->
               </form>
               </div>
               </div>
               </div>
 
             <div class="container">
-            <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
            <!--  <ul class="list-group">
             <li class="list-group-item" ng-repeat="user in users">
             <strong>{{user.name}}</strong><br>

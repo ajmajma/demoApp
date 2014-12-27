@@ -44,6 +44,21 @@
 					<!--Search/Filter Bar -->
 					<div class="row">
 						<div class="col-sm-12">
+							<select class="marketSelectFilter" ng-model="dropLevel1">
+								<option value="Education">Education</option>
+								<option value="HealthCare">HealthCare</option>
+								<option value="Finance">Finance</option>
+							</select>
+									<select class="marketSelectFilter" ng-model="dropLevel2">
+								<option value="1">Education</option>
+								<option value="2">Education</option>
+								<option value="3">Education</option>
+							</select>
+									<select class="marketSelectFilter" ng-model="dropLevel3">
+								<option value="1">Education</option>
+								<option value="2">Education</option>
+								<option value="3">Education</option>
+							</select>
 							<div class="row filterBar">
 								<div class="filterBy">
 									Filter By
@@ -61,13 +76,13 @@
 					
 								<div class="marketMain">
 
-									<div class="row" ng-repeat="item in marketItemsTest2">
+									<div class="row" ng-repeat="item in marketItemsTest2" >
 										<div class="col-xs-12" ng-if="aloneNow($index)" >
-											<div class="market_categories" ><p ng-click="backToParent($index)">{{item.name}}<md-tooltip ng-if="levelTracker != 0">Return to Categories</md-tooltip></p><p ng-if="levelTracker == 3" class="sub_sub"> {{item.subs[whichSub].name}}</p><span ng-click="viewAllSub1($index)">View All<md-tooltip>View all {{item.name}}</md-tooltip></span> <div class="clear"></div></div>
+											<div class="market_categories"><p ng-click="backToParent($index)"><i class="md-arrow-back" ng-if="levelTracker != 0"></i>{{item.name}}<md-tooltip ng-if="levelTracker != 0">Return to Categories</md-tooltip></p><p ng-if="levelTracker == 3" class="sub_sub"> {{item.subs[whichSub].name}}</p><span ng-click="viewAllSub1($index)">View All<md-tooltip>View all {{item.name}}</md-tooltip></span> <div class="clear"></div></div>
 											<div class="row market_category_row">
 
 												<!--Highest level 0 -->
-												<div ng-if="levelTracker == 0" ng-repeat="subs in item.subs | filter:searchPrivate | limitTo: sizeControl" class=" singleMarketItem velocity-opposites-transition-flipBounceYIn"
+												<div ng-if="levelTracker == 0" ng-repeat="subs in item.subs | filter:searchPrivate | filter:dropLevel1 | limitTo: sizeControl" class=" singleMarketItem velocity-opposites-transition-flipBounceYIn"
         data-velocity-opts="{ stagger: 20, duration: 500}" >	
 													<div class="grid">
 															
@@ -283,7 +298,7 @@
 					      	<div class="col-xs-12 select_myApps">
 					      		<h4>Selected Items</h4>
 					      		<ul>
-					      			<li ng-repeat="item in itemsForBuild" class="velocity-opposites-transition-slideUpIn">{{item.name}} <i class="fa fa-trash" ng-click="removeBuildItem($index)"></i></li>
+					      			<li ng-repeat="item in itemsForBuild" class="velocity-opposites-transition-slideUpIn">{{item.name}} <i class="md-delete" ng-click="removeBuildItem($index)"></i></li>
 
 					      		</ul>
 					      		    <md-button ng-if="itemsForBuild.length"  class="md-raised">Build</md-button>
