@@ -11,6 +11,7 @@ angular.module('demoAppApp')
 	    	$scope.myBundles = [{name: 'education', url: 'education', img: 'education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'insurance', url: 'insurance', img: 'insurance'},{name: 'healthcare', url: 'bi', img: 'healthcare'},{name: 'manufacturing', url: 'manufacturing', img: 'inventory'},{name: 'retail', url: 'retail', img: 'retail'},{name: 'hospitality', url: 'hospitality', img: 'hospitality'},{name: 'finance', url: 'finance' , img: 'finance'},{name: 'banking', url: 'banking', img: 'banking'},{name: 'ERP', url: 'erp', img: 'erp'},{name: 'CRM', url: 'crm', img: 'crm'},{name: 'BI', url: 'banking', img: 'bi'}];
 
 
+
 	    //start these off fasle
 	    $scope.publicActive = true;
 	    $scope.myWidgActive = false;
@@ -98,6 +99,7 @@ angular.module('demoAppApp')
 		      templateUrl: 'marketModal.html',
 		      controller: 'MarketModalCtrl',
 		      windowClass: 'marketModal',
+		      size: 'lg',
 		      resolve: {
 		        widget: function () {
 		          return item;
@@ -2104,6 +2106,8 @@ angular.module('demoAppApp')
 			]
 		}
 	];
+
+  
 
 
 
