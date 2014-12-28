@@ -183,7 +183,7 @@ angular.module('demoAppApp')
         ends_at: new Date(currentYear,currentMonth,25,9,30)
       },
       {
-        title: 'Shoft 2',
+        title: 'Shift 2',
         type: 'info',
         starts_at: new Date(currentYear,currentMonth,19,7,30),
         ends_at: new Date(currentYear,currentMonth,25,9,30)
