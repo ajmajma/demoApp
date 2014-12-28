@@ -18,6 +18,8 @@
       <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
       <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
       <link rel="stylesheet" href="bower_components/material-design-iconic-font/css/material-design-iconic-font.css" />
+      <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+      <link rel="stylesheet" href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -63,11 +65,13 @@
             <h3>SHARE <span style="color:#ea6060;">{{nameOfWidg}}</span></h3>
         </div>
         <div class="modal-body">
-        
+        <div class="shareType">
         <md-text-float label="Search Connections" ng-model="searchConnections"></md-text-float>
-      
-        <i class="fa fa-bar-chart"></i> : Send Widget with any modifications you may have made to it.<br/>
+        </div>
+        <div class="shareKey">
+        <i class="fa fa-bar-chart"></i> : Send Widget with changes made to it.<br/>
         <i class="fa fa-paper-plane-o"></i> : Send base version of widget.
+        </div>
           <div class="sharePers">
           <figure class="effect-phoebe velocity-opposites-transition-flipYIn" data-velocity-opts="{ stagger: 20, duration: 500 }" ng-repeat="item in users | filter:searchConnections" ng-click="shareWith =! shareWith" ng-class="{ 'effect-phoebeActive' : shareWith }">
             <img src="assets/images/headshot.jpg" alt="img26"/>
@@ -85,8 +89,8 @@
          
         </div>
         <div class="modal-footer">
-            <button class="btn" ng-click="ok()">Share</button>
-            <button class="btn" ng-click="cancel()">Cancel</button>
+             <md-button class="md-raised"  ng-click="ok()">Share</md-button>
+             <md-button class="md-raised"  ng-click="cancel()">Cancel</md-button>
         </div>
     </script>
 
@@ -120,8 +124,7 @@ font-weight: 300;text-transform:uppercase;padding-top: 10px;">Publish</h3>
          
         </div>
         <div class="modal-footer">
-          <md-button class="md-raised" ng-click="ok()"> OK</md-button>
-          <md-button class="md-raised" ng-click="cancel()"> Cancel</md-button>
+          <md-button class="md-raised" ng-click="ok()"> Done</md-button>
         </div>
     </script>
 
@@ -302,6 +305,10 @@ Duo at aliquid mnesarchum, nec ne impetus hendrerit. Ius id aeterno debitis atom
       <script src="bower_components/angular-aria/angular-aria.js"></script>
       <script src="bower_components/hammerjs/hammer.js"></script>
       <script src="bower_components/angular-material/angular-material.js"></script>
+      <script src="bower_components/moment/moment.js"></script>
+      <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+      <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+      <script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->

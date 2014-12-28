@@ -1,8 +1,10 @@
 <div class="container">
   <div class="row">
-    <p ng-show="isLoggedIn()">Welcome {{ getCurrentUser().name }}</p>
+    <p>Offline</p>
+    <!-- <p ng-show="isLoggedIn()" style="float:right;">Welcome {{ getCurrentUser().name }}</p> -->
     <progressbar class="progress-striped active" value="trackSpace" type="{{offlineLevel}}">{{trackSpace}}% </progressbar>
 
+    
     <!-- <div ng-repeat="item in contentHere" ng-click="deleteAlert(item)">delete</div> -->
   </div>
 </div>
@@ -60,8 +62,6 @@
 
       </div> 
     </div>
-
-
 
   </div>
 </div>

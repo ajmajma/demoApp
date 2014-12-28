@@ -828,6 +828,49 @@ $scope.openGlobalMenu = function(){
           'sideIs' : 'help',
           'active' : false
         }]
+      },
+       {
+      'size' : 'w5',
+      'name' : 'Calender',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Shift Calender',
+          'content' : '<div class="calenderWrap"><mwl-calendar calendar-events="events" calendar-view="calendarView"calendar-current-day="calendarDay" calendar-control="calendarControl" calendar-event-click="eventClicked($event)" calendar-edit-event-html="edit" calendar-delete-event-html="delete" calendar-edit-event-click="eventEdited($event)" calendar-delete-event-click="eventDeleted($event)" calendar-auto-open="true"></mwl-calendar></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Help</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
       }
       ];
 

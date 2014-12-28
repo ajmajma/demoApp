@@ -1,9 +1,10 @@
 <!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
 <div class="container">
   <div class="row">
-    <p ng-show="isLoggedIn()" style="float: left;" ng-click="openPublishMenu()"> Dashboard </p>
-    <p ng-show="isLoggedIn()" style="float: right;">Welcome {{ getCurrentUser().name }}</p>
+    <p ng-show="isLoggedIn()" style="float: left;" ng-click="openPublishMenu()"><i class="md-flip-to-back"></i> Dashboard </p>
+    <p ng-show="isLoggedIn()" style="float: right; padding-right: 17px">Welcome {{ getCurrentUser().name }}</p>
   </div>
+
 
 </div>
 
@@ -17,18 +18,18 @@
       <div class="flipper" >
  
         <!-- Sides Start -->
-        <div ng-repeat="side in widget.sides" class="front "   ng-show="side.active">
+        <div ng-repeat="side in widget.sides" ng-show="side.active" class="front" >
 
            <div class="handle">
             <h5 class="handleTitle" ng-class="{'handleTitleFlip' : openActions }">
               <span><span ng-show="side.sideIs == 'front'">{{$parent.$index + 1}} </span>{{side.title}}</span>
               <nav class="handleActions" ng-show="side.sideIs == 'front'">
-                <i ng-repeat="action in widget.actions" class="fa {{action}} velocity-opposites-transition-flipBounceYIn" ng-click="actionClicked()" data-velocity-opts="{ stagger: 100 }" ></i>
+                <i ng-repeat="action in widget.actions" class="fa {{action}}" ng-click="actionClicked()" ></i>
               </nav>
             </h5>
           </div>
 
-           <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions" ng-class="{'clickedCorner' : openActions}" ng-show="side.sideIs == 'front'"><span></span><md-tooltip>Open/Close Actions</md-tooltip></a>
+           <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions" ng-class="{'clickedCorner' : openActions}" ng-show="side.sideIs == 'front'"><span></span></a>
            <div recompiler="side.content">{{side.content}}</div>
           <div class="frontFooter">
             <ul class="footerActions" >
@@ -45,8 +46,8 @@
               <!-- end front actions -->
 
                 <!-- multi side actions -->
-                <li ng-show="widget.sides.length > 2 && side.sideIs != 'help'" class="flipItems"><i class="md-chevron-left" ng-click="flipSideLeft($index, $parent.$index)"><md-tooltip>Flip to previous side</md-tooltip></i></li>
-               <li ng-show="widget.sides.length > 2  && side.sideIs != 'help'" class="flipItems"><i class="md-chevron-right" ng-click="flipSideRight($index, $parent.$index)"><md-tooltip>Flip to next side</md-tooltip></i></li>
+                <li ng-show="widget.sides.length > 2 && side.sideIs != 'help'" class="flipItems"><i class="md-chevron-left" ng-click="flipSideLeft($index, $parent.$index)"></i></li>
+               <li ng-show="widget.sides.length > 2  && side.sideIs != 'help'" class="flipItems"><i class="md-chevron-right" ng-click="flipSideRight($index, $parent.$index)"></i></li>
               <!-- end multi side acitons -->
 
             </ul>
