@@ -177,19 +177,19 @@ angular.module('demoAppApp')
 
     $scope.events = [
       {
-        title: 'Event 1',
+        title: 'Shift 1',
         type: 'warning',
         starts_at: new Date(currentYear,currentMonth,25,8,30),
         ends_at: new Date(currentYear,currentMonth,25,9,30)
       },
       {
-        title: 'Event 2',
+        title: 'Shoft 2',
         type: 'info',
         starts_at: new Date(currentYear,currentMonth,19,7,30),
         ends_at: new Date(currentYear,currentMonth,25,9,30)
       },
       {
-        title: 'This is a really long event title',
+        title: 'Shift 3',
         type: 'important',
         starts_at: new Date(currentYear,currentMonth,25,6,30),
         ends_at: new Date(currentYear,currentMonth,25,6,60)

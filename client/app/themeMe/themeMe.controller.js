@@ -830,7 +830,7 @@ $scope.openGlobalMenu = function(){
         }]
       },
        {
-      'size' : 'w5',
+      'size' : 'w6',
       'name' : 'Calender',
       'space' : 10,
       'published': true,
@@ -843,7 +843,7 @@ $scope.openGlobalMenu = function(){
       'sides' : [
         {
           'title' : 'Shift Calender',
-          'content' : '<div class="calenderWrap"><mwl-calendar calendar-events="events" calendar-view="calendarView"calendar-current-day="calendarDay" calendar-control="calendarControl" calendar-event-click="eventClicked($event)" calendar-edit-event-html="edit" calendar-delete-event-html="delete" calendar-edit-event-click="eventEdited($event)" calendar-delete-event-click="eventDeleted($event)" calendar-auto-open="true"></mwl-calendar></div>',
+          'content' : '<div class="calenderWrap"><h2 class="text-center">{{ calendarControl.getTitle() }}</h2><mwl-calendar calendar-events="events" calendar-view="calendarView"calendar-current-day="calendarDay" calendar-control="calendarControl" calendar-event-click="eventClicked($event)" calendar-edit-event-html="edit" calendar-delete-event-html="delete" calendar-edit-event-click="eventEdited($event)" calendar-delete-event-click="eventDeleted($event)" calendar-auto-open="true"></mwl-calendar><div class="clear"></div></div><div class="calender_nav"><md-button class="md-raised" ng-click="calendarControl.prev()">Previous</md-button ><md-button class="md-raised" ng-click="setCalendarToToday()">Today</md-button ><md-button class="md-raised" ng-click="calendarControl.next()">Next</md-button ></div><div class="calender_sort"><md-radio-group ng-model="calendarView"><md-radio-button value="year" aria-label="Year">Year</md-radio-button><md-radio-button value="month" aria-label="Month"> Month </md-radio-button><md-radio-button value="week" aria-label="Week"> Week </md-radio-button><md-radio-button value="day" aria-label="Day"> Day </md-radio-button></md-radio-group></div>',
           'sideIs' : 'front',
           'active' : true
         },
