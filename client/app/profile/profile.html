@@ -132,6 +132,94 @@
           </form>
           <div class="clear"></div>
            <md-button class="md-raised">Save</md-button>
+              <div class="formHeader">
+          Manage Messages
+        </div>
+           <div class="activityWrapProfile">
+
+           <div layout="column" flex layout-fill>
+           
+            <md-content style="height: 450px;">
+    <section>
+      <md-subheader class="md-primary">Unread Messages</md-subheader>
+      <md-list layout="column">
+        <md-item ng-repeat="message in messages">
+          <md-item-content>
+            <div class="md-tile-left">
+                <img ng-src="{{message.face}}" class="face" alt="{{message.who}}">
+            </div>
+            <div class="md-tile-content">
+              <h3>{{message.what}}</h3>
+              <h4>{{message.who}}</h4>
+              <p>
+                {{message.notes}}
+              </p>
+            </div>
+          </md-item-content>
+        </md-item>
+      </md-list>
+    </section>
+    <section>
+      <md-subheader class="md-warn">Late Messages</md-subheader>
+      <md-list layout="column">
+        <md-item ng-repeat="message in messages">
+          <md-item-content>
+            <div class="md-tile-left">
+                <img ng-src="{{message.face}}" class="face" alt="{{message.who}}">
+            </div>
+            <div class="md-tile-content">
+              <h3>{{message.what}}</h3>
+              <h4>{{message.who}}</h4>
+              <p>
+                {{message.notes}}
+              </p>
+            </div>
+          </md-item-content>
+        </md-item>
+      </md-list>
+    </section>
+    <section>
+      <md-subheader>Read Messages</md-subheader>
+      <md-list layout="column">
+        <md-item ng-repeat="message in messages">
+          <md-item-content>
+            <div class="md-tile-left">
+                <img ng-src="{{message.face}}" class="face" alt="{{message.who}}">
+            </div>
+            <div class="md-tile-content">
+              <h3>{{message.what}}</h3>
+              <h4>{{message.who}}</h4>
+              <p>
+                {{message.notes}}
+              </p>
+            </div>
+          </md-item-content>
+        </md-item>
+      </md-list>
+    </section>
+    <section>
+      <md-subheader class="md-accent">Archived messages</md-subheader>
+      <md-list layout="column">
+        <md-item ng-repeat="message in messages">
+          <md-item-content>
+            <div class="md-tile-left">
+                <img ng-src="{{message.face}}" class="face" alt="{{message.who}}">
+            </div>
+            <div class="md-tile-content">
+              <h3>{{message.what}}</h3>
+              <h4>{{message.who}}</h4>
+              <p>
+                {{message.notes}}
+              </p>
+            </div>
+          </md-item-content>
+        </md-item>
+      </md-list>
+    </section>
+  </md-content>
+
+           </div>
+         </div>
         </div>
         <div role="tabpanel" id="tab2-content" aria-labelledby="tab2" ng-switch-when="1" md-swipe-left="next()" md-swipe-right="previous()">
               <div class="container">

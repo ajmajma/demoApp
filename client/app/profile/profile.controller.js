@@ -35,7 +35,86 @@ angular.module('demoAppApp')
     };
 
     $scope.user = {'title' : 'Dr', 'email' : 'user@user.com', 'company' : 'Volute', 'firstName' : 'Joe', 'lastName' : 'Nameson', 'address' : '640 George Washington Hwy', 'city' : 'Lincoln', 'state' : 'RI', 'postalCode' : '02906', 'country' : 'USA' }; 
-   
+    
+     $scope.messages = [
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: 'Set meeting for Wednesday?',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: " Let's go over the numbers before Friday"
+      },
+    ];
 
 
   });

@@ -295,7 +295,7 @@
 					      		<h4>Selected Items</h4>
 					      		<ul>
 					      			<li ng-repeat="item in itemsForBuild" class="velocity-opposites-transition-slideUpIn">{{item.name}} <i class="md-delete" ng-click="removeBuildItem($index)"></i></li>
-
+					      			<li ng-if="itemsForBuild.length == 0" class="velocity-opposites-transition-slideUpIn">None Selected</li>
 					      		</ul>
 					      		    <md-button ng-if="itemsForBuild.length"  class="md-raised">Build</md-button>
 					      	</div>
@@ -305,6 +305,8 @@
 
 
 				</div><!-- end Private -->
+			</div>
+			</div>
 
 				<!-- My market -->
 				<div id="myMarket" role="tabpanel" id="tab3-content" aria-labelledby="tab3" ng-switch-when="2" md-swipe-left="next()" md-swipe-right="previous()" class="velocity-opposites-transition-expandIn">
