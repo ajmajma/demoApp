@@ -82,7 +82,7 @@
 
 									<div class="row" ng-repeat="item in marketItemsTest2 ">
 										<div class="col-xs-12" ng-if="aloneNow($index)" >
-											<div class="market_categories"><p ng-click="backToParent($index)"><i class="md-arrow-back" ng-if="levelTracker != 0"></i>{{item.name}}<md-tooltip ng-if="levelTracker != 0">Return to Categories</md-tooltip></p><p ng-if="levelTracker == 3" class="sub_sub"> {{item.subs[whichSub].name}}</p><span ng-click="viewAllSub1($index)">View All<md-tooltip>View all {{item.name}}</md-tooltip></span> <div class="clear"></div></div>
+											<div class="market_categories"><p ng-click="backToParent($index)"><i class="mdi-arrow-back" ng-if="levelTracker != 0"></i>{{item.name}}<md-tooltip ng-if="levelTracker != 0">Return to Categories</md-tooltip></p><p ng-if="levelTracker == 3" class="sub_sub"> {{item.subs[whichSub].name}}</p><span ng-click="viewAllSub1($index)">View All<md-tooltip>View all {{item.name}}</md-tooltip></span> <div class="clear"></div></div>
 											<div class="row market_category_row">
 
 												<!--Highest level 0 -->
@@ -95,9 +95,9 @@
 																<figcaption>
 																	<h2>{{subs.name}} <br/><span>Bundle</span></h2>
 																	<p>
-																		<a href="#" ng-click="fullInfoBundle(subs)"><i class="md-info-outline"><md-tooltip>Full Info</md-tooltip></i></a>
-																		<a href="#" ng-click="openBundle($index, $parent.$parent.$index)"><i class="md-launch"><md-tooltip>Open</md-tooltip></i></a>
-																		<a href="#"><i class="md-grade"><md-tooltip>Save This</md-tooltip></i></a>
+																		<a href="#" ng-click="fullInfoBundle(subs)"><i class="mdi-info-outline"><md-tooltip>Full Info</md-tooltip></i></a>
+																		<a href="#" ng-click="openBundle($index, $parent.$parent.$index)"><i class="mdi-launch"><md-tooltip>Open</md-tooltip></i></a>
+																		<a href="#"><i class="mdi-grade"><md-tooltip>Save This</md-tooltip></i></a>
 																		<a href="#"><i class="fa fa-tags"><md-tooltip>Tag1, Tag2, Tag3, Tag4</md-tooltip></i></a>
 																	</p>
 																</figcaption>			
@@ -146,7 +146,7 @@
 																	<p>
 																		<a href="#"><i class="fa fa-info-circle"></i></a>
 																		<a href="#"><i class="fa fa-cloud-upload"></i></a>
-																		<a href="#"><i class="md-get-app"></i></a>
+																		<a href="#"><i class="mdi-get-app"></i></a>
 																		<a href="#"><i class="fa fa-tags"></i></a>
 																	</p>
 																</figcaption>			
@@ -238,7 +238,7 @@
 
 					<!--Search/Filter Bar -->
 					<div class="row">
-						<div class="col-sm-12 col-md-9">
+						<div class="col-sm-12 makeSmoothAnimate" ng-class="{'col-md-9' : itemsForBuild.length }">
 							<div class="row filterBar">
 								<div class="filterBy">
 									Filter By
@@ -287,7 +287,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-xs-12 col-md-3">
+						<div class="col-xs-12 col-md-3 velocity-opposites-transition-slideUpIn" ng-if="itemsForBuild.length">
 				<div class="row marketSidePanel">
 	
 					<div class="col-xs-12 bundleList">
@@ -297,7 +297,7 @@
 					      	<div class="col-xs-12 select_myApps">
 					      		<h4>Selected Items</h4>
 					      		<ul>
-					      			<li ng-repeat="item in itemsForBuild" class="velocity-opposites-transition-slideUpIn">{{item.name}} <i class="md-delete" ng-click="removeBuildItem($index)"></i></li>
+					      			<li ng-repeat="item in itemsForBuild" class="velocity-opposites-transition-slideUpIn">{{item.name}} <i class="mdi-delete" ng-click="removeBuildItem($index)"></i></li>
 					      			<li ng-if="itemsForBuild.length == 0" class="velocity-opposites-transition-slideUpIn">None Selected</li>
 					      		</ul>
 					      		    <md-button ng-if="itemsForBuild.length"  class="md-raised">Build</md-button>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('demoAppApp')
-  .controller('ThemeMeCtrl', function ($scope, themeFactory, $rootScope, $location, Auth, socket, $http, $modal, $log) {
+  .controller('ThemeMeCtrl', function ($scope, themeFactory, $rootScope, $location, Auth, socket, $http, $modal, $log, $filter) {
   	//Controller for handling anything global - currently handling :
   	//theme
   	//notifications
@@ -446,6 +446,88 @@ $scope.openGlobalMenu = function(){
 
     };
 
+      $scope.data = {};
+      $scope.data.cb1 = false;
+      $scope.data.cb2 = false;
+      $scope.data.cb3 = false;
+
+
+    //add event to calender
+    $scope.addShift  = function(item){
+
+
+    var yearIs = parseInt($filter('date')(item, 'yyyy'));
+    var monthIs = parseInt($filter('date')(item, 'M')) - 1;
+    var dayIs = parseInt($filter('date')(item, 'd'));
+
+    if($scope.data.cb1 == true){
+
+      var shiftItem =  {};
+      shiftItem = {
+        title: 'Shift 1',
+        type: 'warning',
+        starts_at: new Date(yearIs,monthIs,dayIs,8,30),
+        ends_at: new Date(yearIs,monthIs,dayIs,9,30)
+      };
+
+      $scope.events.push(shiftItem);
+    }
+    if($scope.data.cb2 == true){
+      
+      var shiftItem2 =  {};
+      shiftItem2 = {
+        title: 'Shift 2',
+        type: 'info',
+        starts_at: new Date(yearIs,monthIs,dayIs,9,30),
+        ends_at: new Date(yearIs,monthIs,dayIs,10,30)
+      };
+
+      $scope.events.push(shiftItem2);
+    }
+
+     if($scope.data.cb3 == true){
+      
+      var shiftItem3 = {};
+      shiftItem3 = {
+        title: 'Shift 3',
+        type: 'important',
+        starts_at: new Date(yearIs,monthIs,dayIs,9,30),
+        ends_at: new Date(yearIs,monthIs,dayIs,10,30)
+      };
+
+      $scope.events.push(shiftItem3);
+    }
+
+    
+
+    };
+    var currentYear = moment().year();
+    var currentMonth = moment().month();
+
+    $scope.events = [
+      {
+        title: 'Shift 1',
+        type: 'warning',
+        starts_at: new Date(currentYear,currentMonth,25,8,30),
+        ends_at: new Date(currentYear,currentMonth,25,9,30)
+      },
+      {
+        title: 'Shift 2',
+        type: 'info',
+        starts_at: new Date(currentYear,currentMonth,19,7,30),
+        ends_at: new Date(currentYear,currentMonth,25,9,30)
+      },
+      {
+        title: 'Shift 3',
+        type: 'important',
+        starts_at: new Date(currentYear,currentMonth,25,6,30),
+        ends_at: new Date(currentYear,currentMonth,25,6,60)
+      }
+    ];
+
+    $scope.calendarView = 'month';
+    $scope.calendarDay = new Date();
+
    //content for main page
         $scope.contentHereCurrent = [
     {
@@ -807,7 +889,7 @@ $scope.openGlobalMenu = function(){
       'sides' : [
         {
           'title' : 'Schedule Shift',
-          'content' : '<div class="inputDate"><div class="tableHolder"><datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker></div><div class="dateSelected" ng-if="dt">Date Selected : <b>{{dt | date:"fullDate" }}</b></div><div class="clear"></div><md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" ng-if="dt">Shift 1</md-checkbox><md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-if="dt">Shift 2</md-checkbox><md-checkbox ng-model="data.cb3" aria-label="Checkbox 3" ng-if="dt">Shift 3</md-checkbox><div class="clear"></div><div class="dateComment" ng-if="dt"><textarea placeholder="Additional Comments..."></textarea><div class="clear"></div><md-button class="md-raised" ng-if="dt">Submit</md-button></div><p ng-if="!dt">Please select a date to begin</p></div> ',
+          'content' : '<div class="inputDate"><div class="tableHolder"><datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker></div><div class="dateSelected" ng-if="dt">Date Selected : <b>{{dt | date:"fullDate" }}</b></div><div class="clear"></div><md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" ng-show="dt">Shift 1</md-checkbox><md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-show="dt">Shift 2</md-checkbox><md-checkbox ng-model="data.cb3" aria-label="Checkbox 3" ng-show="dt" >Shift 3</md-checkbox><div class="clear"></div><div class="dateComment" ng-show="dt"><textarea placeholder="Additional Comments..."></textarea><div class="clear"></div><md-button class="md-raised" ng-if="dt" ng-click="addShift(dt)">Submit</md-button></div><p ng-if="!dt">Please select a date to begin</p></div> ',
           'sideIs' : 'front',
           'active' : true
         },
