@@ -878,8 +878,81 @@ $scope.openGlobalMenu = function(){
           'sideIs' : 'help',
           'active' : false
         }]
+      },
+      {
+      'size' : 'w2',
+      'name' : 'Shift Points',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Shift Points',
+          'content' : '<div class="shift_point_system"><div class="shift_point_top"><h5>19</h5></div><div class="shift_point_mid"><md-list layout="column"><md-item ng-repeat="message in compareWho"><md-item-content><div class="md-tile-left"><img ng-src="{{message.face}}" class="face" alt="{{message.who}}" style="border-radius: 50%;"></div><div class="md-tile-content"><h3>{{message.what}}</h3><h4>{{message.who}}</h4>{{message.notes}}</div></md-item-content> </md-item> </md-list>You are 14th out of 22.</div></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Points can be used for -</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
       }
       ];
+
+    $scope.compareWho = [
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: '22 Points',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: "12th"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: '20 Points',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: "13th"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: '19 Points',
+        who: 'You',
+        when: '3:08PM',
+        notes: "14th"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: '16 Points',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: "15th"
+      }];
 
 
   });
