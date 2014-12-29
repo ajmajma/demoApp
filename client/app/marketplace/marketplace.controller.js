@@ -2107,8 +2107,6 @@ angular.module('demoAppApp')
 		}
 	];
 
-  
-
 
 
   });
