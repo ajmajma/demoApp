@@ -439,6 +439,13 @@ $scope.openGlobalMenu = function(){
     });
   };
 
+   $scope.nativeWidg = function(index){
+      
+      $scope.prepForSend = $scope.contentHereCurrent[index];
+      themeFactory.setModal($scope.prepForSend);
+
+    };
+
    //content for main page
         $scope.contentHereCurrent = [
     {

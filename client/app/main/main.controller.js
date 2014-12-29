@@ -41,12 +41,7 @@ angular.module('demoAppApp')
 
     };
 
-    $scope.nativeWidg = function(index){
-      
-      $scope.prepForSend = $scope.contentHereCurrent[index];
-      themeFactory.setModal($scope.prepForSend);
-
-    };
+   
 
     $scope.activateOffline = function(index, name) {
       var widgForSendOff = {};
