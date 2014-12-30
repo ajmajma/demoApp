@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('demoAppApp')
-  .controller('ThemeMeCtrl', function ($scope, themeFactory, $rootScope, $location, Auth, socket, $http, $modal, $log) {
+  .controller('ThemeMeCtrl', function ($scope, themeFactory, $rootScope, $location, Auth, socket, $http, $modal, $log, $filter) {
   	//Controller for handling anything global - currently handling :
   	//theme
   	//notifications
@@ -439,6 +439,95 @@ $scope.openGlobalMenu = function(){
     });
   };
 
+   $scope.nativeWidg = function(index){
+      
+      $scope.prepForSend = $scope.contentHereCurrent[index];
+      themeFactory.setModal($scope.prepForSend);
+
+    };
+
+      $scope.data = {};
+      $scope.data.cb1 = false;
+      $scope.data.cb2 = false;
+      $scope.data.cb3 = false;
+
+
+    //add event to calender
+    $scope.addShift  = function(item){
+
+
+    var yearIs = parseInt($filter('date')(item, 'yyyy'));
+    var monthIs = parseInt($filter('date')(item, 'M')) - 1;
+    var dayIs = parseInt($filter('date')(item, 'd'));
+
+    if($scope.data.cb1 == true){
+
+      var shiftItem =  {};
+      shiftItem = {
+        title: 'Shift 1',
+        type: 'warning',
+        starts_at: new Date(yearIs,monthIs,dayIs,8,30),
+        ends_at: new Date(yearIs,monthIs,dayIs,9,30)
+      };
+
+      $scope.events.push(shiftItem);
+    }
+    if($scope.data.cb2 == true){
+      
+      var shiftItem2 =  {};
+      shiftItem2 = {
+        title: 'Shift 2',
+        type: 'info',
+        starts_at: new Date(yearIs,monthIs,dayIs,9,30),
+        ends_at: new Date(yearIs,monthIs,dayIs,10,30)
+      };
+
+      $scope.events.push(shiftItem2);
+    }
+
+     if($scope.data.cb3 == true){
+      
+      var shiftItem3 = {};
+      shiftItem3 = {
+        title: 'Shift 3',
+        type: 'important',
+        starts_at: new Date(yearIs,monthIs,dayIs,9,30),
+        ends_at: new Date(yearIs,monthIs,dayIs,10,30)
+      };
+
+      $scope.events.push(shiftItem3);
+    }
+
+    
+
+    };
+    var currentYear = moment().year();
+    var currentMonth = moment().month();
+
+    $scope.events = [
+      {
+        title: 'Shift 1',
+        type: 'warning',
+        starts_at: new Date(currentYear,currentMonth,25,8,30),
+        ends_at: new Date(currentYear,currentMonth,25,9,30)
+      },
+      {
+        title: 'Shift 2',
+        type: 'info',
+        starts_at: new Date(currentYear,currentMonth,19,7,30),
+        ends_at: new Date(currentYear,currentMonth,25,9,30)
+      },
+      {
+        title: 'Shift 3',
+        type: 'important',
+        starts_at: new Date(currentYear,currentMonth,25,6,30),
+        ends_at: new Date(currentYear,currentMonth,25,6,60)
+      }
+    ];
+
+    $scope.calendarView = 'month';
+    $scope.calendarDay = new Date();
+
    //content for main page
         $scope.contentHereCurrent = [
     {
@@ -800,7 +889,7 @@ $scope.openGlobalMenu = function(){
       'sides' : [
         {
           'title' : 'Schedule Shift',
-          'content' : '<div class="inputDate"><div class="tableHolder"><datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker></div><div class="dateSelected" ng-if="dt">Date Selected : <b>{{dt | date:"fullDate" }}</b></div><div class="clear"></div><md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" ng-if="dt">Shift 1</md-checkbox><md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-if="dt">Shift 2</md-checkbox><md-checkbox ng-model="data.cb3" aria-label="Checkbox 3" ng-if="dt">Shift 3</md-checkbox><div class="clear"></div><div class="dateComment" ng-if="dt"><textarea placeholder="Additional Comments..."></textarea><div class="clear"></div><md-button class="md-raised" ng-if="dt">Submit</md-button></div><p ng-if="!dt">Please select a date to begin</p></div> ',
+          'content' : '<div class="inputDate"><div class="tableHolder"><datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker></div><div class="dateSelected" ng-if="dt">Date Selected : <b>{{dt | date:"fullDate" }}</b></div><div class="clear"></div><md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" ng-show="dt">Shift 1</md-checkbox><md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-show="dt">Shift 2</md-checkbox><md-checkbox ng-model="data.cb3" aria-label="Checkbox 3" ng-show="dt" >Shift 3</md-checkbox><div class="clear"></div><div class="dateComment" ng-show="dt"><textarea placeholder="Additional Comments..."></textarea><div class="clear"></div><md-button class="md-raised" ng-if="dt" ng-click="addShift(dt)">Submit</md-button></div><p ng-if="!dt">Please select a date to begin</p></div> ',
           'sideIs' : 'front',
           'active' : true
         },
@@ -871,8 +960,147 @@ $scope.openGlobalMenu = function(){
           'sideIs' : 'help',
           'active' : false
         }]
+      },
+      {
+      'size' : 'w2',
+      'name' : 'Shift Points',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Shift Points',
+          'content' : '<div class="shift_point_system"><div class="shift_point_top"><h5>19</h5></div><div class="shift_point_mid"><md-list layout="column"><md-item ng-repeat="message in compareWho"><md-item-content><div class="md-tile-left"><img ng-src="{{message.face}}" class="face" alt="{{message.who}}" style="border-radius: 50%;"></div><div class="md-tile-content"><h3>{{message.what}}</h3><h4>{{message.who}}</h4>{{message.notes}}</div></md-item-content> </md-item> </md-list>You are 14th out of 22.</div></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Points can be used for -</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+       
+      {
+      'size' : 'w3',
+      'name' : 'Statistics',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'flipAction' : '',
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'sides' : [
+        {
+          'title' : 'Statistics',
+          'content' : '<nvd3-multi-bar-horizontal-chart data="examplePie" id="showControlsExample" responsive="true"  height="250" xAxisTickFormat="xAxisTickFormatFunction()" yAxisTickFormat="yAxisTickFormatFunction()" color="colorFunction()"showControls="true"showLegend="true"><svg></svg></nvd3-multi-bar-horizontal-chart>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '<p>Alternative graph 1</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Alternative graph 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Alternartive graph 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Documentation for graphs</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
       }
       ];
+
+    $scope.compareWho = [
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: '22 Points',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: "12th"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: '20 Points',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: "13th"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: '19 Points',
+        who: 'You',
+        when: '3:08PM',
+        notes: "14th"
+      },
+      {
+        face : '/assets/images/headSmall.jpg',
+        what: '16 Points',
+        who: 'Susan Thompson',
+        when: '3:08PM',
+        notes: "15th"
+      }];
+
+      var colorArray = [ '#ea6060','#28282e', '#777777'];
+$scope.colorFunction = function() {
+  return function(d, i) {
+    return colorArray[i];
+  };
+}
+
+$scope.examplePie = [
+                {
+                     "key": "Series 1",
+                    "values": [ [ 1025409600000 , 0] , [ 1028088000000 , -6.3382185140371] , [ 1030766400000 , -5.9507873460847] , [ 1033358400000 , -11.569146943813] , [ 1036040400000 , -5.4767332317425] , [ 1038632400000 , 0.50794682203014] , [ 1041310800000 , -5.5310285460542] , [ 1043989200000 , -5.7838296963382] , [ 1046408400000 , -7.3249341615649] , [ 1049086800000 , -6.7078630712489] , [ 1051675200000 , 0.44227126150934] , [ 1054353600000 , 7.2481659343222] , [ 1056945600000 , 9.2512381306992] ]
+                 },
+                 {
+                     "key": "Series 3",
+                    "values": [ [ 1025409600000 , 0] , [ 1028088000000 , -6.3382185140371] , [ 1030766400000 , -5.9507873460847] , [ 1033358400000 , -11.569146943813] , [ 1036040400000 , -5.4767332317425] , [ 1038632400000 , 0.50794682203014] , [ 1041310800000 , -5.5310285460542] , [ 1043989200000 , -5.7838296963382] , [ 1046408400000 , -7.3249341615649] , [ 1049086800000 , -6.7078630712489] , [ 1051675200000 , 0.44227126150934] , [ 1054353600000 , 7.2481659343222] , [ 1056945600000 , 9.2512381306992] ]
+                },
+                {
+                    "key": "Series 4",
+                    "values": [ [ 1025409600000 , -7.0674410638835] , [ 1028088000000 , -14.663359292964] , [ 1030766400000 , -14.104393060540] , [ 1033358400000 , -23.114477037218] , [ 1036040400000 , -16.774256687841] , [ 1038632400000 , -11.902028464000] , [ 1041310800000 , -16.883038668422] , [ 1043989200000 , -19.104223676831] , [ 1046408400000 , -20.420523282736] , [ 1049086800000 , -19.660555051587] , [ 1051675200000 , -13.106911231646] , [ 1054353600000 , -8.2448460302143] , [ 1056945600000 , -7.0313058730976] ]
+                }
+             ];
 
 
   });

@@ -41,12 +41,7 @@ angular.module('demoAppApp')
 
     };
 
-    $scope.nativeWidg = function(index){
-      
-      $scope.prepForSend = $scope.contentHereCurrent[index];
-      themeFactory.setModal($scope.prepForSend);
-
-    };
+   
 
     $scope.activateOffline = function(index, name) {
       var widgForSendOff = {};
@@ -172,32 +167,7 @@ angular.module('demoAppApp')
         }
       };
 
-      var currentYear = moment().year();
-    var currentMonth = moment().month();
-
-    $scope.events = [
-      {
-        title: 'Shift 1',
-        type: 'warning',
-        starts_at: new Date(currentYear,currentMonth,25,8,30),
-        ends_at: new Date(currentYear,currentMonth,25,9,30)
-      },
-      {
-        title: 'Shift 2',
-        type: 'info',
-        starts_at: new Date(currentYear,currentMonth,19,7,30),
-        ends_at: new Date(currentYear,currentMonth,25,9,30)
-      },
-      {
-        title: 'Shift 3',
-        type: 'important',
-        starts_at: new Date(currentYear,currentMonth,25,6,30),
-        ends_at: new Date(currentYear,currentMonth,25,6,60)
-      },
-    ];
-
-    $scope.calendarView = 'month';
-    $scope.calendarDay = new Date();
+      
 
 
 

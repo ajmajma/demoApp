@@ -42,7 +42,7 @@
      <script type="text/ng-template" id="globalMenu.html">
       <div class="modal-header">
           <h3>Menu</h3>
-          <i class="md-close closeModals" ng-click="cancel()"></i>
+          <i class="mdi-close closeModals" ng-click="cancel()"></i>
         </div>
           <div class="modal-body">
       <div class="globalMenu" data-velocity-opts="{ duration: 1000 }">
@@ -234,16 +234,16 @@ Duo at aliquid mnesarchum, nec ne impetus hendrerit. Ius id aeterno debitis atom
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/dashboard')}" class="menu-effect"> <md-button ng-href="/dashboard" aria-label="Dash">Dashboard</md-button></li>
         <!-- <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" class="menu-effect"><a href="/admin">Manage Users</a></li> -->
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/marketplace')}" class="menu-effect"><md-button ng-href="/marketplace" aria-label="Dash">Marketplace</md-button></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><md-button ng-href="/offline" aria-label="Dash"><i class="md-signal-wifi-4-bar"></i></md-button><md-tooltip>{{trackSpace}} %</md-tooltip></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><md-button ng-href="/activity" aria-label="Dash"><i class="md-question-answer" ng-class="{ 'hasActivity' : shareAmount }"></i></md-button><md-tooltip>{{shareAmount}}</md-tooltip></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><md-button ng-href="/offline" aria-label="Dash"><i class="mdi-signal-wifi-4-bar"></i></md-button><md-tooltip>{{trackSpace}} %</md-tooltip></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><md-button ng-href="/activity" aria-label="Dash"><i class="mdi-question-answer" ng-class="{ 'hasActivity' : shareAmount }"></i></md-button><md-tooltip>{{shareAmount}}</md-tooltip></li>
         
 
        <!--  <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" class="menu-effect"><a href="/signup">Sign up</a></li>
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="menu-effect"><a href="/login">Login</a></li> -->
         <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li> -->
-        <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openFavorites()" ng-href="" aria-label="Dash"><i class="md-favorite"></i></md-button></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><md-button ng-href="/profile" aria-label="Dash"><i class="md-person"></i></md-button></li>
-         <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openGlobalMenu()" ng-href="" aria-label="Dash"><i class="md-menu"></i></md-button></li>
+        <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openFavorites()" ng-href="" aria-label="Dash"><i class="mdi-favorite"></i></md-button></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}" class="menu-effect"><md-button ng-href="/profile" aria-label="Dash"><i class="mdi-person"></i></md-button></li>
+         <li ng-show="isLoggedIn()" class="menu-effect"><md-button ng-click="openGlobalMenu()" ng-href="" aria-label="Dash"><i class="mdi-menu"></i></md-button></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="menu-effect"><md-button ng-click="logout()" ng-href="" aria-label="Dash"><i class="fa fa-sign-out"></i></md-button></li>
       </ul>
     </div>
