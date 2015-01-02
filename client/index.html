@@ -72,7 +72,7 @@
         </div>
           <div class="sharePers">
           <figure class="effect-phoebe velocity-opposites-transition-flipYIn" data-velocity-opts="{ stagger: 20, duration: 500 }" ng-repeat="item in users | filter:searchConnections" ng-click="shareWith =! shareWith" ng-class="{ 'effect-phoebeActive' : shareWith }">
-            <img src="assets/images/128.jpg" alt="img26"/>
+            <img ng-src="assets/images/{{$index}}.jpg" alt="img26"/>
               <figcaption>
               <h2>{{item.name}} <br/><span>Sales</span></h2>
               <p>

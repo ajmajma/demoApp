@@ -29,7 +29,7 @@
           </div>
 
            <a href="#" class="hamburg cornerClean" ng-click="openActions =! openActions" ng-class="{'clickedCorner' : openActions}" ng-show="side.sideIs == 'front'"><span></span></a>
-           <div recompiler="side.content">{{side.content}}</div>
+           <div recompiler="side.content" ng-class="{'video_sizer' : side.title == 'Training Video'}">{{side.content}}</div>
           <div class="frontFooter">
             <ul class="footerActions" >
               <!-- help actions -->

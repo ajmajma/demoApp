@@ -530,93 +530,7 @@ $scope.openGlobalMenu = function(){
 
    //content for main page
         $scope.contentHereCurrent = [
-    {
-      'size' : '0',
-      'name' : 'Utility Alerts',
-      'space' : 10,
-      'published': true,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-      {
-      'size' : 'darkMe',
-      'name' : 'Utility Alerts',
-      'space' : 10,
-      'published': true,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'flipAction' : '',
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
+  
        {
       'size' : 'w3',
       'name' : 'Statistics',
@@ -661,8 +575,8 @@ $scope.openGlobalMenu = function(){
         }]
       },
       {
-      'size' : '0',
-      'name' : 'Utility Alerts',
+      'size' : '',
+      'name' : 'Graph Two',
       'space' : 10,
       'published': true,
       'launch' :  true,
@@ -673,14 +587,14 @@ $scope.openGlobalMenu = function(){
       'flipAction' : '',
       'sides' : [
         {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+          'title' : 'Graph Two',
+          'content' : '<div class="graph_two" ></div>',
           'sideIs' : 'front',
           'active' : true
         },
         {
           'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
+          'content' : '',
           'sideIs' : 'side',
           'active' : false
         },
@@ -698,32 +612,76 @@ $scope.openGlobalMenu = function(){
         },
         {
           'title' : 'Help',
-          'content' : '<p>Help</p>',
+          'content' : '<p>Points can be used for -</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+      
+      {
+      'size' : '',
+      'name' : 'Graph',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Graph',
+          'content' : '<div class="graph_one" ></div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Points can be used for -</p>',
           'sideIs' : 'help',
           'active' : false
         }]
       },
       {
       'size' : 'w5',
-      'name' : 'Training Video',
+      'name' : 'Graph Three',
       'space' : 10,
       'published': true,
       'launch' :  true,
       'share' : true,
       'mobile' :  true,
       'native' :  true,
-      'flipAction' : '',
       'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
       'sides' : [
         {
-          'title' : 'Utility Alerts',
-          'content' : '<videogular vg-theme="config.theme"><vg-video vg-src="config.sources" vg-tracks="config.tracks"></vg-video><vg-controls><vg-play-pause-button></vg-play-pause-button><vg-timedisplay>{{ currentTime | date:"mm:ss" }}</vg-timedisplay><vg-scrubBar><vg-scrubbarcurrenttime></vg-scrubbarcurrenttime></vg-scrubBar><vg-timedisplay>{{ timeLeft | date:"mm:ss" }}</vg-timedisplay><vg-volume><vg-mutebutton></vg-mutebutton><vg-volumebar></vg-volumebar></vg-volume><vg-fullscreenButton></vg-fullscreenButton></vg-controls><vg-overlay-play></vg-overlay-play><vg-poster-image vg-url="controller.config.plugins.poster"></vg-poster-image></videogular>',
+          'title' : 'Graph',
+          'content' : '<div class="graph_three" ></div>',
           'sideIs' : 'front',
           'active' : true
         },
         {
           'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
+          'content' : '',
           'sideIs' : 'side',
           'active' : false
         },
@@ -741,50 +699,7 @@ $scope.openGlobalMenu = function(){
         },
         {
           'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-      {
-      'size' : '0',
-      'name' : 'Utility Alerts',
-      'space' : 10,
-      'published': true,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
+          'content' : '<p>Points can be used for -</p>',
           'sideIs' : 'help',
           'active' : false
         }]
@@ -833,8 +748,8 @@ $scope.openGlobalMenu = function(){
         }]
       },
       {
-      'size' : '0',
-      'name' : 'Utility Alerts',
+      'size' : 'w5',
+      'name' : 'Graph Three',
       'space' : 10,
       'published': true,
       'launch' :  true,
@@ -845,14 +760,14 @@ $scope.openGlobalMenu = function(){
       'flipAction' : '',
       'sides' : [
         {
-          'title' : 'Utility Alerts',
-          'content' : '<div class="utilityAlert"><p>Nunc tincidunt ornare orci, nec suscipit nisl viverra a. Praesent felis dolor, congue sed tempus a, tincidunt eu ligula. In vestibulum venenatis lacus non sodales. Praesent convallis erat eget nisl tristique pellentesque non a urna. Sed mattis ligula purus, ut accumsan arcu placerat ac. Sed sollicitudin arcu at purus ultricies ornare. Nullam efficitur sed sapien vitae tempor. Donec volutpat nunc vel neque volutpat, in iaculis nibh ullamcorper.</p></div>',
+          'title' : 'Graph',
+          'content' : '<div class="graph_four" ></div>',
           'sideIs' : 'front',
           'active' : true
         },
         {
           'title' : 'Side 1',
-          'content' : '<p>Side 1</p>',
+          'content' : '',
           'sideIs' : 'side',
           'active' : false
         },
@@ -870,11 +785,12 @@ $scope.openGlobalMenu = function(){
         },
         {
           'title' : 'Help',
-          'content' : '<p>Help</p>',
+          'content' : '<p>Points can be used for -</p>',
           'sideIs' : 'help',
           'active' : false
         }]
       },
+      
       {
       'size' : 'w5',
       'name' : 'Input',
@@ -962,26 +878,26 @@ $scope.openGlobalMenu = function(){
         }]
       },
       {
-      'size' : '',
-      'name' : 'Shift Points',
+      'size' : 'w5',
+      'name' : 'Training Video',
       'space' : 10,
       'published': true,
       'launch' :  true,
       'share' : true,
       'mobile' :  true,
       'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
       'flipAction' : '',
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
       'sides' : [
         {
-          'title' : 'Shift Points',
-          'content' : '<div class="shift_point_system"><div class="shift_point_top"><h5>19</h5></div><div class="shift_point_mid">You have 19 points which makes you 14th out of 22.</div>',
+          'title' : 'Training Video',
+          'content' : '<videogular vg-theme="config.theme"><vg-video vg-src="config.sources" vg-tracks="config.tracks"></vg-video><vg-controls><vg-play-pause-button></vg-play-pause-button><vg-timedisplay>{{ currentTime | date:"mm:ss" }}</vg-timedisplay><vg-scrubBar><vg-scrubbarcurrenttime></vg-scrubbarcurrenttime></vg-scrubBar><vg-timedisplay>{{ timeLeft | date:"mm:ss" }}</vg-timedisplay><vg-volume><vg-mutebutton></vg-mutebutton><vg-volumebar></vg-volumebar></vg-volume><vg-fullscreenButton></vg-fullscreenButton></vg-controls><vg-overlay-play></vg-overlay-play><vg-poster-image vg-url="controller.config.plugins.poster"></vg-poster-image></videogular>',
           'sideIs' : 'front',
           'active' : true
         },
         {
           'title' : 'Side 1',
-          'content' : '',
+          'content' : '<p>Side 1</p>',
           'sideIs' : 'side',
           'active' : false
         },
@@ -999,11 +915,12 @@ $scope.openGlobalMenu = function(){
         },
         {
           'title' : 'Help',
-          'content' : '<p>Points can be used for -</p>',
+          'content' : '<p>Help</p>',
           'sideIs' : 'help',
           'active' : false
         }]
-      }, 
+      },
+     
       {
       'size' : 'w3',
       'name' : 'Statistics',
@@ -1043,6 +960,49 @@ $scope.openGlobalMenu = function(){
         {
           'title' : 'Help',
           'content' : '<p>Documentation for graphs</p>',
+          'sideIs' : 'help',
+          'active' : false
+        }]
+      },
+       {
+      'size' : '',
+      'name' : 'Shift Points',
+      'space' : 10,
+      'published': true,
+      'launch' :  true,
+      'share' : true,
+      'mobile' :  true,
+      'native' :  true,
+      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'flipAction' : '',
+      'sides' : [
+        {
+          'title' : 'Shift Points',
+          'content' : '<div class="shift_point_system"><div class="shift_point_top"><h5>19</h5></div><div class="shift_point_mid">You have 19 points which makes you 14th out of 22.</div>',
+          'sideIs' : 'front',
+          'active' : true
+        },
+        {
+          'title' : 'Side 1',
+          'content' : '',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 2',
+          'content' : '<p>Side 2</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Side 3',
+          'content' : '<p>Side 3</p>',
+          'sideIs' : 'side',
+          'active' : false
+        },
+        {
+          'title' : 'Help',
+          'content' : '<p>Points can be used for -</p>',
           'sideIs' : 'help',
           'active' : false
         }]

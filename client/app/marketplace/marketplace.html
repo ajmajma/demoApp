@@ -24,7 +24,7 @@
 			</md-tab>
 
 			<md-tab id="tab3" aria-controls="tab3-content">
-			My Bundles
+			My Dashboards
 			</md-tab>
 		</md-tabs>
 		</div>
@@ -82,7 +82,7 @@
 
 									<div class="row" ng-repeat="item in marketItemsTest2 ">
 										<div class="col-xs-12" ng-if="aloneNow($index)" >
-											<div class="market_categories"><p ng-click="backToParent($index)"><i class="mdi-arrow-back" ng-if="levelTracker != 0"></i>{{item.name}}<md-tooltip ng-if="levelTracker != 0">Return to Categories</md-tooltip></p><p ng-if="levelTracker == 3" class="sub_sub"> {{item.subs[whichSub].name}}</p><span ng-click="viewAllSub1($index)">View All<md-tooltip>View all {{item.name}}</md-tooltip></span> <div class="clear"></div></div>
+											<div class="market_categories"><p ng-click="backToParent($index)"><i class="mdi-arrow-back" ng-if="levelTracker != 0"></i>{{item.name}}<md-tooltip ng-if="levelTracker != 0">Return to Categories</md-tooltip></p><p ng-if="levelTracker == 3" class="sub_sub"> > {{item.subs[whichSub].name}}</p><span ng-click="viewAllSub1($index)">View All<md-tooltip>View all {{item.name}}</md-tooltip></span> <div class="clear"></div></div>
 											<div class="row market_category_row">
 
 												<!--Highest level 0 -->
@@ -314,7 +314,7 @@
 				<div id="myMarket" role="tabpanel" id="tab3-content" aria-labelledby="tab3" ng-switch-when="2" md-swipe-left="next()" md-swipe-right="previous()" class="velocity-opposites-transition-expandIn">
 					<div class="row">
 						<div class="col-sm-12">
-							<h3 class="typeOfMarket">Search My Bundles</h3>
+							<h3 class="typeOfMarket">Search My Dashboards</h3>
 						</div>
 					</div>
 

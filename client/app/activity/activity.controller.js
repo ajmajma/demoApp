@@ -135,4 +135,6 @@ angular.module('demoAppApp')
       $scope.contentHere[parent].sides[idx].active = true;
     };
 
+    
+
   });
