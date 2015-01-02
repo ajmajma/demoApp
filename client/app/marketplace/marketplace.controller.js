@@ -5,10 +5,10 @@ angular.module('demoAppApp')
     //page transition style
 	  	     $scope.pageClass = 'page-market';
 	  	     //bundle scope
-	  	     $scope.marketItems = [{name: 'education', url: 'education', img: 'education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'insurance', url: 'insurance', img: 'insurance'},{name: 'healthcare', url: 'bi', img: 'healthcare'},{name: 'manufacturing', url: 'manufacturing', img: 'inventory'},{name: 'retail', url: 'retail', img: 'retail'},{name: 'hospitality', url: 'hospitality', img: 'hospitality'},{name: 'finance', url: 'finance' , img: 'finance'},{name: 'banking', url: 'banking', img: 'banking'},{name: 'erp', url: 'erp', img: 'finance'}];
-	    	$scope.marketItemsTest = [{name: 'education', url: 'education', img: 'education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'insurance', url: 'insurance', img: 'insurance'},{name: 'healthcare', url: 'bi', img: 'healthcare'},{name: 'manufacturing', url: 'manufacturing', img: 'inventory'},{name: 'retail', url: 'retail', img: 'retail'},{name: 'hospitality', url: 'hospitality', img: 'hospitality'},{name: 'finance', url: 'finance' , img: 'finance'},{name: 'banking', url: 'banking', img: 'banking'},{name: 'ERP', url: 'erp', img: 'erp'},{name: 'CRM', url: 'crm', img: 'crm'},{name: 'BI', url: 'banking', img: 'bi'}];
+	  	     $scope.marketItems = [{name: 'Education', url: 'Education', img: 'Education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'Insurance', url: 'Insurance', img: 'Insurance'},{name: 'Healthcare', url: 'bi', img: 'Healthcare'},{name: 'Manufacturing', url: 'Manufacturing', img: 'inventory'},{name: 'Retail', url: 'Retail', img: 'Retail'},{name: 'Hospitality', url: 'Hospitality', img: 'Hospitality'},{name: 'Finance', url: 'Finance' , img: 'Finance'},{name: 'Banking', url: 'Banking', img: 'Banking'},{name: 'erp', url: 'erp', img: 'Finance'}];
+	    	$scope.marketItemsTest = [{name: 'Education', url: 'Education', img: 'Education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'Insurance', url: 'Insurance', img: 'Insurance'},{name: 'Healthcare', url: 'bi', img: 'Healthcare'},{name: 'Manufacturing', url: 'Manufacturing', img: 'inventory'},{name: 'Retail', url: 'Retail', img: 'Retail'},{name: 'Hospitality', url: 'Hospitality', img: 'Hospitality'},{name: 'Finance', url: 'Finance' , img: 'Finance'},{name: 'Banking', url: 'Banking', img: 'Banking'},{name: 'ERP', url: 'erp', img: 'erp'},{name: 'CRM', url: 'crm', img: 'crm'},{name: 'BI', url: 'Banking', img: 'bi'}];
 	    
-	    	$scope.myBundles = [{name: 'education', url: 'education', img: 'education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'insurance', url: 'insurance', img: 'insurance'},{name: 'healthcare', url: 'bi', img: 'healthcare'},{name: 'manufacturing', url: 'manufacturing', img: 'inventory'},{name: 'retail', url: 'retail', img: 'retail'},{name: 'hospitality', url: 'hospitality', img: 'hospitality'},{name: 'finance', url: 'finance' , img: 'finance'},{name: 'banking', url: 'banking', img: 'banking'},{name: 'ERP', url: 'erp', img: 'erp'},{name: 'CRM', url: 'crm', img: 'crm'},{name: 'BI', url: 'banking', img: 'bi'}];
+	    	$scope.myBundles = [{name: 'Education', url: 'Education', img: 'Education'},{name: 'Field Services', url: 'hr', img: 'field'},{name: 'Insurance', url: 'Insurance', img: 'Insurance'},{name: 'Healthcare', url: 'bi', img: 'Healthcare'},{name: 'Manufacturing', url: 'Manufacturing', img: 'inventory'},{name: 'Retail', url: 'Retail', img: 'Retail'},{name: 'Hospitality', url: 'Hospitality', img: 'Hospitality'},{name: 'Finance', url: 'Finance' , img: 'Finance'},{name: 'Banking', url: 'Banking', img: 'Banking'},{name: 'ERP', url: 'erp', img: 'erp'},{name: 'CRM', url: 'crm', img: 'crm'},{name: 'BI', url: 'Banking', img: 'bi'}];
 
 
 
@@ -137,24 +137,24 @@ angular.module('demoAppApp')
 		$scope.marketItemsTest2 = [
 		{
 			name: 'Education', 
-			url: 'education', 
-			img: 'education',
+			url: 'Education', 
+			img: 'Education',
 			onlyMe: false,
 			subs: [
 				{
 					name: 'Teaching Resources', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Teaching Resources sub1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'Teaching Resources APP 1-1', 
 									url: 'app1', 
-									img: 'education'
+									img: 'Education'
 									}
 								]
 							}
@@ -163,19 +163,19 @@ angular.module('demoAppApp')
 							{
 								name: 'Teaching Resources APP sub 1', 
 								url: 'app1', 
-								img: 'education'
+								img: 'Education'
 							}
 					]
 				},
 				{
 					name: 'Learning Resources', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -195,13 +195,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Financial Administration', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -221,13 +221,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Staff Resources', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -247,13 +247,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Student Resources', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -273,13 +273,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Program Management', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -299,13 +299,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Room Scheduling', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -325,13 +325,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Managing Student', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -351,13 +351,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Reporting', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -377,13 +377,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Parent Resources', 
-					url: 'education', 
-					img: 'education',
+					url: 'Education', 
+					img: 'Education',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -405,19 +405,19 @@ angular.module('demoAppApp')
 		},
 		{
 			name: 'Healthcare', 
-			url: 'education', 
-			img: 'healthcare',
+			url: 'Education', 
+			img: 'Healthcare',
 			onlyMe: false,
 			subs: [
 				{
 					name: 'Patient Administration', 
-					url: 'education', 
-					img: 'healthcare',
+					url: 'Education', 
+					img: 'Healthcare',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -437,13 +437,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Electronic Health Records', 
-					url: 'education', 
-					img: 'healthcare',
+					url: 'Education', 
+					img: 'Healthcare',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -463,13 +463,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'HIPPA & Security', 
-					url: 'education', 
-					img: 'healthcare',
+					url: 'Education', 
+					img: 'Healthcare',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -489,13 +489,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'healthcare',
+					url: 'Education', 
+					img: 'Healthcare',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -515,13 +515,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Staff Management', 
-					url: 'education', 
-					img: 'healthcare',
+					url: 'Education', 
+					img: 'Healthcare',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -541,13 +541,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Supply Chain Management', 
-					url: 'education', 
-					img: 'healthcare',
+					url: 'Education', 
+					img: 'Healthcare',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -567,13 +567,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Patient Flow Management', 
-					url: 'education', 
-					img: 'healthcare',
+					url: 'Education', 
+					img: 'Healthcare',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -595,19 +595,19 @@ angular.module('demoAppApp')
 		},
 		{
 			name: 'Field Services', 
-			url: 'education', 
+			url: 'Education', 
 			img: 'field',
 			onlyMe: false,
 			subs: [
 				{
 					name: 'Patient Administration', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'field',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -627,13 +627,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Electronic Health Records', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'field',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -653,13 +653,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'HIPPA & Security', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'field',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -679,13 +679,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'field',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -705,13 +705,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'field',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -731,13 +731,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Staff Management', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'field',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -757,13 +757,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Supply Chain Management', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'field',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -783,13 +783,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Patient Flow Management', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'field',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -811,19 +811,19 @@ angular.module('demoAppApp')
 		},
 		{
 			name: 'Insurance', 
-			url: 'education', 
-			img: 'insurance',
+			url: 'Education', 
+			img: 'Insurance',
 			onlyMe: false,
 			subs: [
 				{
 					name: 'Patient Administration', 
-					url: 'education', 
-					img: 'insurance',
+					url: 'Education', 
+					img: 'Insurance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -843,13 +843,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Electronic Health Records', 
-					url: 'education', 
-					img: 'insurance',
+					url: 'Education', 
+					img: 'Insurance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -869,13 +869,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'HIPPA & Security', 
-					url: 'education', 
-					img: 'insurance',
+					url: 'Education', 
+					img: 'Insurance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -895,13 +895,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'insurance',
+					url: 'Education', 
+					img: 'Insurance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -921,13 +921,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'insurance',
+					url: 'Education', 
+					img: 'Insurance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -947,13 +947,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Staff Management', 
-					url: 'education', 
-					img: 'insurance',
+					url: 'Education', 
+					img: 'Insurance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -973,13 +973,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Supply Chain Management', 
-					url: 'education', 
-					img: 'insurance',
+					url: 'Education', 
+					img: 'Insurance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -999,13 +999,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Patient Flow Management', 
-					url: 'education', 
-					img: 'insurance',
+					url: 'Education', 
+					img: 'Insurance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1027,19 +1027,19 @@ angular.module('demoAppApp')
 		},
 		{
 			name: 'Manufacturing', 
-			url: 'education', 
+			url: 'Education', 
 			img: 'inventory',
 			onlyMe: false,
 			subs: [
 				{
 					name: 'Patient Administration', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'inventory',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1059,13 +1059,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Electronic Health Records', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'inventory',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1085,13 +1085,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'HIPPA & Security', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'inventory',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1111,13 +1111,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'inventory',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1137,13 +1137,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'inventory',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1163,13 +1163,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Staff Management', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'inventory',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1189,13 +1189,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Supply Chain Management', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'inventory',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1215,13 +1215,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Patient Flow Management', 
-					url: 'education', 
+					url: 'Education', 
 					img: 'inventory',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1243,19 +1243,19 @@ angular.module('demoAppApp')
 		},
 		{
 			name: 'Retail', 
-			url: 'education', 
-			img: 'retail',
+			url: 'Education', 
+			img: 'Retail',
 			onlyMe: false,
 			subs: [
 				{
 					name: 'Patient Administration', 
-					url: 'education', 
-					img: 'retail',
+					url: 'Education', 
+					img: 'Retail',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1275,13 +1275,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Electronic Health Records', 
-					url: 'education', 
-					img: 'retail',
+					url: 'Education', 
+					img: 'Retail',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1301,13 +1301,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'HIPPA & Security', 
-					url: 'education', 
-					img: 'retail',
+					url: 'Education', 
+					img: 'Retail',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1327,13 +1327,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'retail',
+					url: 'Education', 
+					img: 'Retail',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1353,13 +1353,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'retail',
+					url: 'Education', 
+					img: 'Retail',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1379,13 +1379,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Staff Management', 
-					url: 'education', 
-					img: 'retail',
+					url: 'Education', 
+					img: 'Retail',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1405,13 +1405,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Supply Chain Management', 
-					url: 'education', 
-					img: 'retail',
+					url: 'Education', 
+					img: 'Retail',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1431,13 +1431,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Patient Flow Management', 
-					url: 'education', 
-					img: 'retail',
+					url: 'Education', 
+					img: 'Retail',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1459,19 +1459,19 @@ angular.module('demoAppApp')
 		},
 		{
 			name: 'Hospitality', 
-			url: 'education', 
-			img: 'hospitality',
+			url: 'Education', 
+			img: 'Hospitality',
 			onlyMe: false,
 			subs: [
 				{
 					name: 'Patient Administration', 
-					url: 'education', 
-					img: 'hospitality',
+					url: 'Education', 
+					img: 'Hospitality',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1491,13 +1491,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Electronic Health Records', 
-					url: 'education', 
-					img: 'hospitality',
+					url: 'Education', 
+					img: 'Hospitality',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1517,13 +1517,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'HIPPA & Security', 
-					url: 'education', 
-					img: 'hospitality',
+					url: 'Education', 
+					img: 'Hospitality',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1543,13 +1543,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'hospitality',
+					url: 'Education', 
+					img: 'Hospitality',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1569,13 +1569,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'hospitality',
+					url: 'Education', 
+					img: 'Hospitality',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1595,13 +1595,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Staff Management', 
-					url: 'education', 
-					img: 'hospitality',
+					url: 'Education', 
+					img: 'Hospitality',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1621,13 +1621,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Supply Chain Management', 
-					url: 'education', 
-					img: 'hospitality',
+					url: 'Education', 
+					img: 'Hospitality',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1647,13 +1647,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Patient Flow Management', 
-					url: 'education', 
-					img: 'hospitality',
+					url: 'Education', 
+					img: 'Hospitality',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1675,19 +1675,19 @@ angular.module('demoAppApp')
 		},
 		{
 			name: 'Finance', 
-			url: 'education', 
-			img: 'finance',
+			url: 'Education', 
+			img: 'Finance',
 			onlyMe: false,
 			subs: [
 				{
 					name: 'Patient Administration', 
-					url: 'education', 
-					img: 'finance',
+					url: 'Education', 
+					img: 'Finance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1707,13 +1707,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Electronic Health Records', 
-					url: 'education', 
-					img: 'finance',
+					url: 'Education', 
+					img: 'Finance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1733,13 +1733,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'HIPPA & Security', 
-					url: 'education', 
-					img: 'finance',
+					url: 'Education', 
+					img: 'Finance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1759,13 +1759,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'finance',
+					url: 'Education', 
+					img: 'Finance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1785,13 +1785,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'finance',
+					url: 'Education', 
+					img: 'Finance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1811,13 +1811,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Staff Management', 
-					url: 'education', 
-					img: 'finance',
+					url: 'Education', 
+					img: 'Finance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1837,13 +1837,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Supply Chain Management', 
-					url: 'education', 
-					img: 'finance',
+					url: 'Education', 
+					img: 'Finance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1863,13 +1863,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Patient Flow Management', 
-					url: 'education', 
-					img: 'finance',
+					url: 'Education', 
+					img: 'Finance',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1891,19 +1891,19 @@ angular.module('demoAppApp')
 		},
 		{
 			name: 'Banking', 
-			url: 'education', 
-			img: 'banking',
+			url: 'Education', 
+			img: 'Banking',
 			onlyMe: false,
 			subs: [
 				{
 					name: 'Patient Administration', 
-					url: 'education', 
-					img: 'banking',
+					url: 'Education', 
+					img: 'Banking',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1923,13 +1923,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Electronic Health Records', 
-					url: 'education', 
-					img: 'banking',
+					url: 'Education', 
+					img: 'Banking',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1949,13 +1949,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'HIPPA & Security', 
-					url: 'education', 
-					img: 'banking',
+					url: 'Education', 
+					img: 'Banking',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -1975,13 +1975,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'banking',
+					url: 'Education', 
+					img: 'Banking',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -2001,13 +2001,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Accounting', 
-					url: 'education', 
-					img: 'banking',
+					url: 'Education', 
+					img: 'Banking',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -2027,13 +2027,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Staff Management', 
-					url: 'education', 
-					img: 'banking',
+					url: 'Education', 
+					img: 'Banking',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -2053,13 +2053,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Supply Chain Management', 
-					url: 'education', 
-					img: 'banking',
+					url: 'Education', 
+					img: 'Banking',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 
@@ -2079,13 +2079,13 @@ angular.module('demoAppApp')
 				},
 				{
 					name: 'Patient Flow Management', 
-					url: 'education', 
-					img: 'banking',
+					url: 'Education', 
+					img: 'Banking',
 					subs: [
 							{
 								name: 'Ed Sub 1-1', 
-								url: 'education', 
-								img: 'education',
+								url: 'Education', 
+								img: 'Education',
 								apps: [
 									{
 									name: 'app1 sub 1-1', 

@@ -1,10 +1,10 @@
 <!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
 <div class="container">
   <div class="row">
-    <p ng-show="isLoggedIn()" style="float: left;" ng-click="openPublishMenu()"><i class="mdi-flip-to-back"></i> Dashboard </p>
+    <p ng-show="isLoggedIn()" style="float: left;" ng-click="openPublishMenu()"> Dashboard </p>
     <p ng-show="isLoggedIn()" style="float: right; padding-right: 17px">Welcome {{ getCurrentUser().name }}</p>
   </div>
-  {{shift1Check}}
+ 
 </div>
 
 <div class="container">
@@ -38,7 +38,7 @@
 
               <!-- front actions -->
               <li ng-show="side.sideIs == 'front'"><i class="mdi-help" ng-click="flipHelp($index, $parent.$index)" > <md-tooltip>Turn For Help</md-tooltip></i></li>
-              <li ng-show="side.sideIs == 'front'"><i class="mdi-signal-wifi-4-bar" ng-click="activateOffline($parent.$index, widget.title)"><md-tooltip >Offline Mode</md-tooltip></i></li>
+              <li ng-show="side.sideIs == 'front'"><i class="fa fa-wifi" ng-click="activateOffline($parent.$index, widget.title)"><md-tooltip >Offline Mode</md-tooltip></i></li>
               <li ng-show="side.sideIs == 'front'"><i class="mdi-share" ng-click="openShareModal(widget.name, widget)"><md-tooltip>Share</md-tooltip></i></li>
               <li ng-show="side.sideIs == 'front'"><i class="mdi-launch" ><md-tooltip>Launch</md-tooltip></i></li>
               <li ng-show="side.sideIs == 'front'"><i class="mdi-phone-iphone" ng-click="nativeWidg($index)"><md-tooltip>Launch Widget in native mode</md-tooltip></i></li>

@@ -65,16 +65,14 @@
             <h3>SHARE <span style="color:#ea6060;">{{nameOfWidg}}</span></h3>
         </div>
         <div class="modal-body">
-        <div class="shareType">
-        <md-text-float label="Search Connections" ng-model="searchConnections"></md-text-float>
-        </div>
         <div class="shareKey">
+        <h3>Select Users to share with </h3>
         <i class="fa fa-bar-chart"></i> : Send Widget with changes made to it.<br/>
         <i class="fa fa-paper-plane-o"></i> : Send base version of widget.
         </div>
           <div class="sharePers">
           <figure class="effect-phoebe velocity-opposites-transition-flipYIn" data-velocity-opts="{ stagger: 20, duration: 500 }" ng-repeat="item in users | filter:searchConnections" ng-click="shareWith =! shareWith" ng-class="{ 'effect-phoebeActive' : shareWith }">
-            <img src="assets/images/headshot.jpg" alt="img26"/>
+            <img src="assets/images/128.jpg" alt="img26"/>
               <figcaption>
               <h2>{{item.name}} <br/><span>Sales</span></h2>
               <p>
@@ -234,7 +232,7 @@ Duo at aliquid mnesarchum, nec ne impetus hendrerit. Ius id aeterno debitis atom
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/dashboard')}" class="menu-effect"> <md-button ng-href="/dashboard" aria-label="Dash">Dashboard</md-button></li>
         <!-- <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" class="menu-effect"><a href="/admin">Manage Users</a></li> -->
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/marketplace')}" class="menu-effect"><md-button ng-href="/marketplace" aria-label="Dash">Marketplace</md-button></li>
-         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><md-button ng-href="/offline" aria-label="Dash"><i class="mdi-signal-wifi-4-bar"></i></md-button><md-tooltip>{{trackSpace}} %</md-tooltip></li>
+         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/offline')}" class="menu-effect"><md-button ng-href="/offline" aria-label="Dash"><i class="fa fa-wifi"></i></md-button><md-tooltip>{{trackSpace}} %</md-tooltip></li>
          <li ng-show="isLoggedIn()" ng-class="{active: isActive('/activity')}" class="menu-effect"><md-button ng-href="/activity" aria-label="Dash"><i class="mdi-question-answer" ng-class="{ 'hasActivity' : shareAmount }"></i></md-button><md-tooltip>{{shareAmount}}</md-tooltip></li>
         
 
