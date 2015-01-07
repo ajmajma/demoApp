@@ -12,6 +12,12 @@ h1,h2,h3,h4,h5,h6
 *:focus 
 	outline: 0
 
+::selection
+	background: transparent
+
+::-moz-selection
+	background: transparent
+
 textarea:focus, input:focus
 	outline: 0
 
@@ -86,7 +92,7 @@ growl-notification
 			font-size: 110px
 
 .loginScreen
-	background: #f7f7f7 url(/assets/images/bgTest.jpg) repeat center
+	background: #f7f7f7 url(/assets/images/bgTest2.jpg) repeat center
 	background-size: cover
 
 .loginContain
@@ -327,15 +333,18 @@ growl-notification
 	position: fixed
 	height: 100%
 	width: 100%
-	background-color: #ea6060
+	background-color: #f7f7f7
 	z-index: 1002
 	.nativeTitle
-		color: #fff
+		color: #28282e
 		text-align: center
-		font-size: 90px
+		font-size: 28px
 	.nativeClose
-		color: #fff
-		font-size: 50px
+		position: absolute
+		top: 5px
+		right: 5px
+		color: #ea6060
+		font-size: 30px
 
 
 .shareModal
@@ -528,3 +537,89 @@ growl-notification
 	background-size: contain
 	width: 100%
 	height: 517px
+
+.ehrForm
+	width: 96%
+	margin: 0 auto
+
+.ehrForm
+	textarea
+		width: 100%
+		max-width: 100%
+		margin-bottom: 10px
+
+.formHeader
+	width: 96%
+	border-bottom: 1px solid #6B6B6B
+	margin: 0 auto 20px auto
+
+.ehrForm md-input-group
+	width: 19%
+	float: left
+	margin-right: 1%
+	@media screen and (max-width: 600px)
+		width: 49%
+
+.ehrWrap
+	position: relative
+	width: 100%
+	height: 498px
+	@media screen and (max-width: 600px)
+		overflow-y: auto
+
+.appointmentsApp
+	position: relative
+
+.videoSelectLeft
+	margin: 5%
+	padding: 5px
+	width: 40%
+	height: 400px
+	overflow-y: auto
+	float: left
+	ul 
+		padding-left: 0
+		list-style-type: none
+		li:hover
+			color: #ea6060
+
+.videoSelectRight
+	width: 50%
+	float: left
+
+.mobileScheduling
+	#tab2-content
+		padding: 10px
+		.date_select_mobile
+			margin-top: 5px
+			select 
+				width: 100%
+				margin-top: 3px
+				padding: 10px
+		.md-button
+			width: 100%
+		md-checkbox
+			float: left
+		textarea
+			width: 100%
+			max-width: 100%
+			margin-bottom: 10px
+	.shift_point_mobile
+		position: relative
+		text-align: center
+		h5
+			color: #fff
+			padding-top: 28px
+			font-size: 44px
+		h5:after
+			content: ""
+			position: absolute
+			top: 0
+			left: 50%
+			z-index: -1
+			margin-left: -50px
+			width: 100px
+			border-radius: 50%
+			height: 100px
+			background-color: #ea6060
+			box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26)

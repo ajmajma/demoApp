@@ -133,8 +133,8 @@ angular.module('demoAppApp')
   $scope.openFavorites = function(){
 
      var modalInstance = $modal.open({
-      templateUrl: 'favoriteModal.html',
-      controller: 'FavoriteModalCtrl',
+      templateUrl: 'fa favoriteModal.html',
+      controller: 'fa favoriteModalCtrl',
       windowClass: 'shareModal',
       size: 'sm',
       resolve: {
@@ -174,8 +174,8 @@ angular.module('demoAppApp')
     //Object for Global Nav
     $scope.categoriess = [
     { 
-    title: 'Favorites',
-    icon: 'fa-heart',
+    title: 'fa favorites',
+    icon: 'fa fa-heart',
     shown: false,
     categories: [
       {
@@ -217,7 +217,7 @@ angular.module('demoAppApp')
   },
   { 
     title: 'Education',
-    icon: 'fa-graduation-cap',
+    icon: 'fa fa-graduation-cap',
     shown: false,
     categories: [
       {
@@ -260,35 +260,35 @@ angular.module('demoAppApp')
 
   {
     title: 'Field services',
-    icon: 'fa-truck'
+    icon: 'fa fa-truck'
   },
   {
     title: 'Insurance',
-    icon: 'fa-umbrella'
+    icon: 'fa fa-umbrella'
   },
   {
     title: 'Healthcare',
-    icon: 'fa-coffee'
+    icon: 'fa fa-coffee'
   },
   {
     title: 'Manufacturing',
-    icon: 'fa-gears'
+    icon: 'fa fa-gears'
   },
   {
     title: 'Retail',
-    icon: 'fa-shopping-cart'
+    icon: 'fa fa-shopping-cart'
   },
   {
     title: 'Hospitality',
-    icon: 'fa-heart'
+    icon: 'fa fa-heart'
   },
   {
     title: 'Finance',
-    icon: 'fa-line-chart'
+    icon: 'fa fa-line-chart'
   },
   {
     title: 'Banking',
-    icon: 'fa-money'
+    icon: 'fa fa-money'
   }
 
 ];
@@ -296,7 +296,7 @@ angular.module('demoAppApp')
     $scope.categoriesForMarket = [
     { 
     title: 'Education',
-    icon: 'fa-graduation-cap',
+    icon: 'fa fa-graduation-cap',
     shown: false,
     categories: [
       {
@@ -359,35 +359,35 @@ angular.module('demoAppApp')
 
   {
     title: 'Field services',
-    icon: 'fa-truck'
+    icon: 'fa fa-truck'
   },
   {
     title: 'Insurance',
-    icon: 'fa-umbrella'
+    icon: 'fa fa-umbrella'
   },
   {
     title: 'Healthcare',
-    icon: 'fa-coffee'
+    icon: 'fa fa-coffee'
   },
   {
     title: 'Manufacturing',
-    icon: 'fa-gears'
+    icon: 'fa fa-gears'
   },
   {
     title: 'Retail',
-    icon: 'fa-shopping-cart'
+    icon: 'fa fa-shopping-cart'
   },
   {
     title: 'Hospitality',
-    icon: 'fa-heart'
+    icon: 'fa fa-heart'
   },
   {
     title: 'Finance',
-    icon: 'fa-line-chart'
+    icon: 'fa fa-line-chart'
   },
   {
     title: 'Banking',
-    icon: 'fa-money'
+    icon: 'fa fa-money'
   }
 
 ];
@@ -541,7 +541,7 @@ $scope.openGlobalMenu = function(){
       'mobile' :  true,
       'native' :  true,
       'flipAction' : '',
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'actions' : ['fa fa-suitcase', 'fa fa-bar-chart', 'fa fa-bell-o', 'fa fa-print'],
       'sides' : [
         {
           'title' : 'Statistics',
@@ -583,56 +583,12 @@ $scope.openGlobalMenu = function(){
       'share' : true,
       'mobile' :  true,
       'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'actions' : ['fa fa-suitcase', 'fa fa-bar-chart', 'fa fa-bell-o', 'fa fa-print'],
       'flipAction' : '',
       'sides' : [
         {
           'title' : 'Graph Two',
           'content' : '<div class="graph_two" ></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Points can be used for -</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-      
-      {
-      'size' : '',
-      'name' : 'Graph',
-      'space' : 10,
-      'published': true,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Graph',
-          'content' : '<div class="graph_one" ></div>',
           'sideIs' : 'front',
           'active' : true
         },
@@ -670,7 +626,7 @@ $scope.openGlobalMenu = function(){
       'share' : true,
       'mobile' :  true,
       'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'actions' : ['fa fa-suitcase', 'fa fa-bar-chart', 'fa fa-bell-o', 'fa fa-print'],
       'flipAction' : '',
       'sides' : [
         {
@@ -714,7 +670,7 @@ $scope.openGlobalMenu = function(){
       'mobile' :  true,
       'native' :  true,
       'flipAction' : '',
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'actions' : ['fa fa-suitcase', 'fa fa-bar-chart', 'fa fa-bell-o', 'fa fa-print'],
       'sides' : [
         {
           'title' : 'Utility Alerts',
@@ -756,7 +712,7 @@ $scope.openGlobalMenu = function(){
       'share' : true,
       'mobile' :  true,
       'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'actions' : ['fa fa-suitcase', 'fa fa-bar-chart', 'fa fa-bell-o', 'fa fa-print'],
       'flipAction' : '',
       'sides' : [
         {
@@ -791,92 +747,7 @@ $scope.openGlobalMenu = function(){
         }]
       },
       
-      {
-      'size' : 'w5',
-      'name' : 'Input',
-      'space' : 10,
-      'published': true,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Schedule Shift',
-          'content' : '<div class="inputDate"><div class="tableHolder"><datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker></div><div class="dateSelected" ng-if="dt">Date Selected : <b>{{dt | date:"fullDate" }}</b></div><div class="clear"></div><md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" ng-show="dt">Shift 1</md-checkbox><md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-show="dt">Shift 2</md-checkbox><md-checkbox ng-model="data.cb3" aria-label="Checkbox 3" ng-show="dt" >Shift 3</md-checkbox><div class="clear"></div><div class="dateComment" ng-show="dt"><textarea placeholder="Additional Comments..."></textarea><div class="clear"></div><md-button class="md-raised" ng-if="dt" ng-click="addShift(dt)">Submit</md-button></div><p ng-if="!dt">Please select a date to begin</p></div> ',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-       {
-      'size' : 'w6',
-      'name' : 'Calender',
-      'space' : 10,
-      'published': true,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Shift Calender',
-          'content' : '<div class="calenderWrap"><h2 class="text-center">{{ calendarControl.getTitle() }}</h2><mwl-calendar calendar-events="events" calendar-view="calendarView"calendar-current-day="calendarDay" calendar-control="calendarControl" calendar-event-click="eventClicked($event)" calendar-edit-event-html="edit" calendar-delete-event-html="delete" calendar-edit-event-click="eventEdited($event)" calendar-delete-event-click="eventDeleted($event)" calendar-auto-open="true"></mwl-calendar><div class="clear"></div></div><div class="calender_nav"><md-button class="md-raised" ng-click="calendarControl.prev()">Previous</md-button ><md-button class="md-raised" ng-click="setCalendarToToday()">Today</md-button ><md-button class="md-raised" ng-click="calendarControl.next()">Next</md-button ></div><div class="calender_sort"><md-radio-group ng-model="calendarView"><md-radio-button value="year" aria-label="Year">Year</md-radio-button><md-radio-button value="month" aria-label="Month"> Month </md-radio-button><md-radio-button value="week" aria-label="Week"> Week </md-radio-button><md-radio-button value="day" aria-label="Day"> Day </md-radio-button></md-radio-group></div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Help</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
+      
       {
       'size' : 'w5',
       'name' : 'Training Video',
@@ -887,7 +758,7 @@ $scope.openGlobalMenu = function(){
       'mobile' :  true,
       'native' :  true,
       'flipAction' : '',
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'actions' : ['fa fa-suitcase', 'fa fa-bar-chart', 'fa fa-bell-o', 'fa fa-print'],
       'sides' : [
         {
           'title' : 'Training Video',
@@ -931,7 +802,7 @@ $scope.openGlobalMenu = function(){
       'mobile' :  true,
       'native' :  true,
       'flipAction' : '',
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
+      'actions' : ['fa fa-suitcase', 'fa fa-bar-chart', 'fa fa-bell-o', 'fa fa-print'],
       'sides' : [
         {
           'title' : 'Statistics',
@@ -960,49 +831,6 @@ $scope.openGlobalMenu = function(){
         {
           'title' : 'Help',
           'content' : '<p>Documentation for graphs</p>',
-          'sideIs' : 'help',
-          'active' : false
-        }]
-      },
-       {
-      'size' : '',
-      'name' : 'Shift Points',
-      'space' : 10,
-      'published': true,
-      'launch' :  true,
-      'share' : true,
-      'mobile' :  true,
-      'native' :  true,
-      'actions' : ['fa-suitcase', 'fa-bar-chart', 'fa-bell-o', 'fa-print'],
-      'flipAction' : '',
-      'sides' : [
-        {
-          'title' : 'Shift Points',
-          'content' : '<div class="shift_point_system"><div class="shift_point_top"><h5>19</h5></div><div class="shift_point_mid">You have 19 points which makes you 14th out of 22.</div>',
-          'sideIs' : 'front',
-          'active' : true
-        },
-        {
-          'title' : 'Side 1',
-          'content' : '',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 2',
-          'content' : '<p>Side 2</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Side 3',
-          'content' : '<p>Side 3</p>',
-          'sideIs' : 'side',
-          'active' : false
-        },
-        {
-          'title' : 'Help',
-          'content' : '<p>Points can be used for -</p>',
           'sideIs' : 'help',
           'active' : false
         }]
@@ -1079,6 +907,7 @@ $scope.examplePie = [
            "values": [ [ 1025409600000 , -7.0674410638835] , [ 1028088000000 , -14.663359292964] , [ 1030766400000 , -14.104393060540] , [ 1033358400000 , -23.114477037218] , [ 1036040400000 , -16.774256687841] , [ 1038632400000 , -11.902028464000] , [ 1041310800000 , -16.883038668422] , [ 1043989200000 , -19.104223676831] , [ 1046408400000 , -20.420523282736] , [ 1049086800000 , -19.660555051587] , [ 1051675200000 , -13.106911231646] , [ 1054353600000 , -8.2448460302143] , [ 1056945600000 , -7.0313058730976] ]
        }
    ];
+   $scope.user = {'title' : 'Dr', 'email' : 'user@user.com', 'company' : 'Volute', 'firstName' : 'Joe', 'lastName' : 'Nameson', 'address' : '640 George Hwy', 'city' : 'Lincoln', 'state' : 'RI', 'postalCode' : '02906', 'country' : 'USA' ,'dob' : '01/02/1954', 'diagnosis' : 'ACL Tear', 'statusDate' : '12/15/2014', 'pharmacy' : 'CVS#8671', 'procedure' : 'Knee Surgery','procedureDate' : '10/3/2014','procStatus' : 'Performed', 'cpt': '29881', 'symptoms' : 'Knee Pain' }; 
 
 
   });

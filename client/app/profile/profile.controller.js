@@ -116,7 +116,6 @@ angular.module('demoAppApp')
       },
     ];
 
-
-
+    
 
   });

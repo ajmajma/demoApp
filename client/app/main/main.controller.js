@@ -76,9 +76,9 @@ angular.module('demoAppApp')
     };
     //flip right
     $scope.flipSideRight = function(index, parent){
-     
+      console.log(index, parent);
 
-      $scope.contentHereCurrent[parent].sides[index].active = false;
+      
       var idx = index + 1;
       if(idx >= $scope.contentHereCurrent[parent].sides.length){
          idx = 0;
